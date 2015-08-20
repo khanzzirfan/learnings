@@ -1,0 +1,9 @@
+C:\Users\DELL\Documents\Projects\flickrimagelist\flickrimagelist.UITests\bin\Debug\flickrimagelist.UITests.dll
+C:\Users\DELL\Documents\Projects\flickrimagelist\flickrimagelist.UITests\bin\Debug\flickrimagelist.UITests.pdb
+C:\Users\DELL\Documents\Projects\flickrimagelist\flickrimagelist.UITests\bin\Debug\nunit.framework.dll
+C:\Users\DELL\Documents\Projects\flickrimagelist\flickrimagelist.UITests\bin\Debug\Xamarin.UITest.dll
+C:\Users\DELL\Documents\Projects\flickrimagelist\flickrimagelist.UITests\bin\Debug\nunit.framework.xml
+C:\Users\DELL\Documents\Projects\flickrimagelist\flickrimagelist.UITests\bin\Debug\Xamarin.UITest.xml
+C:\Users\DELL\Documents\Projects\flickrimagelist\flickrimagelist.UITests\obj\Debug\flickrimagelist.UITests.csprojResolveAssemblyReference.cache
+C:\Users\DELL\Documents\Projects\flickrimagelist\flickrimagelist.UITests\obj\Debug\flickrimagelist.UITests.dll
+C:\Users\DELL\Documents\Projects\flickrimagelist\flickrimagelist.UITests\obj\Debug\flickrimagelist.UITests.pdb

@@ -1,0 +1,31 @@
+﻿<Properties StartupItem="flickrimagelist\flickrimagelist.csproj">
+  <DisabledProjects>
+    <String>flickrimagelist.UITests\flickrimagelist.UITests.csproj</String>
+  </DisabledProjects>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Android.androidS3_V14" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="flickrimagelist\ImageFragment.cs">
+    <Files>
+      <File FileName="flickrimagelist\MainActivity.cs" Line="1" Column="1" />
+      <File FileName="flickrimagelist\ScollImageActivity.cs" Line="1" Column="1" />
+      <File FileName="flickrimagelist\ImageFragment.cs" Line="75" Column="4" />
+      <File FileName="c:\Users\DELL\Documents\Projects\flickrimagelist\flickrimagelist\AL\ImageLoader.cs" Line="1" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="C:\Users\DELL\Documents\Projects\flickrimagelist\flickrimagelist\GridImages.cs" line="129" column="1" />
+      <Breakpoint file="C:\Users\DELL\Documents\Projects\flickrimagelist\flickrimagelist\GridImageAdapter.cs" line="28" column="1" />
+      <Breakpoint file="C:\Users\DELL\Documents\Projects\flickrimagelist\flickrimagelist\GridImageAdapter.cs" line="30" column="1" />
+      <Breakpoint file="C:\Users\DELL\Documents\Projects\flickrimagelist\flickrimagelist\GridImages.cs" line="74" column="1" />
+      <Breakpoint file="C:\Users\DELL\Documents\Projects\flickrimagelist\flickrimagelist\GridImages.cs" line="128" column="1" />
+      <Breakpoint file="C:\Users\DELL\Documents\Projects\flickrimagelist\flickrimagelist\ScollImageActivity.cs" line="51" column="1" />
+      <Breakpoint file="C:\Users\DELL\Documents\Projects\flickrimagelist\flickrimagelist\AL\LRUCache.cs" line="84" column="1" />
+      <Breakpoint file="C:\Users\DELL\Documents\Projects\flickrimagelist\flickrimagelist\AL\LRUCache.cs" line="65" column="1" />
+      <Breakpoint file="C:\Users\DELL\Documents\Projects\flickrimagelist\flickrimagelist\AL\LRUCache.cs" line="67" column="1" />
+      <Breakpoint file="C:\Users\DELL\Documents\Projects\flickrimagelist\flickrimagelist\ImageFragment.cs" line="40" column="1" />
+      <Breakpoint file="C:\Users\DELL\Documents\Projects\flickrimagelist\flickrimagelist\ImageFragment.cs" line="55" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.flickrimagelist AndroidDesignerPreferredDevice="Nexus 4" />
+</Properties>

@@ -1,0 +1,1 @@
+<menu xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:android="http://schemas.android.com/apk/res/android"><item android:id="@+id/btnSwipe" app:showAsAction="always" android:title="Swipe gallery" /><item android:id="@+id/btnRecycler" app:showAsAction="always" android:title="RecyclerView" /></menu>

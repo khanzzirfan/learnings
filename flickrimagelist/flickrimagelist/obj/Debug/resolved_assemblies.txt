@@ -1,0 +1,8 @@
+C:\Users\DELL\Documents\Projects\flickrimagelist\flickrimagelist\bin\Debug\flickrimagelist.dll
+C:\android-sdk\xam\FFImageLoading-trunk\FFImageLoading.Droid\obj\Debug\FFImageLoading.Droid.dll
+C:\android-sdk\ExternalLibs\lib\android\ModernHttpClient.dll
+C:\android-sdk\Json70r1\Bin\Net40\Newtonsoft.Json.dll
+C:\android-sdk\ExternalLibs\lib\android\OkHttp.dll
+C:\Users\DELL\Documents\Projects\flickrimagelist\packages\Xamarin.Android.Support.v4.22.2.1.0\lib\MonoAndroid403\Xamarin.Android.Support.v4.dll
+C:\Users\DELL\Documents\Projects\flickrimagelist\packages\Xamarin.Android.Support.v7.AppCompat.22.2.1.0\lib\MonoAndroid403\Xamarin.Android.Support.v7.AppCompat.dll
+C:\Users\DELL\Documents\Projects\flickrimagelist\packages\Xamarin.Android.Support.v7.RecyclerView.22.2.1.0\lib\MonoAndroid403\Xamarin.Android.Support.v7.RecyclerView.dll
