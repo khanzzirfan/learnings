@@ -62,7 +62,8 @@ namespace flickrimagelist
 				ImageConfig.page,
 				ImageConfig.per_page);
 
-			HttpClient client = new HttpClient ();
+		
+			var client = new System.Net.Http.HttpClient ();
 			client.GetStringAsync (baseUrl).ContinueWith ((requestString) => {
 
 				var flickrResult = requestString.Result;
@@ -88,7 +89,8 @@ namespace flickrimagelist
 
 			});
 
-			
+		
+
 		}
 
 		protected override void OnResume ()

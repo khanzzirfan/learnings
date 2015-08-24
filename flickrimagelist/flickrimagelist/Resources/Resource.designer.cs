@@ -26,7 +26,6 @@ namespace flickrimagelist
 		
 		public static void UpdateIdValues()
 		{
-			global::ModernHttpClient.Resource.String.library_name = global::flickrimagelist.Resource.String.library_name;
 		}
 		
 		public partial class Animation
@@ -1917,14 +1916,11 @@ namespace flickrimagelist
 			// aapt resource value: 0x7f070010
 			public const int abc_toolbar_collapse_description = 2131165200;
 			
-			// aapt resource value: 0x7f070014
-			public const int app_name = 2131165204;
-			
 			// aapt resource value: 0x7f070013
-			public const int hello = 2131165203;
+			public const int app_name = 2131165203;
 			
 			// aapt resource value: 0x7f070012
-			public const int library_name = 2131165202;
+			public const int hello = 2131165202;
 			
 			// aapt resource value: 0x7f070011
 			public const int status_bar_notification_info_overflow = 2131165201;

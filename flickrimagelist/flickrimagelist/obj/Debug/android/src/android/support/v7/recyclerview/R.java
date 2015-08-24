@@ -1736,9 +1736,8 @@ containing a value of this type.
         public static int abc_shareactionprovider_share_with=0x7f07000b;
         public static int abc_shareactionprovider_share_with_application=0x7f07000c;
         public static int abc_toolbar_collapse_description=0x7f070010;
-        public static int app_name=0x7f070014;
-        public static int hello=0x7f070013;
-        public static int library_name=0x7f070012;
+        public static int app_name=0x7f070013;
+        public static int hello=0x7f070012;
         public static int status_bar_notification_info_overflow=0x7f070011;
     }
     public static final class style {

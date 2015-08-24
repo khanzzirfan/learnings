@@ -81,12 +81,13 @@ class MonoPackageManager_Resources {
 	public static final String[] Assemblies = new String[]{
 		"flickrimagelist.dll",
 		"FFImageLoading.Droid.dll",
-		"ModernHttpClient.dll",
 		"Newtonsoft.Json.dll",
 		"OkHttp.dll",
+		"System.IO.Compression.FileSystem.dll",
 		"Xamarin.Android.Support.v4.dll",
 		"Xamarin.Android.Support.v7.AppCompat.dll",
 		"Xamarin.Android.Support.v7.RecyclerView.dll",
+		"ModernHttpClient.dll",
 	};
 	public static final String[] Dependencies = new String[]{
 	};

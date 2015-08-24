@@ -45,9 +45,6 @@
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\..\..\..\..\..\android-sdk\Json70r1\Bin\Net40\Newtonsoft.Json.dll</HintPath>
     </Reference>
-    <Reference Include="System.Net.Http">
-      <HintPath>..\..\..\..\..\..\Program Files %28x86%29\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Net.Http.dll</HintPath>
-    </Reference>
     <Reference Include="Xamarin.Android.Support.v4">
       <HintPath>..\packages\Xamarin.Android.Support.v4.22.2.1.0\lib\MonoAndroid403\Xamarin.Android.Support.v4.dll</HintPath>
     </Reference>
@@ -60,12 +57,12 @@
     <Reference Include="FFImageLoading.Droid">
       <HintPath>..\..\..\..\..\..\android-sdk\xam\FFImageLoading-trunk\FFImageLoading.Droid\obj\Debug\FFImageLoading.Droid.dll</HintPath>
     </Reference>
-    <Reference Include="ModernHttpClient">
-      <HintPath>..\..\..\..\..\..\android-sdk\ExternalLibs\lib\android\ModernHttpClient.dll</HintPath>
-    </Reference>
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.IO.Compression.FileSystem" />
     <Reference Include="OkHttp">
       <HintPath>..\..\..\..\..\..\android-sdk\ExternalLibs\lib\android\OkHttp.dll</HintPath>
     </Reference>
+    <Reference Include="System.Net.Http" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MainActivity.cs" />

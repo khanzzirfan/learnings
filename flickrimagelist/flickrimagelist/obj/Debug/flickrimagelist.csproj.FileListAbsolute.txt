@@ -1,10 +1,8 @@
 C:\Users\DELL\Documents\Projects\flickrimagelist\flickrimagelist\bin\Debug\flickrimagelist.dll
 C:\Users\DELL\Documents\Projects\flickrimagelist\flickrimagelist\bin\Debug\flickrimagelist.pdb
-C:\Users\DELL\Documents\Projects\flickrimagelist\flickrimagelist\bin\Debug\flickrimagelist.dll.mdb
 C:\Users\DELL\Documents\Projects\flickrimagelist\flickrimagelist\bin\Debug\com.companyname.flickrimagelist.apk
 C:\Users\DELL\Documents\Projects\flickrimagelist\flickrimagelist\bin\Debug\com.companyname.flickrimagelist-Signed.apk
 C:\Users\DELL\Documents\Projects\flickrimagelist\flickrimagelist\bin\Debug\FFImageLoading.Droid.dll
-C:\Users\DELL\Documents\Projects\flickrimagelist\flickrimagelist\bin\Debug\ModernHttpClient.dll
 C:\Users\DELL\Documents\Projects\flickrimagelist\flickrimagelist\bin\Debug\Newtonsoft.Json.dll
 C:\Users\DELL\Documents\Projects\flickrimagelist\flickrimagelist\bin\Debug\OkHttp.dll
 C:\Users\DELL\Documents\Projects\flickrimagelist\flickrimagelist\bin\Debug\Xamarin.Android.Support.v4.dll

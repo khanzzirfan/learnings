@@ -8,7 +8,7 @@ namespace flickrimagelist
 		public const string flickrApiKey = "850e32be70ca5a7e04b39b6a7e130e38";
 		public const string userId = "10734446@N06";
 		public const int page = 0;
-		public const int per_page = 30;
+		public const int per_page = 80;
 
 		public ImageConfig()
 		{
