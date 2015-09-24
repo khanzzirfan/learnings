@@ -1,0 +1,17 @@
+﻿<Properties StartupItem="recyclerviewlistner\recyclerviewlistner.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Android.galaxy_S6" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="recyclerviewlistner\MainActivity.cs">
+    <Files>
+      <File FileName="recyclerviewlistner\MainActivity.cs" Line="57" Column="39" />
+      <File FileName="recyclerviewlistner\RecycleAdapter.cs" Line="43" Column="43" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <DisabledProjects>
+    <String>recyclerviewlistner.UITests\recyclerviewlistner.UITests.csproj</String>
+  </DisabledProjects>
+  <MonoDevelop.Ide.ItemProperties.recyclerviewlistner AndroidDesignerPreferredDevice="Nexus 4" />
+</Properties>

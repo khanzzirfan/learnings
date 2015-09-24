@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Paths>
+  <AdditionalAndroidResourcePaths>C:\Users\Irfan.Kahn\AppData\Local\Xamarin\Android.Support.v4\22.2.1\embedded;C:\Users\Irfan.Kahn\AppData\Local\Xamarin\Android.Support.v7.CardView\22.2.1\embedded;C:\Users\Irfan.Kahn\AppData\Local\Xamarin\Android.Support.v7.RecyclerView\22.2.1\embedded</AdditionalAndroidResourcePaths>
+  <AdditionalJavaLibraryReferences>C:\Users\Irfan.Kahn\AppData\Local\Xamarin\Android.Support.v4\22.2.1\embedded\classes.jar;C:\Users\Irfan.Kahn\AppData\Local\Xamarin\Android.Support.v4\22.2.1\embedded\libs\internal_impl-22.2.1.jar;C:\Users\Irfan.Kahn\AppData\Local\Xamarin\Android.Support.v7.CardView\22.2.1\embedded\classes.jar;C:\Users\Irfan.Kahn\AppData\Local\Xamarin\Android.Support.v7.RecyclerView\22.2.1\embedded\classes.jar</AdditionalJavaLibraryReferences>
+  <AdditionalNativeLibraryReferences></AdditionalNativeLibraryReferences>
+</Paths>

@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "recyclerviewlistner", "recyclerviewlistner\recyclerviewlistner.csproj", "{CE5FEC8D-1A00-435D-B3B6-E2B47FC03469}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "recyclerviewlistner.UITests", "recyclerviewlistner.UITests\recyclerviewlistner.UITests.csproj", "{3957A113-BE07-42F8-8B56-C1F8B563BBFD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3957A113-BE07-42F8-8B56-C1F8B563BBFD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3957A113-BE07-42F8-8B56-C1F8B563BBFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3957A113-BE07-42F8-8B56-C1F8B563BBFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3957A113-BE07-42F8-8B56-C1F8B563BBFD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE5FEC8D-1A00-435D-B3B6-E2B47FC03469}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE5FEC8D-1A00-435D-B3B6-E2B47FC03469}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE5FEC8D-1A00-435D-B3B6-E2B47FC03469}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE5FEC8D-1A00-435D-B3B6-E2B47FC03469}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
