@@ -1,0 +1,159 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!--------------------------------------------------------------------------->  
+<!--                           INTRODUCTION                                
+
+ The Code Project article submission template (HTML version)
+
+Using this template will help us post your article sooner. To use, just 
+follow the 3 easy steps below:
+ 
+     1. Fill in the article description details
+     2. Add links to your images and downloads
+     3. Include the main article text
+
+That's all there is to it! All formatting will be done by our submission
+scripts and style sheets. 
+
+-->  
+<!--------------------------------------------------------------------------->  
+<!--                        IGNORE THIS SECTION                            -->
+<html>
+<head>
+<title>The Code Project</title>
+<Style>
+BODY, P, TD { font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 10pt }
+H2,H3,H4,H5 { color: #ff9900; font-weight: bold; }
+H2 { font-size: 13pt; }
+H3 { font-size: 12pt; }
+H4 { font-size: 10pt; color: black; }
+PRE { BACKGROUND-COLOR: #FBEDBB; FONT-FAMILY: "Courier New", Courier, mono; WHITE-SPACE: pre; }
+CODE { COLOR: #990000; FONT-FAMILY: "Courier New", Courier, mono; }
+</style>
+<link rel="stylesheet" type="text/css" href="http://www.codeproject.com/App_Themes/Std/CodeProject.css">
+</head>
+<body bgcolor="#FFFFFF" color=#000000>
+<!--------------------------------------------------------------------------->  
+
+
+<!-------------------------------     STEP 1      --------------------------->
+<!--  Fill in the details (CodeProject will reformat this section for you) -->
+
+<pre>
+Title:       Android Recycler view with spinner item change selection and update UI
+Author:      khanzzirfan
+Email:       khanzz_irfan@hotmail.com
+Language:    C# 4.0 
+Platform:    Android 
+Technology:  Xamarin Android
+Level:       Pick ONE: Beginner
+Description: This article helps you to understand how to listen to nested controls inside the recycler view and update the view dynamically.
+Section      Mobile Development
+SubSection   Android
+License:     CPOL (<a href="http://www.codeproject.com/info/licenses.aspx">CPOL, CPL, MIT, etc</a>)
+</pre>
+
+<!-------------------------------     STEP 2      --------------------------->
+<!--  Include download and sample image information.                       --> 
+
+<ul class=download>
+<li><a href="Article_demo.zip">Download demo project - XXX Kb </a></li>
+<li><a href="Article_src.zip">Download source - XXX Kb</a></li>
+</ul>
+
+<p><img src="Article.gif" alt="Sample Image - maximum width is 600 pixels" width=400 height=200></p>
+
+
+<!-------------------------------     STEP 3      --------------------------->
+
+<!--  Add the article text. Please use simple formatting (<h2>, <p> etc)   -->
+
+<h2>Introduction</h2>
+
+<p>What the article/code snippet does, why it's useful, the problem it solves etc. 
+	As I'm keep learning xamarin cross platform , I was developing sample app which has recycler view and the view has nested controls like spinner and checkboxes. 
+	I was finding difficult to dynamically update the view row when I changed with spinner drop down value. So, I came up with a idea to event listner to the spinner drop down
+	and pass the event listner to the main activity. In the main activity I can just update the underlying dataset and then there is option called notifyitemchanged, 
+	which will update the view row recycler list, based on the index provided.
+</p>
+
+<h2>Background</h2>
+
+<p>(Optional) Is there any background to this article that may be useful such as an introduction to the basic ideas presented?
+	
+ </p>
+
+<h2>Using the code</h2>
+
+<p>
+	To start with , this article is about creating a recycler view in xamarin android and then adding spinner control on the each list item and updating the list row dynamically based on the spinner drop down value selected.
+	The basic concept of how to recycler view is explained on the xamarin guid page very neatly (https://developer.xamarin.com/guides/android/user_interface/recyclerview/). My explanation here how to add nested controls 
+	on the recycler view row and listen to the event listner of those nested controls and update the list row.
+</p>
+<p> Lets start with the code;
+	I have created ViewHolder class, which will have reference to the view objects.
+	The view holder class has spinner object and then the spinner object is assigned to the event ItemSelected in the ViewHolder class constructor.
+	Note that ItemSelected event is an event called after the user has selected the value from the spinner drop down list.
+	Below is the complete example  of the View Holder class.
+</p>
+<p> 
+&quot;
+	public class VegeViewHolder: RecyclerView.ViewHolder
+	{
+		public ImageView Image { get; set; }
+		public TextView Name { get; set; }
+		public Spinner Quantity { get; set; }
+		public TextView Price { get; set; }
+		public TextView TotalAmount { get; set; }
+
+		// Get references to the views defined in the CardView layout.
+		public VegeViewHolder(View itemView, Action<int> itemlistner, Action<object,AdapterView.ItemSelectedEventArgs> spinnerItemSelected )
+			:base(itemView)
+		{
+			Image = itemView.FindViewById<ImageView> (Resource.Id.list_image);
+			Name = itemView.FindViewById<TextView> (Resource.Id.Name);
+			Price = itemView.FindViewById<TextView> (Resource.Id.Price);
+			Quantity = itemView.FindViewById<Spinner> (Resource.Id.spinner1);
+			TotalAmount = itemView.FindViewById<TextView> (Resource.Id.total);
+
+			itemView.Click += (sender, e) => itemlistner (base.Position);
+			Quantity.ItemSelected+=	new EventHandler<AdapterView.ItemSelectedEventArgs> (spinnerItemSelected);
+		}
+
+	}
+&quot; 
+</p>
+<p> 
+	Lets create a custom adapter class for the recycler view, Most of the "heavy-lifting" of our RecyclerView integration code takes place in the adapter. RecyclerView requires that we provide an adapter derived from RecyclerView.Adapter to access our data source and populate each item with content from the data source. 
+	In this adapter class I have created a event handler which is then associated with the spinner control.
+</p>
+<p> 	&quot;	public event EventHandler<AdapterView.ItemSelectedEventArgs> SpinnerItemSelectionChanged;	&quot; </p>
+
+<p> 
+	
+</p>
+
+<p>Blocks of code should be set as style &quot;Formatted&quot; like this: </p>
+
+<pre>//
+// Any source code blocks look like this
+//
+var i = 0;
+...</pre>
+
+<p>Remember to set the Language of your code snippet using the Language dropdown. </p>
+
+<p>Use the &quot;var&quot; button to wrap Variable or class names in &amp;lt;code&amp;gt; tags like <code>this</code>. </p>
+
+<h2>Points of Interest</h2>
+
+<p>Did you learn anything interesting/fun/annoying while writing the code? Did you do anything particularly clever or wild or zany? </p>
+
+<h2>History</h2>
+
+<p>Keep a running update of any changes or improvements you've made here. </p>
+
+<!-------------------------------    That's it!   --------------------------->
+</body>
+
+</html>
+
