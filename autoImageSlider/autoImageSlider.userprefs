@@ -1,0 +1,19 @@
+﻿<Properties StartupItem="autoImageSlider\autoImageSlider.csproj">
+  <DisabledProjects>
+    <String>autoImageSlider.UITests\autoImageSlider.UITests.csproj</String>
+  </DisabledProjects>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Android.3be3da11" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="autoImageSlider\AutoImageScroller.cs">
+    <Files>
+      <File FileName="autoImageSlider\MainActivity.cs" Line="1" Column="1" />
+      <File FileName="autoImageSlider\AutoImageScroller.cs" Line="81" Column="4" />
+      <File FileName="autoImageSlider\TestFragment.cs" Line="1" Column="1" />
+      <File FileName="autoImageSlider\FragStateSupport.cs" Line="1" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.autoImageSlider AndroidDesignerPreferredDevice="Nexus 4" />
+</Properties>
