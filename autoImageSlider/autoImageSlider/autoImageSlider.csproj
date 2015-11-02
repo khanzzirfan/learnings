@@ -82,6 +82,7 @@
     <AndroidResource Include="Resources\drawable-hdpi\photo2.jpeg" />
     <AndroidResource Include="Resources\drawable-hdpi\photo3.jpg" />
     <AndroidResource Include="Resources\drawable-hdpi\photo4.jpeg" />
+    <AndroidResource Include="Resources\layout\ViewFlipperLayout.axml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
 </Project>
