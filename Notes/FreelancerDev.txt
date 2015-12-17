@@ -1,0 +1,14 @@
+Hi,I'm currently full time Web Developer MVC & C# having 3 years of experience in Utility & banking domain. I'm working on Xamarin at the current place of work & also I have own project on Xamarin android (Restaurant take away & booking table app). 
+
+I have created the app using Xamarin, SQL Lite, MongoDB, WebAPI2 Rest Services in C# & also SQL. I can provide you the app reference of my work.  There some code project articles I have been writing of my findings as Tips & Tricks for people.
+
+Code Project:  (@khanzzirfan or http://www.codeproject.com/Members/khanzzirfan) 
+GitHub: My sample works can been looked at Git Repo (https://github.com/sahilkhan99/learnings)
+Linkedin: https://www.linkedin.com/profile/public-profile-settings?trk=prof-edit-edit-public_profile
+Google Play Store : (Reserve Table) by khanzzirfan sample reservation app for restaurants
+
+As I work all the weekends gaining knowledge , experience & earning extra money, I can easily put in about 12-16 hours of my time to work for you.
+I do have experience with Google API, Android SDK, Bluetooth applications.I'm very much interested in doing more apps going onwards. 
+Also challenges  motivates me to achieve the task. Hence, I present my self as self focused & meeting dead lines is priority for a given task. 
+
+I present all the skills required here for the project, I would like you to take opportunity to review my knowledge & experience & provide me an opportunity to work & discuss the role in further detail.
