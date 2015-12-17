@@ -133,6 +133,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Properties\AndroidManifest.xml" />
+    <AndroidResource Include="Resources\drawable\ic_lovred.png" />
+    <AndroidResource Include="Resources\drawable\arrowright_16.png" />
+    <AndroidResource Include="Resources\drawable\dine2.jpg" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Codenutz.XFLabs.Basics\Codenutz.XFLabs.Basics.csproj">

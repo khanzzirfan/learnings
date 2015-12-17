@@ -11,13 +11,15 @@ namespace Codenutz.XFLabs.Basics
 		public App()
 		{
 			RegisterViews();
-			MainPage = new NavigationPage((Page)ViewFactory.CreatePage<MainViewModel, MainView>());
-		}
+			//MainPage = new NavigationPage((Page)ViewFactory.CreatePage<MainViewModel, MainView>());
+            MainPage = new NavigationPage((Page)ViewFactory.CreatePage<HomeViewModel, Home>());
+        }
 
 		private void RegisterViews()
 		{
 			ViewFactory.Register<MainView, MainViewModel>();
-		}
+            ViewFactory.Register<Home, HomeViewModel>();
+        }
 
 		protected override void OnStart()
 		{

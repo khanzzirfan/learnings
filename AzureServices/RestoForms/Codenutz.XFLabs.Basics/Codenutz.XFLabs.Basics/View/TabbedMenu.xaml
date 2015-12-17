@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Codenutz.XFLabs.Basics.View.TabbedMenu"
+             xmlns:controls="clr-namespace:XLabs.Forms.Controls;assembly=XLabs.Forms"
+             Title="{Binding Title}"
+	           IsBusy="{Binding IsBusy}"
+             >
+  
+  <TabbedPage.ItemTemplate>
+    <DataTemplate>
+      <ContentPage Title="{Binding MenuCategory}" Icon="monkeyicon.png">
+        <StackLayout Padding="2, 2">
+          <ListView x:Name="list" ItemsSource="{Binding MenuList}"
+                 ItemTapped="OnItemSelected"
+                 RowHeight="100">
+            <ListView.ItemTemplate>
+              <DataTemplate>
+                <ViewCell>
+                  <Grid Padding="5" >
+                    <Grid.RowDefinitions>
+                      <RowDefinition Height="30"></RowDefinition>
+                      <RowDefinition Height="20"></RowDefinition>
+                      <RowDefinition Height="40"></RowDefinition>
+                      <RowDefinition Height="10"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                      <ColumnDefinition Width="100"></ColumnDefinition>
+                      <ColumnDefinition Width="*"></ColumnDefinition>
+                      <ColumnDefinition Width="40"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Image Grid.Row="0" Grid.Column="0" Grid.RowSpan="3"  Source="{Binding ThumbUrl}" HeightRequest="100" Aspect="AspectFill"/>
+                    <Image Grid.Row="0" Grid.Column="2" Grid.RowSpan="3" HeightRequest="12"  Source="arrowright_16.png" HorizontalOptions="Center" />
+                    <Label Grid.Row="0" BackgroundColor="Aqua" Grid.Column="1" Text="{Binding Name}" FontSize = "20"  LineBreakMode="TailTruncation"></Label>
+                    <Label Grid.Row="1" BackgroundColor="Blue"  Grid.Column="1" FontSize = "15" Text="Price: $10.00" LineBreakMode="TailTruncation"></Label>
+
+
+                    <StackLayout Grid.Row="2" HorizontalOptions="Start"  Grid.Column="1" Orientation="Horizontal">
+
+                      <Label FontSize = "18" BackgroundColor="Aqua" Text="Add:" HorizontalOptions="Start" VerticalOptions="Start"  LineBreakMode="TailTruncation"></Label>
+
+                      <Button Text="+" BackgroundColor="Aqua" HeightRequest="26"  WidthRequest="30" CommandParameter="{Binding Name}" Clicked="AddClicked" VerticalOptions="Start" >    </Button>
+
+                      <!--<Label FontSize = "16" BackgroundColor="Yellow" Text="1" HorizontalOptions="Start" VerticalOptions="Start"  LineBreakMode="TailTruncation"></Label>-->
+
+                      <controls:CheckBox DefaultText="DefaultText" CheckedChanged="OnCheckBoxChanged"
+                                          TextColor="Blue" FontSize="18" FontName="AmericanTypewriter"
+                                          CheckedText="Checked" UncheckedText="Unchecked"
+                                          HeightRequest="35" WidthRequest="30" HorizontalOptions="Start"
+                                         BackgroundColor="Yellow"
+                                           />
+
+                      <Button Text="-"  BackgroundColor="Aqua" HeightRequest="26"  WidthRequest="30" CommandParameter="{Binding Name}" Clicked="RemoveClicked"  VerticalOptions="Start">    </Button>
+                    </StackLayout>
+
+                    <!--<Grid Grid.Row="2" Grid.Column="1">
+                    HeightRequest ="40"
+                    BackgroundColor="Aqua" 
+                    VerticalOptions="CenterAndExpand"
+                    
+                    
+                    Padding="5"
+                      <Grid.RowDefinitions>
+                        <RowDefinition Height="*"></RowDefinition>
+                      </Grid.RowDefinitions>
+                       <Grid.ColumnDefinitions>
+                         <ColumnDefinition Width="*"></ColumnDefinition>
+                       </Grid.ColumnDefinitions>
+                     
+                      
+                        -->
+                    <!--<Label Grid.Row="0" Grid.Column="0" FontSize = "18" Text="Add To Order" HorizontalOptions="Start" VerticalOptions="CenterAndExpand" LineBreakMode="TailTruncation"></Label>
+                         <Button Grid.Row="0" Grid.Column="1" Text="+" HorizontalOptions="Fill" CommandParameter="{Binding Name}" Clicked="AddClicked">    </Button>  
+                         <Button Grid.Row="0" Grid.Column="2" Text="-" HorizontalOptions="Fill" CommandParameter="{Binding Name}" Clicked="RemoveClicked">    </Button>-->
+                    <!--  
+                        
+                  </Grid>-->
+
+
+                  </Grid>
+                </ViewCell>
+              </DataTemplate>
+            </ListView.ItemTemplate>
+          </ListView>
+
+        </StackLayout>
+      </ContentPage>
+    </DataTemplate>
+  </TabbedPage.ItemTemplate>
+</TabbedPage>
