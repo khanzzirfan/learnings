@@ -33,7 +33,7 @@
           <ColumnDefinition Width=".4*"/>
         </Grid.ColumnDefinitions>
      
-        <controls:CircleImage
+        <!--<controls:CircleImage
 					x:Name="MainImage"
 					Grid.ColumnSpan="3"
 					HeightRequest="150"
@@ -47,7 +47,7 @@
 							CacheValidity="14"
 							CachingEnabled="true"/>
           </controls:CircleImage.Source>
-        </controls:CircleImage>
+        </controls:CircleImage>-->
         <Label
 					Grid.Row="1"
 					Grid.ColumnSpan="3"
@@ -233,11 +233,11 @@
 					Command="{Binding NavigateCommand}"
 					VerticalOptions="Center"/>
 
-        <maps:Map Grid.Row="14"
+        <!--<maps:Map Grid.Row="14"
 						Grid.ColumnSpan="3"
 			            x:Name="MyMap"
 			            IsShowingUser="true"
-		        	    MapType="Hybrid"/>
+		        	    MapType="Hybrid"/>-->
       </Grid>
     </ScrollView>
   </ContentPage.Content>
