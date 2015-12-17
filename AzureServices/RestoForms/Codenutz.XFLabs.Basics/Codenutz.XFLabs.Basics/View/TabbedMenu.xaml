@@ -43,16 +43,25 @@
 
                       <!--<Label FontSize = "16" BackgroundColor="Yellow" Text="1" HorizontalOptions="Start" VerticalOptions="Start"  LineBreakMode="TailTruncation"></Label>-->
 
-                      <controls:CheckBox DefaultText="DefaultText" CheckedChanged="OnCheckBoxChanged"
-                                          TextColor="Blue" FontSize="18" FontName="AmericanTypewriter"
-                                          CheckedText="Checked" UncheckedText="Unchecked"
-                                          HeightRequest="35" WidthRequest="30" HorizontalOptions="Start"
-                                         BackgroundColor="Yellow"
+                      <controls:CheckBox DefaultText="DefaultText" 
+                                         CheckedChanged="OnCheckBoxChanged"
+                                         HeightRequest="30" 
+                                         WidthRequest="30"
+                                         HorizontalOptions="Start"
+                                         VerticalOptions="Start"
                                            />
 
                       <Button Text="-"  BackgroundColor="Aqua" HeightRequest="26"  WidthRequest="30" CommandParameter="{Binding Name}" Clicked="RemoveClicked"  VerticalOptions="Start">    </Button>
                     </StackLayout>
 
+                    <!--<controls:CheckBox DefaultText="DefaultText" CheckedChanged="OnCheckBoxChanged"
+                                         TextColor="Blue" FontSize="18" FontName="AmericanTypewriter"
+                                         CheckedText="Checked" UncheckedText="Unchecked"
+                                         HeightRequest="35" WidthRequest="30" HorizontalOptions="Start"
+                                        BackgroundColor="Yellow"
+                                           />-->
+
+                    
                     <!--<Grid Grid.Row="2" Grid.Column="1">
                     HeightRequest ="40"
                     BackgroundColor="Aqua" 

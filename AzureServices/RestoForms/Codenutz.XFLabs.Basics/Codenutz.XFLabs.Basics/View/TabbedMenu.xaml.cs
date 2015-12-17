@@ -116,8 +116,7 @@ namespace Codenutz.XFLabs.Basics.View
 
             };
 
-            //await Navigation.PushAsync(new StorePage(store));
-
+            await Navigation.PushAsync(new StorePage(store));
             return 1;
         }
         #endregion
