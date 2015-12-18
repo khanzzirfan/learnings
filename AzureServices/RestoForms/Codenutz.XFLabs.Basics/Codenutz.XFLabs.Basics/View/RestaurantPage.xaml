@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Codenutz.XFLabs.Basics.View.RestaurantPage"
+             Title="{Binding Title}"
+	           IsBusy="{Binding IsBusy}"
+             >
+  <ContentPage.Resources>
+    <ResourceDictionary>
+      <OnPlatform x:Key="boxSize"
+                  x:TypeArguments="x:Double"
+                  iOS="50"
+                  Android="50"
+                  WinPhone="75" />
+      <!-- This is only an issue on the iPhone; Android and 
+           WinPhone auto size the row height to the contents. -->
+      <OnPlatform x:Key="rowHeight"
+                  x:TypeArguments="x:Int32"
+                  iOS="60"
+                  Android="60"
+                  WinPhone="85" />
+    </ResourceDictionary>
+  </ContentPage.Resources>
+
+  <ContentPage.Content Padding="0">
+    <Grid RowSpacing="0"
+          ColumnSpacing="0">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="3*"/>
+        <RowDefinition Height="2*"/>
+        <RowDefinition Height="Auto"/>
+      </Grid.RowDefinitions>
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="*"/>
+        <ColumnDefinition Width="*"/>
+      </Grid.ColumnDefinitions>
+
+      <Image
+        x:Name="HeroImage"
+        Grid.ColumnSpan="2"
+				Source="dine2.jpg"
+        Aspect="AspectFill"
+				HorizontalOptions="FillAndExpand"
+				VerticalOptions ="FillAndExpand"/>
+
+      <Grid Grid.Row="1" 
+            Grid.ColumnSpan="2"
+            Padding="5">
+        <Grid.RowDefinitions>
+          <RowDefinition Height="30"></RowDefinition>
+          <RowDefinition Height="30"></RowDefinition>
+          <RowDefinition Height="30"></RowDefinition>
+          <RowDefinition Height="30"></RowDefinition>
+          <RowDefinition Height="30"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="40"></ColumnDefinition>
+          <ColumnDefinition Width="*"></ColumnDefinition>
+          <ColumnDefinition Width="40"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <!--<Label Grid.Row="0" Grid.Column="1"  
+               Text="{Binding RestoPage.Name}" 
+               BackgroundColor="Aqua"
+               FontSize="Medium"
+               TextColor="White"
+               LineBreakMode="TailTruncation"></Label>-->
+
+        <Button
+				  x:Name="BtnReserveTable"
+				  Grid.Row="0" Grid.Column="1"
+				  BackgroundColor="#3498DB"
+				  BorderRadius="0"
+				  TextColor="White"
+				  Text="Reserve Table"/>
+        
+        <Button
+				  x:Name="BtnOrderMenu"
+				  Grid.Row="1" Grid.Column="1"
+				  BackgroundColor="#3498DB"
+				  BorderRadius="0"
+				  TextColor="White"
+				  Text="Order Takeaway"/>
+
+        <Button
+				  x:Name="BtnViewOrders"
+				  Grid.Row="2" Grid.Column="1"
+				  BackgroundColor="#3498DB"
+				  BorderRadius="0"
+				  TextColor="White"
+				  Text="Your Order"/>
+
+        <Button
+				  x:Name="BtnGallery"
+				  Grid.Row="3" Grid.Column="1"
+				  BackgroundColor="#3498DB"
+				  BorderRadius="0"
+				  TextColor="White"
+				  Text="Gallery"/>
+        
+      </Grid>
+
+      <Button
+				x:Name="ButtonFindStore"
+				Grid.Row="2"
+				BackgroundColor="#3498DB"
+				BorderRadius="0"
+				TextColor="White"
+				Text="Locations"/>
+
+      <Button
+				x:Name="ButtonLeaveFeedback"
+				Grid.Row="2"
+				Grid.Column="1"
+				BackgroundColor="#81C134"
+				BorderRadius="0"
+				TextColor="White"
+				Text="Leave Feedback"/>
+
+    </Grid>
+  </ContentPage.Content>
+</ContentPage>

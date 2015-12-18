@@ -35,6 +35,8 @@ namespace Codenutz.XFLabs.Basics.View
             if (searchOption == null)
                 return;
 
+            //Navigation.PushAsync(new RestaurantPage(searchOption.Title));
+
             Navigation.PushAsync(new TabbedMenu(searchOption.Title));
             // Reset the selected item
             list.SelectedItem = null;

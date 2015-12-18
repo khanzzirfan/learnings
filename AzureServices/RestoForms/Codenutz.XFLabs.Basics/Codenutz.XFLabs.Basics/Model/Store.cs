@@ -68,6 +68,14 @@ namespace Codenutz.XFLabs.Basics.Model
         public string PhoneNumber { get; set; }
         public string LocationCode { get; set; }
 
+        public class RestoDetail
+        {
+            public string DisplayImage { get; set; }
+            public string Name { get; set; }
+            public string Suburb { get; set; }
+            public string Phone { get; set; }
+        }
+
 
     }
 }

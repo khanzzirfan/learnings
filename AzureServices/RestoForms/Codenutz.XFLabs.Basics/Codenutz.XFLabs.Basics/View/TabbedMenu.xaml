@@ -10,9 +10,10 @@
   <TabbedPage.ItemTemplate>
     <DataTemplate>
       <ContentPage Title="{Binding MenuCategory}" Icon="monkeyicon.png">
-        <StackLayout Padding="2, 2">
+        <StackLayout Padding="2, 2" Spacing="0">
           <ListView x:Name="list" ItemsSource="{Binding MenuList}"
                  ItemTapped="OnItemSelected"
+                 VerticalOptions="FillAndExpand"
                  RowHeight="100">
             <ListView.ItemTemplate>
               <DataTemplate>
@@ -53,46 +54,46 @@
 
                       <Button Text="-"  BackgroundColor="Aqua" HeightRequest="26"  WidthRequest="30" CommandParameter="{Binding Name}" Clicked="RemoveClicked"  VerticalOptions="Start">    </Button>
                     </StackLayout>
-
-                    <!--<controls:CheckBox DefaultText="DefaultText" CheckedChanged="OnCheckBoxChanged"
-                                         TextColor="Blue" FontSize="18" FontName="AmericanTypewriter"
-                                         CheckedText="Checked" UncheckedText="Unchecked"
-                                         HeightRequest="35" WidthRequest="30" HorizontalOptions="Start"
-                                        BackgroundColor="Yellow"
-                                           />-->
-
-                    
-                    <!--<Grid Grid.Row="2" Grid.Column="1">
-                    HeightRequest ="40"
-                    BackgroundColor="Aqua" 
-                    VerticalOptions="CenterAndExpand"
-                    
-                    
-                    Padding="5"
-                      <Grid.RowDefinitions>
-                        <RowDefinition Height="*"></RowDefinition>
-                      </Grid.RowDefinitions>
-                       <Grid.ColumnDefinitions>
-                         <ColumnDefinition Width="*"></ColumnDefinition>
-                       </Grid.ColumnDefinitions>
-                     
-                      
-                        -->
-                    <!--<Label Grid.Row="0" Grid.Column="0" FontSize = "18" Text="Add To Order" HorizontalOptions="Start" VerticalOptions="CenterAndExpand" LineBreakMode="TailTruncation"></Label>
-                         <Button Grid.Row="0" Grid.Column="1" Text="+" HorizontalOptions="Fill" CommandParameter="{Binding Name}" Clicked="AddClicked">    </Button>  
-                         <Button Grid.Row="0" Grid.Column="2" Text="-" HorizontalOptions="Fill" CommandParameter="{Binding Name}" Clicked="RemoveClicked">    </Button>-->
-                    <!--  
-                        
-                  </Grid>-->
-
-
                   </Grid>
                 </ViewCell>
               </DataTemplate>
             </ListView.ItemTemplate>
           </ListView>
 
+          <StackLayout Padding="0,2,0,0" VerticalOptions="End">
+            <Grid RowSpacing="0"
+                  ColumnSpacing="0"
+                  BackgroundColor="Blue"
+                  >
+              <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+              </Grid.RowDefinitions>
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+              </Grid.ColumnDefinitions>
+
+              <Button
+				          x:Name="BtnOrderTakeaway"
+				          Grid.Row="0"
+				          BackgroundColor="#3498DB"
+				          BorderRadius="0"
+				          TextColor="White"
+				          Text="Order Takeaway"/>
+
+              <Button
+                x:Name="BtnReserveTable"
+                Grid.Row="0"
+                Grid.Column="1"
+                BackgroundColor="#81C134"
+                BorderRadius="0"
+                TextColor="White"
+                Text="Reserve Table"/>
+            </Grid>
+          </StackLayout>
         </StackLayout>
+        
+       
       </ContentPage>
     </DataTemplate>
   </TabbedPage.ItemTemplate>
