@@ -19,6 +19,7 @@ namespace Codenutz.XFLabs.Basics
 		{
 			ViewFactory.Register<MainView, MainViewModel>();
             ViewFactory.Register<Home, HomeViewModel>();
+            ViewFactory.Register<ReserveTable, ReserveTableViewModel>();
         }
 
 		protected override void OnStart()

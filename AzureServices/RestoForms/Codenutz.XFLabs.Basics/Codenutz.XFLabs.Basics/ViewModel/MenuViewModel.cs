@@ -6,10 +6,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
+using System.Windows.Input;
+using System.ComponentModel;
+using XLabs.Forms.Mvvm;
 
 namespace Codenutz.XFLabs.Basics.ViewModel
 {
-    public class MenuViewModel : BaseViewModel
+    public class MenuViewModel : BaseViewModel 
     {
         #region ImageKConstants
         string d1_dessert_v1 = "https://lh3.googleusercontent.com/-Xh8aY2RRwd0/VeFCHSv2lzI/AAAAAAAAAOY/8SY3a6qk7WM/d1_icecream.png";
@@ -48,6 +51,11 @@ namespace Codenutz.XFLabs.Basics.ViewModel
 
             //Load List;
             this.ExecuteGetMenuCommand();
+
+            //OrderTakeAwayCommand = new Command(() =>
+            //{
+            //     Navigation.PushAsync(new Search());
+            //});
         }
 
 
@@ -227,6 +235,21 @@ namespace Codenutz.XFLabs.Basics.ViewModel
 
 
         }
+
+
+        // ICommand implementations
+        public ICommand ReserveTableCommand { protected set; get; }
+        public ICommand OrderTakeAwayCommand { protected set; get; }
+
+
+        private void GoTo()
+        {
+            var navigationPage = new NavigationPage((Page)ViewFactory.CreatePage<ReserveTableViewModel, ReserveTable>());
+            NavigationService.NavigateTo<ReserveTable>("");
+           
+
+        }
+
 
 
 

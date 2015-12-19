@@ -84,11 +84,14 @@
               <Button
                 x:Name="BtnReserveTable"
                 Grid.Row="0"
+                Clicked="OnReserveTableClicked"
                 Grid.Column="1"
                 BackgroundColor="#81C134"
                 BorderRadius="0"
                 TextColor="White"
                 Text="Reserve Table"/>
+              
+              
             </Grid>
           </StackLayout>
         </StackLayout>

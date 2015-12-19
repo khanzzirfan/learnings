@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 using Xamarin.Forms;
 using XLabs;
 
@@ -14,10 +13,18 @@ namespace Codenutz.XFLabs.Basics.View
     public partial class TabbedMenu : TabbedPage
     {
         private MenuViewModel viewModel;
+        private string _RestoTitle { get; set; }
+        public string RestoTitle
+        {
+            get { return _RestoTitle;}
+            set { _RestoTitle = value; }
+        }
+
         public TabbedMenu(string restoName)
         {
             this.Title = restoName;
             InitializeComponent();
+            RestoTitle = restoName;
 
             this.ToolbarItems.Add(new ToolbarItem
             {
@@ -25,7 +32,8 @@ namespace Codenutz.XFLabs.Basics.View
                 Order = ToolbarItemOrder.Primary,
                 Icon = "ic_lovred.png",
                 Priority = 1,
-                Command = new Command(() => this.LoadStorePage(restoName))
+                Command = new Command(() => this.LoadStorePage(restoName)),
+               
             });
 
             this.ToolbarItems.Add(new ToolbarItem
@@ -42,6 +50,17 @@ namespace Codenutz.XFLabs.Basics.View
             this.ItemsSource = source;
 
             BindingContext = viewModel = new MenuViewModel(this, "");
+        }
+
+        /// <summary>
+        /// Call Reserve Table page with specific restaurant page name;
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public async void OnReserveTableClicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new ReserveTable(_RestoTitle));
         }
 
         protected override void OnAppearing()

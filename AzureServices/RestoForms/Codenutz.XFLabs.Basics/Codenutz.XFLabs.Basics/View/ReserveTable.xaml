@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Codenutz.XFLabs.Basics.View.ReserveTable"
+             Title="{Binding Title}"
+	           IsBusy="{Binding IsBusy}"  >
+  <ContentPage.Content>
+    <StackLayout>
+
+  <ScrollView VerticalOptions="FillAndExpand">
+    <Grid VerticalOptions="FillAndExpand">
+      <Grid.ColumnSpacing>
+        <OnIdiom x:TypeArguments="x:Double">
+          <OnIdiom.Phone>20</OnIdiom.Phone>
+          <OnIdiom.Tablet>40</OnIdiom.Tablet>
+        </OnIdiom>
+      </Grid.ColumnSpacing>
+      <Grid.RowSpacing>
+        <OnIdiom x:TypeArguments="x:Double">
+          <OnIdiom.Phone>10</OnIdiom.Phone>
+          <OnIdiom.Tablet>20</OnIdiom.Tablet>
+        </OnIdiom>
+      </Grid.RowSpacing>
+      <Grid.Padding>
+        <OnIdiom x:TypeArguments="Thickness">
+          <OnIdiom.Phone>10,10,10,0</OnIdiom.Phone>
+          <OnIdiom.Tablet>20,20,20,0</OnIdiom.Tablet>
+        </OnIdiom>
+      </Grid.Padding>
+      <Grid.RowDefinitions>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="*"/>
+        <RowDefinition Height="Auto"/>
+      </Grid.RowDefinitions>
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="Auto"/>
+        <ColumnDefinition Width="*"/>
+      </Grid.ColumnDefinitions>
+
+      <Label
+			  Grid.Row="0"
+			  FontSize="Medium"
+			  Text="Name:"
+			  TextColor="#3498DB"
+			  VerticalOptions="Center"  />
+
+      <Entry
+        Grid.Row="0"
+        Grid.Column="1"
+        Text="{Binding Name}"
+        Placeholder="First and Last"
+        Keyboard="Default"/>
+
+      <Label
+			  Grid.Row="1"
+			  FontSize="Medium"
+			  Text="Date:"
+			  TextColor="#3498DB"
+			  VerticalOptions="Center"  />
+
+      <DatePicker
+			  Grid.Row="1"
+			  Grid.Column="1"
+			  Date="{Binding Date, Mode=TwoWay}"/>
+
+      <Label
+        Grid.Row="2"
+        FontSize="Medium"
+        Text="Guests:"
+        TextColor="#3498DB"
+        VerticalOptions="Center"  />
+
+      <Entry
+        Grid.Row="2"
+        Grid.Column="1"
+        Text="{Binding Guests}"
+        Keyboard="Default"/>
+
+      <Label
+        Grid.Row="3"
+        FontSize="Medium"
+        Text="Phone:"
+        TextColor="#3498DB"
+        VerticalOptions="Center"  />
+
+      <Entry
+        Grid.Row="3"
+        Grid.Column="1"
+        Text="{Binding Phone}"
+        Keyboard="Default"/>
+
+      <Label
+        Grid.Row="4"
+        FontSize="Medium"
+        Text="Email:"
+        TextColor="#3498DB"
+        VerticalOptions="Center"  />
+
+      <Entry
+        Grid.Row="4"
+        Grid.Column="1"
+        Text="{Binding Email}"
+        Keyboard="Default"/>
+
+      <Label
+       Grid.Row="5"
+       FontSize="Medium"
+       Text="Comment:"
+       TextColor="#3498DB"
+       VerticalOptions="Center"  />
+
+      <Editor
+       Grid.Row="5"
+       Grid.RowSpan="2"
+       Grid.Column="1"
+       Grid.ColumnSpan="1"
+       HeightRequest="150"
+       Text="{Binding Comment}"
+       BackgroundColor="#103498DB"
+			
+			/>
+
+    </Grid>
+
+      </ScrollView>
+      <Button
+			  x:Name="ButtonSubmitFeedback"
+			  BackgroundColor="#3498DB"
+			  BorderRadius="0"
+			  TextColor="White"
+			  Text="Make Reservation"
+			  Command="{Binding SaveFeedbackCommand}"/>
+      
+    </StackLayout>
+  </ContentPage.Content>
+</ContentPage>
