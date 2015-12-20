@@ -197,6 +197,12 @@
     <AndroidResource Include="Resources\drawable\ic_lovred.png" />
     <AndroidResource Include="Resources\drawable\arrowright_16.png" />
     <AndroidResource Include="Resources\drawable\dine2.jpg" />
+    <AndroidResource Include="Resources\drawable\ic_action_location.png" />
+    <AndroidResource Include="Resources\drawable\ic_action_info.png" />
+    <AndroidResource Include="Resources\values\styles.xml" />
+    <AndroidResource Include="Resources\values\colors.xml" />
+    <AndroidResource Include="Resources\values-v21\styles.xml" />
+    <AndroidResource Include="Resources\values\Strings.xml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Codenutz.XFLabs.Basics\Codenutz.XFLabs.Basics.csproj">
@@ -204,6 +210,7 @@
       <Project>{36B8598F-7C36-4C17-97E3-542D58D9762F}</Project>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

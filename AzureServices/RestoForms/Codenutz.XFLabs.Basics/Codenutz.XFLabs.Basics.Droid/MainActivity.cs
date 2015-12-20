@@ -1,5 +1,6 @@
 ﻿using Android.App;
 using Android.Content.PM;
+using Android.Graphics.Drawables;
 using Android.OS;
 using Autofac;
 using Codenutz.XFLabs.Basics.ViewModel;
@@ -22,7 +23,9 @@ namespace Codenutz.XFLabs.Basics.Droid
 			if(!Resolver.IsSet) SetIoc();
 
 			LoadApplication(new App());
-		}
+
+            ActionBar.SetIcon(new ColorDrawable(Resources.GetColor(Android.Resource.Color.Transparent)));
+        }
 
 		private void SetIoc()
 		{

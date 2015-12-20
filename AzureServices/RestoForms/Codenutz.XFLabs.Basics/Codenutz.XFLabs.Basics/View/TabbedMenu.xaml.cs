@@ -28,9 +28,9 @@ namespace Codenutz.XFLabs.Basics.View
 
             this.ToolbarItems.Add(new ToolbarItem
             {
-                Name = "Ok",
+                Name = "About Us",
                 Order = ToolbarItemOrder.Primary,
-                Icon = "ic_lovred.png",
+                Icon = "ic_action_info.png",
                 Priority = 1,
                 Command = new Command(() => this.LoadStorePage(restoName)),
                
@@ -38,10 +38,10 @@ namespace Codenutz.XFLabs.Basics.View
 
             this.ToolbarItems.Add(new ToolbarItem
             {
-                Name = "About Us",
+                Name = "Location",
                 Order = ToolbarItemOrder.Primary,
                 Priority = 0,
-                Icon = "ic_lovred.png",
+                Icon = "ic_action_location.png",
                 Command = new Command(() => this.LoadStorePage(restoName))
             });
 

@@ -2530,32 +2530,68 @@ namespace Codenutz.XFLabs.Basics.Droid
 		public partial class Color
 		{
 			
-			// aapt resource value: 0x7f06005c
-			public const int abc_background_cache_hint_selector_material_dark = 2131099740;
+			// aapt resource value: 0x7f060073
+			public const int AppBlue = 2131099763;
 			
-			// aapt resource value: 0x7f06005d
-			public const int abc_background_cache_hint_selector_material_light = 2131099741;
+			// aapt resource value: 0x7f06007c
+			public const int CustomWhite1 = 2131099772;
 			
-			// aapt resource value: 0x7f06005e
-			public const int abc_color_highlight_material = 2131099742;
+			// aapt resource value: 0x7f06007d
+			public const int Customgrey1 = 2131099773;
+			
+			// aapt resource value: 0x7f060061
+			public const int DarkGrey = 2131099745;
+			
+			// aapt resource value: 0x7f060060
+			public const int DimGrey = 2131099744;
+			
+			// aapt resource value: 0x7f06005f
+			public const int LightGrey = 2131099743;
+			
+			// aapt resource value: 0x7f060098
+			public const int MainPage_DarkRed = 2131099800;
+			
+			// aapt resource value: 0x7f060099
+			public const int MainPage_DarkRed2 = 2131099801;
+			
+			// aapt resource value: 0x7f06009a
+			public const int MainPage_DarkRedGradient = 2131099802;
+			
+			// aapt resource value: 0x7f060097
+			public const int MainPage_Maroon = 2131099799;
+			
+			// aapt resource value: 0x7f060065
+			public const int Saddle_Brown = 2131099749;
+			
+			// aapt resource value: 0x7f060062
+			public const int Silver = 2131099746;
+			
+			// aapt resource value: 0x7f06009f
+			public const int abc_background_cache_hint_selector_material_dark = 2131099807;
+			
+			// aapt resource value: 0x7f0600a0
+			public const int abc_background_cache_hint_selector_material_light = 2131099808;
+			
+			// aapt resource value: 0x7f0600a1
+			public const int abc_color_highlight_material = 2131099809;
 			
 			// aapt resource value: 0x7f06000e
 			public const int abc_input_method_navigation_guard = 2131099662;
 			
-			// aapt resource value: 0x7f06005f
-			public const int abc_primary_text_disable_only_material_dark = 2131099743;
+			// aapt resource value: 0x7f0600a2
+			public const int abc_primary_text_disable_only_material_dark = 2131099810;
 			
-			// aapt resource value: 0x7f060060
-			public const int abc_primary_text_disable_only_material_light = 2131099744;
+			// aapt resource value: 0x7f0600a3
+			public const int abc_primary_text_disable_only_material_light = 2131099811;
 			
-			// aapt resource value: 0x7f060061
-			public const int abc_primary_text_material_dark = 2131099745;
+			// aapt resource value: 0x7f0600a4
+			public const int abc_primary_text_material_dark = 2131099812;
 			
-			// aapt resource value: 0x7f060062
-			public const int abc_primary_text_material_light = 2131099746;
+			// aapt resource value: 0x7f0600a5
+			public const int abc_primary_text_material_light = 2131099813;
 			
-			// aapt resource value: 0x7f060063
-			public const int abc_search_url_text = 2131099747;
+			// aapt resource value: 0x7f0600a6
+			public const int abc_search_url_text = 2131099814;
 			
 			// aapt resource value: 0x7f06000f
 			public const int abc_search_url_text_normal = 2131099663;
@@ -2566,17 +2602,35 @@ namespace Codenutz.XFLabs.Basics.Droid
 			// aapt resource value: 0x7f060011
 			public const int abc_search_url_text_selected = 2131099665;
 			
-			// aapt resource value: 0x7f060064
-			public const int abc_secondary_text_material_dark = 2131099748;
+			// aapt resource value: 0x7f0600a7
+			public const int abc_secondary_text_material_dark = 2131099815;
 			
-			// aapt resource value: 0x7f060065
-			public const int abc_secondary_text_material_light = 2131099749;
+			// aapt resource value: 0x7f0600a8
+			public const int abc_secondary_text_material_light = 2131099816;
+			
+			// aapt resource value: 0x7f06005e
+			public const int accent = 2131099742;
 			
 			// aapt resource value: 0x7f060012
 			public const int accent_material_dark = 2131099666;
 			
 			// aapt resource value: 0x7f060013
 			public const int accent_material_light = 2131099667;
+			
+			// aapt resource value: 0x7f06009c
+			public const int actionbar_navy = 2131099804;
+			
+			// aapt resource value: 0x7f06009d
+			public const int actionbar_navy2 = 2131099805;
+			
+			// aapt resource value: 0x7f060085
+			public const int appWhite = 2131099781;
+			
+			// aapt resource value: 0x7f060079
+			public const int aqua = 2131099769;
+			
+			// aapt resource value: 0x7f060068
+			public const int background = 2131099752;
 			
 			// aapt resource value: 0x7f060014
 			public const int background_floating_material_dark = 2131099668;
@@ -2589,6 +2643,15 @@ namespace Codenutz.XFLabs.Basics.Droid
 			
 			// aapt resource value: 0x7f060017
 			public const int background_material_light = 2131099671;
+			
+			// aapt resource value: 0x7f06006f
+			public const int black = 2131099759;
+			
+			// aapt resource value: 0x7f06006a
+			public const int bluedark = 2131099754;
+			
+			// aapt resource value: 0x7f060069
+			public const int bluelight = 2131099753;
 			
 			// aapt resource value: 0x7f060018
 			public const int bright_foreground_disabled_material_dark = 2131099672;
@@ -2613,6 +2676,12 @@ namespace Codenutz.XFLabs.Basics.Droid
 			
 			// aapt resource value: 0x7f06001f
 			public const int button_material_light = 2131099679;
+			
+			// aapt resource value: 0x7f060076
+			public const int buttonblue = 2131099766;
+			
+			// aapt resource value: 0x7f060084
+			public const int cWhite = 2131099780;
 			
 			// aapt resource value: 0x7f060051
 			public const int calendar_active_month_bg = 2131099729;
@@ -2644,8 +2713,8 @@ namespace Codenutz.XFLabs.Basics.Droid
 			// aapt resource value: 0x7f06005a
 			public const int calendar_text_selected = 2131099738;
 			
-			// aapt resource value: 0x7f060066
-			public const int calendar_text_selector = 2131099750;
+			// aapt resource value: 0x7f0600a9
+			public const int calendar_text_selector = 2131099817;
 			
 			// aapt resource value: 0x7f06005b
 			public const int calendar_text_unselectable = 2131099739;
@@ -2661,6 +2730,9 @@ namespace Codenutz.XFLabs.Basics.Droid
 			
 			// aapt resource value: 0x7f06000d
 			public const int cardview_shadow_start_color = 2131099661;
+			
+			// aapt resource value: 0x7f06009e
+			public const int color_action_bar = 2131099806;
 			
 			// aapt resource value: 0x7f060009
 			public const int common_action_bar_splitter = 2131099657;
@@ -2692,11 +2764,29 @@ namespace Codenutz.XFLabs.Basics.Droid
 			// aapt resource value: 0x7f060005
 			public const int common_signin_btn_light_text_pressed = 2131099653;
 			
-			// aapt resource value: 0x7f060067
-			public const int common_signin_btn_text_dark = 2131099751;
+			// aapt resource value: 0x7f0600aa
+			public const int common_signin_btn_text_dark = 2131099818;
 			
-			// aapt resource value: 0x7f060068
-			public const int common_signin_btn_text_light = 2131099752;
+			// aapt resource value: 0x7f0600ab
+			public const int common_signin_btn_text_light = 2131099819;
+			
+			// aapt resource value: 0x7f060080
+			public const int dark_garyV3 = 2131099776;
+			
+			// aapt resource value: 0x7f06007e
+			public const int dark_grayV1 = 2131099774;
+			
+			// aapt resource value: 0x7f06007f
+			public const int dark_grayV2 = 2131099775;
+			
+			// aapt resource value: 0x7f06007b
+			public const int darkgrey1 = 2131099771;
+			
+			// aapt resource value: 0x7f060088
+			public const int davys_gray = 2131099784;
+			
+			// aapt resource value: 0x7f060089
+			public const int deep_sparkle = 2131099785;
 			
 			// aapt resource value: 0x7f060048
 			public const int design_fab_shadow_end_color = 2131099720;
@@ -2737,11 +2827,47 @@ namespace Codenutz.XFLabs.Basics.Droid
 			// aapt resource value: 0x7f060023
 			public const int dim_foreground_material_light = 2131099683;
 			
+			// aapt resource value: 0x7f060087
+			public const int dim_gray = 2131099783;
+			
+			// aapt resource value: 0x7f060077
+			public const int dskyblue = 2131099767;
+			
+			// aapt resource value: 0x7f060078
+			public const int dskyblue1 = 2131099768;
+			
+			// aapt resource value: 0x7f06008a
+			public const int ebony = 2131099786;
+			
+			// aapt resource value: 0x7f06008b
+			public const int feldgrau = 2131099787;
+			
 			// aapt resource value: 0x7f060024
 			public const int foreground_material_dark = 2131099684;
 			
 			// aapt resource value: 0x7f060025
 			public const int foreground_material_light = 2131099685;
+			
+			// aapt resource value: 0x7f060063
+			public const int gainsboro = 2131099747;
+			
+			// aapt resource value: 0x7f06008f
+			public const int genre = 2131099791;
+			
+			// aapt resource value: 0x7f060074
+			public const int goldrod = 2131099764;
+			
+			// aapt resource value: 0x7f06008d
+			public const int goshtWhite = 2131099789;
+			
+			// aapt resource value: 0x7f06006c
+			public const int greendark = 2131099756;
+			
+			// aapt resource value: 0x7f06006b
+			public const int greenlight = 2131099755;
+			
+			// aapt resource value: 0x7f060067
+			public const int grey = 2131099751;
 			
 			// aapt resource value: 0x7f060026
 			public const int highlighted_text_material_dark = 2131099686;
@@ -2749,11 +2875,32 @@ namespace Codenutz.XFLabs.Basics.Droid
 			// aapt resource value: 0x7f060027
 			public const int highlighted_text_material_light = 2131099687;
 			
+			// aapt resource value: 0x7f060082
+			public const int hint_bg = 2131099778;
+			
 			// aapt resource value: 0x7f060028
 			public const int hint_foreground_material_dark = 2131099688;
 			
 			// aapt resource value: 0x7f060029
 			public const int hint_foreground_material_light = 2131099689;
+			
+			// aapt resource value: 0x7f060075
+			public const int lightblue = 2131099765;
+			
+			// aapt resource value: 0x7f060091
+			public const int list_divider = 2131099793;
+			
+			// aapt resource value: 0x7f060093
+			public const int list_row_end_color = 2131099795;
+			
+			// aapt resource value: 0x7f060095
+			public const int list_row_hover_end_color = 2131099797;
+			
+			// aapt resource value: 0x7f060094
+			public const int list_row_hover_start_color = 2131099796;
+			
+			// aapt resource value: 0x7f060092
+			public const int list_row_start_color = 2131099794;
 			
 			// aapt resource value: 0x7f06002a
 			public const int material_blue_grey_800 = 2131099690;
@@ -2791,6 +2938,18 @@ namespace Codenutz.XFLabs.Basics.Droid
 			// aapt resource value: 0x7f060035
 			public const int material_grey_900 = 2131099701;
 			
+			// aapt resource value: 0x7f06006e
+			public const int orangedark = 2131099758;
+			
+			// aapt resource value: 0x7f06006d
+			public const int orangelight = 2131099757;
+			
+			// aapt resource value: 0x7f06005c
+			public const int primary = 2131099740;
+			
+			// aapt resource value: 0x7f06005d
+			public const int primary_dark = 2131099741;
+			
 			// aapt resource value: 0x7f060036
 			public const int primary_dark_material_dark = 2131099702;
 			
@@ -2815,11 +2974,17 @@ namespace Codenutz.XFLabs.Basics.Droid
 			// aapt resource value: 0x7f06003d
 			public const int primary_text_disabled_material_light = 2131099709;
 			
+			// aapt resource value: 0x7f060083
+			public const int relativeDivider = 2131099779;
+			
 			// aapt resource value: 0x7f06003e
 			public const int ripple_material_dark = 2131099710;
 			
 			// aapt resource value: 0x7f06003f
 			public const int ripple_material_light = 2131099711;
+			
+			// aapt resource value: 0x7f06007a
+			public const int seagreen = 2131099770;
 			
 			// aapt resource value: 0x7f060040
 			public const int secondary_text_default_material_dark = 2131099712;
@@ -2833,23 +2998,59 @@ namespace Codenutz.XFLabs.Basics.Droid
 			// aapt resource value: 0x7f060043
 			public const int secondary_text_disabled_material_light = 2131099715;
 			
+			// aapt resource value: 0x7f060081
+			public const int silver_v1 = 2131099777;
+			
+			// aapt resource value: 0x7f06008e
+			public const int silverv2 = 2131099790;
+			
+			// aapt resource value: 0x7f060070
+			public const int skyblue = 2131099760;
+			
+			// aapt resource value: 0x7f060064
+			public const int snow = 2131099748;
+			
+			// aapt resource value: 0x7f060086
+			public const int sonic_silver = 2131099782;
+			
+			// aapt resource value: 0x7f060071
+			public const int steelblue = 2131099761;
+			
 			// aapt resource value: 0x7f060044
 			public const int switch_thumb_disabled_material_dark = 2131099716;
 			
 			// aapt resource value: 0x7f060045
 			public const int switch_thumb_disabled_material_light = 2131099717;
 			
-			// aapt resource value: 0x7f060069
-			public const int switch_thumb_material_dark = 2131099753;
+			// aapt resource value: 0x7f0600ac
+			public const int switch_thumb_material_dark = 2131099820;
 			
-			// aapt resource value: 0x7f06006a
-			public const int switch_thumb_material_light = 2131099754;
+			// aapt resource value: 0x7f0600ad
+			public const int switch_thumb_material_light = 2131099821;
 			
 			// aapt resource value: 0x7f060046
 			public const int switch_thumb_normal_material_dark = 2131099718;
 			
 			// aapt resource value: 0x7f060047
 			public const int switch_thumb_normal_material_light = 2131099719;
+			
+			// aapt resource value: 0x7f060072
+			public const int transparent = 2131099762;
+			
+			// aapt resource value: 0x7f060096
+			public const int tryBlue1 = 2131099798;
+			
+			// aapt resource value: 0x7f06009b
+			public const int tryBlue2 = 2131099803;
+			
+			// aapt resource value: 0x7f06008c
+			public const int wenge = 2131099788;
+			
+			// aapt resource value: 0x7f060066
+			public const int white = 2131099750;
+			
+			// aapt resource value: 0x7f060090
+			public const int year = 2131099792;
 			
 			static Color()
 			{
@@ -3043,6 +3244,24 @@ namespace Codenutz.XFLabs.Basics.Droid
 			
 			// aapt resource value: 0x7f080008
 			public const int abc_text_size_title_material_toolbar = 2131230728;
+			
+			// aapt resource value: 0x7f08006b
+			public const int activity_horizontal_margin = 2131230827;
+			
+			// aapt resource value: 0x7f08006c
+			public const int activity_vertical_margin = 2131230828;
+			
+			// aapt resource value: 0x7f08006d
+			public const int booktableEdittext_height = 2131230829;
+			
+			// aapt resource value: 0x7f08006e
+			public const int booktableEdittext_height2 = 2131230830;
+			
+			// aapt resource value: 0x7f08006f
+			public const int booktableEdittext_heightv3 = 2131230831;
+			
+			// aapt resource value: 0x7f080070
+			public const int buttonview_width = 2131230832;
 			
 			// aapt resource value: 0x7f080066
 			public const int calendar_day_headers_paddingbottom = 2131230822;
@@ -3481,115 +3700,121 @@ namespace Codenutz.XFLabs.Basics.Droid
 			public const int dine2 = 2130837597;
 			
 			// aapt resource value: 0x7f02005e
-			public const int ic_cast_dark = 2130837598;
+			public const int ic_action_info = 2130837598;
 			
 			// aapt resource value: 0x7f02005f
-			public const int ic_cast_disabled_light = 2130837599;
+			public const int ic_action_location = 2130837599;
 			
 			// aapt resource value: 0x7f020060
-			public const int ic_cast_light = 2130837600;
+			public const int ic_cast_dark = 2130837600;
 			
 			// aapt resource value: 0x7f020061
-			public const int ic_cast_off_light = 2130837601;
+			public const int ic_cast_disabled_light = 2130837601;
 			
 			// aapt resource value: 0x7f020062
-			public const int ic_cast_on_0_light = 2130837602;
+			public const int ic_cast_light = 2130837602;
 			
 			// aapt resource value: 0x7f020063
-			public const int ic_cast_on_1_light = 2130837603;
+			public const int ic_cast_off_light = 2130837603;
 			
 			// aapt resource value: 0x7f020064
-			public const int ic_cast_on_2_light = 2130837604;
+			public const int ic_cast_on_0_light = 2130837604;
 			
 			// aapt resource value: 0x7f020065
-			public const int ic_cast_on_light = 2130837605;
+			public const int ic_cast_on_1_light = 2130837605;
 			
 			// aapt resource value: 0x7f020066
-			public const int ic_lovred = 2130837606;
+			public const int ic_cast_on_2_light = 2130837606;
 			
 			// aapt resource value: 0x7f020067
-			public const int ic_media_pause = 2130837607;
+			public const int ic_cast_on_light = 2130837607;
 			
 			// aapt resource value: 0x7f020068
-			public const int ic_media_play = 2130837608;
+			public const int ic_lovred = 2130837608;
 			
 			// aapt resource value: 0x7f020069
-			public const int ic_media_route_disabled_mono_dark = 2130837609;
+			public const int ic_media_pause = 2130837609;
 			
 			// aapt resource value: 0x7f02006a
-			public const int ic_media_route_off_mono_dark = 2130837610;
+			public const int ic_media_play = 2130837610;
 			
 			// aapt resource value: 0x7f02006b
-			public const int ic_media_route_on_0_mono_dark = 2130837611;
+			public const int ic_media_route_disabled_mono_dark = 2130837611;
 			
 			// aapt resource value: 0x7f02006c
-			public const int ic_media_route_on_1_mono_dark = 2130837612;
+			public const int ic_media_route_off_mono_dark = 2130837612;
 			
 			// aapt resource value: 0x7f02006d
-			public const int ic_media_route_on_2_mono_dark = 2130837613;
+			public const int ic_media_route_on_0_mono_dark = 2130837613;
 			
 			// aapt resource value: 0x7f02006e
-			public const int ic_media_route_on_mono_dark = 2130837614;
+			public const int ic_media_route_on_1_mono_dark = 2130837614;
 			
 			// aapt resource value: 0x7f02006f
-			public const int ic_pause_dark = 2130837615;
+			public const int ic_media_route_on_2_mono_dark = 2130837615;
 			
 			// aapt resource value: 0x7f020070
-			public const int ic_pause_light = 2130837616;
+			public const int ic_media_route_on_mono_dark = 2130837616;
 			
 			// aapt resource value: 0x7f020071
-			public const int ic_play_dark = 2130837617;
+			public const int ic_pause_dark = 2130837617;
 			
 			// aapt resource value: 0x7f020072
-			public const int ic_play_light = 2130837618;
+			public const int ic_pause_light = 2130837618;
 			
 			// aapt resource value: 0x7f020073
-			public const int ic_setting_dark = 2130837619;
+			public const int ic_play_dark = 2130837619;
 			
 			// aapt resource value: 0x7f020074
-			public const int ic_setting_light = 2130837620;
+			public const int ic_play_light = 2130837620;
 			
 			// aapt resource value: 0x7f020075
-			public const int icon = 2130837621;
+			public const int ic_setting_dark = 2130837621;
 			
 			// aapt resource value: 0x7f020076
-			public const int mr_ic_cast_dark = 2130837622;
+			public const int ic_setting_light = 2130837622;
 			
 			// aapt resource value: 0x7f020077
-			public const int mr_ic_cast_light = 2130837623;
+			public const int icon = 2130837623;
 			
 			// aapt resource value: 0x7f020078
-			public const int mr_ic_media_route_connecting_mono_dark = 2130837624;
+			public const int mr_ic_cast_dark = 2130837624;
 			
 			// aapt resource value: 0x7f020079
-			public const int mr_ic_media_route_connecting_mono_light = 2130837625;
+			public const int mr_ic_cast_light = 2130837625;
 			
 			// aapt resource value: 0x7f02007a
-			public const int mr_ic_media_route_mono_dark = 2130837626;
+			public const int mr_ic_media_route_connecting_mono_dark = 2130837626;
 			
 			// aapt resource value: 0x7f02007b
-			public const int mr_ic_media_route_mono_light = 2130837627;
+			public const int mr_ic_media_route_connecting_mono_light = 2130837627;
 			
 			// aapt resource value: 0x7f02007c
-			public const int mr_ic_pause_dark = 2130837628;
+			public const int mr_ic_media_route_mono_dark = 2130837628;
 			
 			// aapt resource value: 0x7f02007d
-			public const int mr_ic_pause_light = 2130837629;
+			public const int mr_ic_media_route_mono_light = 2130837629;
 			
 			// aapt resource value: 0x7f02007e
-			public const int mr_ic_play_dark = 2130837630;
+			public const int mr_ic_pause_dark = 2130837630;
 			
 			// aapt resource value: 0x7f02007f
-			public const int mr_ic_play_light = 2130837631;
+			public const int mr_ic_pause_light = 2130837631;
 			
 			// aapt resource value: 0x7f020080
-			public const int mr_ic_settings_dark = 2130837632;
+			public const int mr_ic_play_dark = 2130837632;
 			
 			// aapt resource value: 0x7f020081
-			public const int mr_ic_settings_light = 2130837633;
+			public const int mr_ic_play_light = 2130837633;
 			
 			// aapt resource value: 0x7f020082
-			public const int notification_template_icon_bg = 2130837634;
+			public const int mr_ic_settings_dark = 2130837634;
+			
+			// aapt resource value: 0x7f020083
+			public const int mr_ic_settings_light = 2130837635;
+			
+			// aapt resource value: 0x7f020084
+			public const int notification_template_icon_bg = 2130837636;
 			
 			static Drawable()
 			{
@@ -4028,6 +4253,28 @@ namespace Codenutz.XFLabs.Basics.Droid
 			}
 		}
 		
+		public partial class InputType
+		{
+			
+			// aapt resource value: 0x7f0c0001
+			public const int inputType_email = 2131492865;
+			
+			// aapt resource value: 0x7f0c0000
+			public const int inputType_phone = 2131492864;
+			
+			// aapt resource value: 0x7f0c0002
+			public const int inputType_text = 2131492866;
+			
+			static InputType()
+			{
+				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
+			}
+			
+			private InputType()
+			{
+			}
+		}
+		
 		public partial class Integer
 		{
 			
@@ -4048,6 +4295,21 @@ namespace Codenutz.XFLabs.Basics.Droid
 			
 			// aapt resource value: 0x7f070000
 			public const int google_play_services_version = 2131165184;
+			
+			// aapt resource value: 0x7f07000b
+			public const int len_comment = 2131165195;
+			
+			// aapt resource value: 0x7f070009
+			public const int len_email = 2131165193;
+			
+			// aapt resource value: 0x7f07000a
+			public const int len_name = 2131165194;
+			
+			// aapt resource value: 0x7f070008
+			public const int len_phone = 2131165192;
+			
+			// aapt resource value: 0x7f070007
+			public const int max_length = 2131165191;
 			
 			// aapt resource value: 0x7f070005
 			public const int status_bar_notification_info_maxnum = 2131165189;
@@ -4243,6 +4505,9 @@ namespace Codenutz.XFLabs.Basics.Droid
 			// aapt resource value: 0x7f050040
 			public const int Hello = 2131034176;
 			
+			// aapt resource value: 0x7f050050
+			public const int Separator = 2131034192;
+			
 			// aapt resource value: 0x7f05002d
 			public const int abc_action_bar_home_description = 2131034157;
 			
@@ -4302,6 +4567,24 @@ namespace Codenutz.XFLabs.Basics.Droid
 			
 			// aapt resource value: 0x7f050000
 			public const int auth_google_play_services_client_google_display_name = 2131034112;
+			
+			// aapt resource value: 0x7f050051
+			public const int bookDate = 2131034193;
+			
+			// aapt resource value: 0x7f050056
+			public const int bookEmail = 2131034198;
+			
+			// aapt resource value: 0x7f050053
+			public const int bookGuests = 2131034195;
+			
+			// aapt resource value: 0x7f050054
+			public const int bookName = 2131034196;
+			
+			// aapt resource value: 0x7f050055
+			public const int bookPhone = 2131034197;
+			
+			// aapt resource value: 0x7f050052
+			public const int bookTime = 2131034194;
 			
 			// aapt resource value: 0x7f050004
 			public const int common_android_wear_notification_needs_update_text = 2131034116;
@@ -4402,14 +4685,35 @@ namespace Codenutz.XFLabs.Basics.Droid
 			// aapt resource value: 0x7f050043
 			public const int day_name_format = 2131034179;
 			
+			// aapt resource value: 0x7f050057
+			public const int dividerColor = 2131034199;
+			
+			// aapt resource value: 0x7f050058
+			public const int dividerHeight = 2131034200;
+			
+			// aapt resource value: 0x7f05005c
+			public const int emailsTab = 2131034204;
+			
 			// aapt resource value: 0x7f050046
 			public const int full_date_format = 2131034182;
+			
+			// aapt resource value: 0x7f05005a
+			public const int generalTab = 2131034202;
 			
 			// aapt resource value: 0x7f050044
 			public const int invalid_date = 2131034180;
 			
 			// aapt resource value: 0x7f050042
 			public const int library_name = 2131034178;
+			
+			// aapt resource value: 0x7f050047
+			public const int linkedin = 2131034183;
+			
+			// aapt resource value: 0x7f05005d
+			public const int logHistoryTab = 2131034205;
+			
+			// aapt resource value: 0x7f050048
+			public const int menu_settings = 2131034184;
 			
 			// aapt resource value: 0x7f050045
 			public const int month_name_format = 2131034181;
@@ -4449,6 +4753,33 @@ namespace Codenutz.XFLabs.Basics.Droid
 			
 			// aapt resource value: 0x7f05003e
 			public const int status_bar_notification_info_overflow = 2131034174;
+			
+			// aapt resource value: 0x7f05004a
+			public const int strCity = 2131034186;
+			
+			// aapt resource value: 0x7f05004c
+			public const int strTemp = 2131034188;
+			
+			// aapt resource value: 0x7f05004b
+			public const int strWeather = 2131034187;
+			
+			// aapt resource value: 0x7f05004e
+			public const int strWindSpeed = 2131034190;
+			
+			// aapt resource value: 0x7f05005b
+			public const int tasksTab = 2131034203;
+			
+			// aapt resource value: 0x7f050049
+			public const int title_activity_weather = 2131034185;
+			
+			// aapt resource value: 0x7f05004d
+			public const int txtTemp = 2131034189;
+			
+			// aapt resource value: 0x7f05004f
+			public const int txtWindSpeed = 2131034191;
+			
+			// aapt resource value: 0x7f050059
+			public const int whatson_tab_label = 2131034201;
 			
 			static String()
 			{
@@ -4912,6 +5243,18 @@ namespace Codenutz.XFLabs.Basics.Droid
 			
 			// aapt resource value: 0x7f090006
 			public const int CardView_Light = 2131296262;
+			
+			// aapt resource value: 0x7f090149
+			public const int MyTheme = 2131296585;
+			
+			// aapt resource value: 0x7f09014b
+			public const int MyTheme_ActionBar_TitleTextStyle = 2131296587;
+			
+			// aapt resource value: 0x7f09014a
+			public const int MyTheme_ActionBarStyle = 2131296586;
+			
+			// aapt resource value: 0x7f090148
+			public const int MyTheme_Base = 2131296584;
 			
 			// aapt resource value: 0x7f090016
 			public const int Platform_AppCompat = 2131296278;

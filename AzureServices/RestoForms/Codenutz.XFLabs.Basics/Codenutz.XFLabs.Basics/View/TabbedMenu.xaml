@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Codenutz.XFLabs.Basics.View.TabbedMenu"
              xmlns:controls="clr-namespace:XLabs.Forms.Controls;assembly=XLabs.Forms"
+            xmlns:resources ="clr-namespace:Codenutz.XFLabs.Basics.Resx.AppResource;assembly=Codenutz.XFLabs.Basics"
              Title="{Binding Title}"
 	           IsBusy="{Binding IsBusy}"
              >
@@ -10,11 +11,12 @@
   <TabbedPage.ItemTemplate>
     <DataTemplate>
       <ContentPage Title="{Binding MenuCategory}" Icon="monkeyicon.png">
-        <StackLayout Padding="2, 2" Spacing="0">
+        <StackLayout Padding="0,2,0,2" Spacing="0" BackgroundColor="#f4f4f4">
           <ListView x:Name="list" ItemsSource="{Binding MenuList}"
                  ItemTapped="OnItemSelected"
                  VerticalOptions="FillAndExpand"
-                 RowHeight="100">
+                 SeparatorColor="Black"
+                 RowHeight="96">
             <ListView.ItemTemplate>
               <DataTemplate>
                 <ViewCell>
@@ -30,7 +32,7 @@
                       <ColumnDefinition Width="*"></ColumnDefinition>
                       <ColumnDefinition Width="40"></ColumnDefinition>
                     </Grid.ColumnDefinitions>
-                    <Image Grid.Row="0" Grid.Column="0" Grid.RowSpan="3"  Source="{Binding ThumbUrl}" HeightRequest="100" Aspect="AspectFill"/>
+                    <Image Grid.Row="0" Grid.Column="0" Grid.RowSpan="3"  Source="{Binding ThumbUrl}" HeightRequest="91" Aspect="AspectFill"/>
                     <Image Grid.Row="0" Grid.Column="2" Grid.RowSpan="3" HeightRequest="12"  Source="arrowright_16.png" HorizontalOptions="Center" />
                     <Label Grid.Row="0" BackgroundColor="Aqua" Grid.Column="1" Text="{Binding Name}" FontSize = "20"  LineBreakMode="TailTruncation"></Label>
                     <Label Grid.Row="1" BackgroundColor="Blue"  Grid.Column="1" FontSize = "15" Text="Price: $10.00" LineBreakMode="TailTruncation"></Label>
