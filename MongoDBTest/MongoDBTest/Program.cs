@@ -27,23 +27,24 @@ namespace MongoDBTest
             // const string connectionString = "mongodb://localhost";
 
             client = new MongoClient(connectionString);
-            //database = client.GetDatabase("test");
+            database = client.GetDatabase("test");
 
-            database = client.GetDatabase("blog");
+            //database = client.GetDatabase("blog");
 
             
            
-            QueryAllDocuments(database,"users");
-            ListBlogUsers(database);
-            
+            //QueryAllDocuments(database,"users");
+            //ListBlogUsers(database);
+           // QueryByModel(database);
+ 
             /**
-           //QueryByModel(database);
+           
            InsertOrders(database);
            UpdateOrders(database);
            DeleteOrders(database);
            ****/
 
-            //   QueryAggregation(database, "restaurants");
+          //  QueryAggregation(database, "posts");
             //   QueryGroupBy(database, "restaurants");
            
            //Home Work Json 2.1
@@ -52,12 +53,66 @@ namespace MongoDBTest
 
             //Home Work Json 3.1
             //InsertStudentScore(database);
-            
+
+            InsertAnimals(database);
+
             Console.ReadLine();
 
         }
 
-        
+        #region FinalExam
+
+        public static async void InsertAnimals(IMongoDatabase db)
+        {
+            //var client = new MongoClient();
+            //var db = client.GetDatabase("test");
+
+            var animals = db.GetCollection<BsonDocument>("animals");
+
+            var animal = new BsonDocument
+                            {
+                            {"animal", "monkey"}
+                            };
+
+            try
+            {
+                await animals.InsertOneAsync(animal);
+                animal.Remove("animal");
+                animal.Add("animal", "cat");
+                await animals.InsertOneAsync(animal);
+                animal.Remove("animal");
+                animal.Add("animal", "lion");
+                await animals.InsertOneAsync(animal);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("ErroredOut", ex.Message.ToString());
+            }
+           
+
+            var count = 0;
+            var filter = new BsonDocument();
+            using (var cursor = await animals.FindAsync(filter))
+            {
+                while (await cursor.MoveNextAsync())
+                {
+                    var batch = cursor.Current;
+                    foreach (var document in batch)
+                    {
+                        count++;
+                    }
+                }
+            }
+
+            Console.WriteLine("Total Count {0}", count);
+
+
+
+        }
+
+        #endregion
+
+
         #region NormalCrud
         public static async Task<int> QueryAllDocuments(IMongoDatabase db, string collectionName = "restaurants")
         {
@@ -82,58 +137,7 @@ namespace MongoDBTest
         }//Eof QueryAllDocuments
 
 
-        public static async void ListBlogUsers (IMongoDatabase db)
-        {
-            string key = "Name";
-            string value = "*";
-            var collection = db.GetCollection<User>("users");
-            var filter = new FilterDefinitionBuilder<User>().Eq(key, value);
-            var result = await collection.Find(filter).ToListAsync();
-            result = await collection.AsQueryable().ToListAsync();
-            result = await collection.Find(e => true).ToListAsync();
-            var count = result.Count;
-            foreach (var item in result)
-            {
-                Console.WriteLine("Users Name: {0} Email: {1}", item.Name, item.Email);
-            }
-            Console.WriteLine("Total Users {0} ", count);
-
-            await ListPostsByUser(db);
-
-        }
-
-        public static async Task<int> ListPostsByUser (IMongoDatabase db, string user="craig")
-        {
-            var collection = db.GetCollection<Post>("posts");
-            var result = await collection.AsQueryable().ToListAsync();
-            Console.WriteLine("Listing Posts By User {0}", user);
-            foreach (var item in result)
-            {
-                Console.WriteLine("\nId {0}", item.Id);
-                Console.WriteLine("Title: {0} Author: {1} Created At: {2} \nContent: {3}", item.Title, item.Author, item.CreatedAtUtc, item.Content);
-                
-                foreach (var tag in item.Tags)
-                {
-                    Console.WriteLine("Tags: {0}", tag);
-                }
-
-                foreach (var comment in item.Comments)
-                {
-                    Console.WriteLine("Author: {0} Content: {1}, Date: {2}", comment.Author, comment.Content, comment.CreatedAtUtc);
-                }
-
-            }
-
-
-            var filter = Builders<Post>.Filter.Eq("Id", "56381e89aafd990dbc2400b7");
-            var post = await collection.Find(filter).FirstOrDefaultAsync();
-
-            var post2 = await collection.Find(c => c.Id == "56381e89aafd990dbc2400b7").FirstOrDefaultAsync();
-
-
-
-            return 1;
-        }
+      
 
         public static async void DeleteOrders(IMongoDatabase db)
         {
@@ -261,8 +265,8 @@ namespace MongoDBTest
         public static async void QueryByModel(IMongoDatabase db)
         {
             string key = "borough";
-            string value = "Manhattan";
-            var collection = db.GetCollection<Resturant>("restaurants");
+            string value = "Manhattan"; //restaurants
+            var collection = db.GetCollection<Resturant>("Restaurant");
             var filter = new FilterDefinitionBuilder<Resturant>().Eq(key, value);
             var result = await collection.Find(filter).ToListAsync();
             var count = result.Count;
@@ -283,39 +287,79 @@ namespace MongoDBTest
 
            var collection = db.GetCollection<BsonDocument>(collectionName);
 
-            //Aggregation Filter for Greater Than
-            var filter = Builders<BsonDocument>.Filter.Gt("grades.score", 30);
-            var result = await collection.Find(filter).ToListAsync();
-            var count = result.Count;
-            Console.WriteLine("Total For {0} is {1} ", "grades with score > 30: ", count);
+            if (collectionName == "restaurants")
+            {
 
-            //Aggregation Filter for less Than
-            filter = Builders<BsonDocument>.Filter.Lt("grades.score", 10);
-            result = await collection.Find(filter).ToListAsync();
-            count = result.Count;
-            Console.WriteLine("Total For {0} is {1} ", "grades with score < 10: ", count);
+                //Aggregation Filter for Greater Than
+                var filter = Builders<BsonDocument>.Filter.Gt("grades.score", 30);
+                var result = await collection.Find(filter).ToListAsync();
+                var count = result.Count;
+                Console.WriteLine("Total For {0} is {1} ", "grades with score > 30: ", count);
 
-            //Aggregation Filter for Logical And
-            var builder = Builders<BsonDocument>.Filter;
-            filter = builder.Eq("cuisine", "Italian") & builder.Eq("address.zipcode", "10075");
-            result = await collection.Find(filter).ToListAsync();
-            count = result.Count;
-            Console.WriteLine("Total For {0} is {1} ", "cuisine & zip code 10075", count);
+                //Aggregation Filter for less Than
+                filter = Builders<BsonDocument>.Filter.Lt("grades.score", 10);
+                result = await collection.Find(filter).ToListAsync();
+                count = result.Count;
+                Console.WriteLine("Total For {0} is {1} ", "grades with score < 10: ", count);
 
-            //Aggregation Filter for Logical OR
-            builder = Builders<BsonDocument>.Filter;
-            filter = builder.Eq("cuisine", "Italian") | builder.Eq("address.zipcode", "10075");
-            result = await collection.Find(filter).ToListAsync();
-            count = result.Count;
-            Console.WriteLine("Total For {0} is {1} ", "cuisine || zip code 10075", count);
+                //Aggregation Filter for Logical And
+                var builder = Builders<BsonDocument>.Filter;
+                filter = builder.Eq("cuisine", "Italian") & builder.Eq("address.zipcode", "10075");
+                result = await collection.Find(filter).ToListAsync();
+                count = result.Count;
+                Console.WriteLine("Total For {0} is {1} ", "cuisine & zip code 10075", count);
 
-            //Aggregation Filter for Logical Sort By
-            filter = new BsonDocument();
-            var sort = Builders<BsonDocument>.Sort.Ascending("borough").Ascending("address.zipcode");
-            result = await collection.Find(filter).Sort(sort).ToListAsync();
-            count = result.Count;
-            Console.WriteLine("Total For {0} is {1} ", "Sort By", count);
+                //Aggregation Filter for Logical OR
+                builder = Builders<BsonDocument>.Filter;
+                filter = builder.Eq("cuisine", "Italian") | builder.Eq("address.zipcode", "10075");
+                result = await collection.Find(filter).ToListAsync();
+                count = result.Count;
+                Console.WriteLine("Total For {0} is {1} ", "cuisine || zip code 10075", count);
 
+                //Aggregation Filter for Logical Sort By
+                filter = new BsonDocument();
+                var sort = Builders<BsonDocument>.Sort.Ascending("borough").Ascending("address.zipcode");
+                result = await collection.Find(filter).Sort(sort).ToListAsync();
+                count = result.Count;
+                Console.WriteLine("Total For {0} is {1} ", "Sort By", count);
+            }
+
+            if (collectionName == "posts")
+            {
+
+                var aggregate = collection.Aggregate().Group(new BsonDocument { { "_id", "$Author" }, { "count", new BsonDocument("$sum", 1) } });
+                var result = await aggregate.ToListAsync();
+                var count = result.Count;
+                foreach (var resturant in result)
+                {
+                    var r = resturant;
+
+                }
+                aggregate = collection.Aggregate()
+                                      .Group(new BsonDocument { { "_id", "$Author" }, { "count", new BsonDocument("$sum", 1) } })
+                                      .Sort(new BsonDocument { { "_id", 1 }});
+
+                //After Sort Results;
+                count = result.Count;
+                foreach (var resturant in result)
+                {
+                    var r = resturant;
+
+                }
+
+                var blogCollection = db.GetCollection<Post>(collectionName);
+                var blogdata = blogCollection.AsQueryable().Where(c => true).ToList();
+                var aggdata = blogdata.GroupBy(c => c.Author)
+                                      .Select(s => new
+                                      {
+                                          AuthorID = s.Key,
+                                          CommentsTotal = s.Sum(b => b.Comments.Count)
+                                      }).ToList();
+
+                var sortData = aggdata.OrderBy(c => c.CommentsTotal).ToList();
+                var cody = aggdata.Where(c => c.AuthorID == "Cody Strouth").ToList();
+
+            }
 
             return 1;
         }
@@ -328,31 +372,36 @@ namespace MongoDBTest
 
             var collection = db.GetCollection<BsonDocument>(collectionName);
 
-            var aggregate = collection.Aggregate().Group(new BsonDocument { { "_id", "$borough" }, { "count", new BsonDocument("$sum", 1) } });
-            var result = await aggregate.ToListAsync();
-            var count = result.Count;
-            foreach (var resturant in result)
+            if (collectionName == "restaurants")
             {
-                var r = resturant;
+
+                var aggregate = collection.Aggregate().Group(new BsonDocument { { "_id", "$borough" }, { "count", new BsonDocument("$sum", 1) } });
+                var result = await aggregate.ToListAsync();
+                var count = result.Count;
+                foreach (var resturant in result)
+                {
+                    var r = resturant;
+
+                }
+
+                Console.WriteLine("Total For {0} is {1} ", "Group By", count);
+
+                aggregate = collection.Aggregate()
+                                      .Match(new BsonDocument { { "borough", "Queens" }, { "cuisine", "Brazilian" } })
+                                      .Group(new BsonDocument { { "_id", "$address.zipcode" }, { "count", new BsonDocument("$sum", 1) } });
+                var results = await aggregate.ToListAsync();
+                foreach (var resturant in results)
+                {
+                    var r = resturant;
+
+                }
+
+
 
             }
-
-            Console.WriteLine("Total For {0} is {1} ", "Group By", count);
-
-            aggregate = collection.Aggregate()
-                .Match(new BsonDocument { { "borough", "Queens" }, { "cuisine", "Brazilian" } })
-                .Group(new BsonDocument { { "_id", "$address.zipcode" }, { "count", new BsonDocument("$sum", 1) } });
-            var results = await aggregate.ToListAsync();
-            foreach (var resturant in results)
-            {
-                var r = resturant;
-
-            }
-            
-
             //Now WOrk WIth Grades
             //await QueryGroupByGrades(db, "grades");
-            await RemoveGradesByType(db, "grades");
+            //await RemoveGradesByType(db, "grades");
             return 1;
         }
 
@@ -694,6 +743,60 @@ namespace MongoDBTest
             //lowscorecollection = await newstudentcollection.AsQueryable().ToListAsync();
 
             return lowscorecollection;
+        }
+
+
+        public static async void ListBlogUsers(IMongoDatabase db)
+        {
+            string key = "Name";
+            string value = "*";
+            var collection = db.GetCollection<User>("users");
+            var filter = new FilterDefinitionBuilder<User>().Eq(key, value);
+            var result = await collection.Find(filter).ToListAsync();
+            result = await collection.AsQueryable().ToListAsync();
+            result = await collection.Find(e => true).ToListAsync();
+            var count = result.Count;
+            foreach (var item in result)
+            {
+                Console.WriteLine("Users Name: {0} Email: {1}", item.Name, item.Email);
+            }
+            Console.WriteLine("Total Users {0} ", count);
+
+            await ListPostsByUser(db);
+
+        }
+
+        public static async Task<int> ListPostsByUser(IMongoDatabase db, string user = "craig")
+        {
+            var collection = db.GetCollection<Post>("posts");
+            var result = await collection.AsQueryable().ToListAsync();
+            Console.WriteLine("Listing Posts By User {0}", user);
+            foreach (var item in result)
+            {
+                Console.WriteLine("\nId {0}", item.Id);
+                Console.WriteLine("Title: {0} Author: {1} Created At: {2} \nContent: {3}", item.Title, item.Author, item.CreatedAtUtc, item.Content);
+
+                foreach (var tag in item.Tags)
+                {
+                    Console.WriteLine("Tags: {0}", tag);
+                }
+
+                foreach (var comment in item.Comments)
+                {
+                    Console.WriteLine("Author: {0} Content: {1}, Date: {2}", comment.Author, comment.Content, comment.CreatedAtUtc);
+                }
+
+            }
+
+
+            var filter = Builders<Post>.Filter.Eq("Id", "56381e89aafd990dbc2400b7");
+            var post = await collection.Find(filter).FirstOrDefaultAsync();
+
+            var post2 = await collection.Find(c => c.Id == "56381e89aafd990dbc2400b7").FirstOrDefaultAsync();
+
+
+
+            return 1;
         }
 
 
