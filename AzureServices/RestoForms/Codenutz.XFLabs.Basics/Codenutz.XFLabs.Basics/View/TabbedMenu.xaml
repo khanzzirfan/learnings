@@ -5,8 +5,7 @@
              xmlns:controls="clr-namespace:XLabs.Forms.Controls;assembly=XLabs.Forms"
             xmlns:resources ="clr-namespace:Codenutz.XFLabs.Basics.Resx.AppResource;assembly=Codenutz.XFLabs.Basics"
              Title="{Binding Title}"
-	           IsBusy="{Binding IsBusy}"
-             >
+	           IsBusy="{Binding IsBusy}" >
   
   <TabbedPage.ItemTemplate>
     <DataTemplate>
