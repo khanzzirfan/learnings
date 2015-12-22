@@ -13,6 +13,7 @@ namespace EmpApp2.ViewModel
         public HomeViewModel(Page page)
             : base(page)
         {
+            IsBusy = true;
         }
 
         public HomeViewModel(IDevice device)
@@ -21,13 +22,26 @@ namespace EmpApp2.ViewModel
             Message = String.Format("Hello Xamarin Forms Labs MVVM Basics!! How is your {0} device", device.Manufacturer);
             Title = "EmployeeApp";
             Message = "HomeModel";
+            IsBusy = true;
+
+            Task.Run(()=> ShowAsBusy());
+            
+
         }
 
+        public async Task ShowAsBusy()
+        {
+            await Task.Delay(30000);
+            IsBusy = false;
+        }
 
         public HomeViewModel()
         {
             Title = "EmployeeApp";
             Message = "HomeModel";
+            IsBusy = true;
+
+            Task.Run(() => ShowAsBusy());
         }
 
 
