@@ -34,60 +34,75 @@
           
      </StackLayout>
    
-      <StackLayout VerticalOptions="CenterAndExpand" Padding="10" Spacing="10">
+      <StackLayout Orientation="Vertical" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" Padding="10" Spacing="10">
         <!-- middle controls -->
-         <Grid RowSpacing="0"
-            ColumnSpacing="0">
-          <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="20"/>
-            <RowDefinition Height="Auto"/>
-          </Grid.RowDefinitions>
-          <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="20"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="20"/>
-          </Grid.ColumnDefinitions>
+           <RelativeLayout VerticalOptions="FillAndExpand"
+                           HorizontalOptions="FillAndExpand">
+            
+             <StackLayout Orientation="Vertical"
+                         VerticalOptions="FillAndExpand"
+                         Padding="10"
+                         RelativeLayout.XConstraint="{ConstraintExpression Type=Constant, Constant=0}"
+                         RelativeLayout.YConstraint="{ConstraintExpression Type=Constant, Constant=0}">
 
-         <Entry 
-			      Grid.Row="0"
-			      Grid.Column="1"
-			      Text="" 
-			      Placeholder="555-555-5555"
-			      Keyboard="Telephone" />  
-           
-         <StackLayout Grid.Row="0" Grid.Column="1"
-                      HorizontalOptions="Center"
-           Orientation="Vertical" Spacing="10"
-           Padding="10" IsVisible="{Binding IsBusy}">
-           
-				  <ActivityIndicator  HorizontalOptions="Center"
-								     IsRunning="{Binding IsBusy}"
-								     IsVisible="{Binding IsBusy}"/>
-			      <Label HorizontalOptions="Center"
-			    	   VerticalOptions="Center" 
-			    	   Text="Loading Data Please Wait..."/>
-	   		  </StackLayout>
-      
-           
-          <Button 
-			      x:Name="ButtonSubmitFeedback"
-            Grid.Row="4" Grid.Column="1"
-			      BackgroundColor="#3498DB"
-			      BorderRadius="0"
-			      TextColor="White" 
-			      Text="Admin" />  
-         </Grid>
+                <Grid x:Name="SegmentGrid"
+                      RowSpacing="10"
+                      ColumnSpacing="10">
+                  <Grid.RowDefinitions>
+                    <RowDefinition Height="35"/>
+                  </Grid.RowDefinitions>  
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                
+                <Entry Text="" Grid.Row="0" Grid.Column="0"
+			                Placeholder="555-555-5555"
+			                Keyboard="Telephone" />  
+                
+                  <Button 
+			              x:Name="BtnGo"
+                    Grid.Row="0"
+                    Grid.Column="1"
+			              BackgroundColor="#3498DB"
+			              BorderRadius="0"
+			              TextColor="White" 
+			              Text="Go" /> 
+               </Grid>
+            </StackLayout>
+             
+             <StackLayout IsVisible="{Binding IsBusy}" 
+                           VerticalOptions="CenterAndExpand" >
+				        <ActivityIndicator  
+								            IsRunning="{Binding IsBusy}"
+								            IsVisible="{Binding IsBusy}"
+                              VerticalOptions="CenterAndExpand"
+                              HorizontalOptions="CenterAndExpand"
+                             HeightRequest="40"
+                             RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent,
+                                        Property=Height,
+                                        Factor=0.33}"
+                               RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent,
+                                        Property=Height,
+                                        Factor=0.28}"
+                                                            />
+			            <Label HorizontalOptions="Center"
+			    	          VerticalOptions="Center" 
+			    	          Text="Loading Data Please Wait..."/>
+	   		      </StackLayout>
+        </RelativeLayout>
   
       </StackLayout>
       
-      <StackLayout Orientation="Horizontal" VerticalOptions="End">
-        <!-- bottom controls -->
+      <StackLayout Orientation="Vertical" VerticalOptions="End">
+        <!-- bottom controls -->  
+          <Button 
+			        x:Name="ButtonSubmitFeedback"
+			        BackgroundColor="#3498DB"
+			        BorderRadius="0"
+			        TextColor="White" 
+			        Text="Admin" />  
       </StackLayout>
-   
-
+    
   </StackLayout>
-
 </ContentPage>
