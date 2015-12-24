@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace EmpApp2.Model
 {
@@ -14,13 +10,29 @@ namespace EmpApp2.Model
 
         public string LogMessage
         {
-            get { return string.Format("Clocked at {0:d}", LogTime); }
+            get
+            {
+                var logstring = "";
+                if (LogTime.HasValue)
+                {
+                    var currentDate = DateTime.Now.Date;
+                    var timeSpan = (currentDate - LogTime.Value.Date).Days;
+                    if (timeSpan < 1)
+                        logstring = "today";
+                    else if (timeSpan < 2)
+                        logstring = "yesterday";
+                    else
+                        logstring = string.Format("{0:d}", LogTime);
+                }
+                
+                return string.Format("Clocked [{0}] {1} at {2:t}",LogType.ToString(), logstring, LogTime.Value);
+            }
         }
     }
 
     public enum LogType
     {
-        LogIn,
-        LogOut
+        In,
+        Out
     }
 }
