@@ -14,7 +14,7 @@ namespace EmpApp2.ViewModel
     {
         #region ImageKConstants
         public string d1_dessert_v1 = "https://lh3.googleusercontent.com/-Xh8aY2RRwd0/VeFCHSv2lzI/AAAAAAAAAOY/8SY3a6qk7WM/d1_icecream.png";
-        public string flkr_image1 = "empImage.png";
+        public string flkr_image1 = "https://lh3.googleusercontent.com/-Xh8aY2RRwd0/VeFCHSv2lzI/AAAAAAAAAOY/8SY3a6qk7WM/d1_icecream.png";
         public const string login = "Check In";
         public const string logOut = "Check Out";
         #endregion

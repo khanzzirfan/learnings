@@ -17,6 +17,10 @@ namespace EmpApp2.View
              {
                  await Navigation.PushAsync(new EmployeeMainPage());
              };
+
+            ButtonAdmin.Clicked += async (sender, e) => {
+                await Navigation.PushAsync(new Login());
+            };
         }
     }
 }

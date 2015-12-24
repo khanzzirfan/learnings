@@ -97,7 +97,7 @@
       <StackLayout Orientation="Vertical" VerticalOptions="End">
         <!-- bottom controls -->  
           <Button 
-			        x:Name="ButtonSubmitFeedback"
+			        x:Name="ButtonAdmin"
 			        BackgroundColor="#3498DB"
 			        BorderRadius="0"
 			        TextColor="White" 
