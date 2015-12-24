@@ -13,6 +13,10 @@ namespace EmpApp2.View
         public Home()
         {
             InitializeComponent();
+            BtnGo.Clicked += async (sender, e) =>
+             {
+                 await Navigation.PushAsync(new EmployeeMainPage());
+             };
         }
     }
 }

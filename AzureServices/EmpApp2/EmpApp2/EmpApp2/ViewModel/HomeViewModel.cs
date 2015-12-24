@@ -31,7 +31,7 @@ namespace EmpApp2.ViewModel
 
         public async Task ShowAsBusy()
         {
-            await Task.Delay(30000);
+            await Task.Delay(1000);
             IsBusy = false;
         }
 

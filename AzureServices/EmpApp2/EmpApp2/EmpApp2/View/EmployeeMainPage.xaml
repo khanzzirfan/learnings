@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EmpApp2.View.EmployeeMainPage"
+             xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions"
+             Title="{Binding Title}" 
+             IsBusy="{Binding IsBusy}"
+             >
+  <ContentPage.Content Padding="0">
+    <Grid RowSpacing="0" ColumnSpacing="0" >
+      <Grid.Padding>
+        <OnPlatform x:TypeArguments="Thickness">
+          <OnPlatform.iOS>
+            10,5,10,5
+          </OnPlatform.iOS>
+          <OnPlatform.Android>
+            10,5,10,5
+          </OnPlatform.Android>
+          <OnPlatform.WinPhone>
+            20,25,20,25
+          </OnPlatform.WinPhone>
+        </OnPlatform>
+      </Grid.Padding>
+      <Grid.RowDefinitions>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="*"/>
+      </Grid.RowDefinitions>
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="*"/>
+      </Grid.ColumnDefinitions>
+
+        <Grid Grid.Row="0" 
+              RowSpacing="0" 
+              ColumnSpacing="0">
+          <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="40"/>
+          </Grid.RowDefinitions>
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+          </Grid.ColumnDefinitions>
+          
+          <controls:CircleImage
+             x:Name="MainImage"
+             Grid.Row="0"
+             Grid.RowSpan="3"
+             HeightRequest="150"
+             WidthRequest="150"
+             HorizontalOptions="Start"
+             VerticalOptions ="Start"
+             BorderColor="#3498DB"
+             BorderThickness="4">
+                  <controls:CircleImage.Source>
+                    <UriImageSource Uri="{Binding EmpDetails.ImageUri}"
+                      CacheValidity="14"
+                      CachingEnabled="true"/>
+                  </controls:CircleImage.Source>
+          </controls:CircleImage>
+
+          <StackLayout Grid.Row="0" Grid.Column="1"
+                       Padding="2,30,2,1"
+                       HorizontalOptions="CenterAndExpand"  
+                       VerticalOptions="CenterAndExpand"
+                       Orientation="Horizontal">
+            <Label
+                 VerticalOptions="Center"
+                 HorizontalOptions="Center"
+                 FontSize="Medium"
+                 TextColor="White"
+                 Text="{Binding EmpDetails.EmpName}"/>
+          </StackLayout>
+         
+          <Label
+              Grid.Row="1"
+              Grid.Column="1"
+              VerticalOptions="Center"
+              HorizontalOptions="Center"
+              FontSize="Medium"
+              TextColor="White"
+              Text="{Binding EmpDetails.JobTitle}"/>
+
+          <Button
+             x:Name="BtnLogin"
+             Grid.Row="2"
+             Grid.Column="1"
+             BackgroundColor="#3498DB"
+             BorderRadius="0"
+             TextColor="White"
+             Command="{Binding CheckInCommand}"
+             Text="{Binding BtnName}"/>
+          
+        </Grid>
+
+      
+      <StackLayout  Grid.Row="1"  
+        Padding="0,25,0,2" Spacing="0">
+        
+        <ListView x:Name="list" 
+                  ItemsSource="{Binding EmpDetails.EmployeeLogs}"
+                  ItemTapped="OnItemSelected"
+                  VerticalOptions="FillAndExpand"
+                  SeparatorColor="Black" >
+          <ListView.ItemTemplate>
+            <DataTemplate>
+              <ViewCell>
+                  <Label 
+                         FontSize = "15" 
+                         Text="{Binding LogMessage}" 
+                         LineBreakMode="TailTruncation"></Label>
+              </ViewCell>
+            </DataTemplate>
+          </ListView.ItemTemplate>
+        </ListView>
+      </StackLayout>
+ 
+    </Grid>
+  </ContentPage.Content>
+</ContentPage>

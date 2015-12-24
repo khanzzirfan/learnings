@@ -156,6 +156,7 @@
   <ItemGroup>
     <Content Include="Properties\AndroidManifest.xml" />
     <AndroidResource Include="Resources\drawable\vlogodesign.jpg" />
+    <AndroidResource Include="Resources\drawable\empImage.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\EmpApp2\EmpApp2.csproj">
