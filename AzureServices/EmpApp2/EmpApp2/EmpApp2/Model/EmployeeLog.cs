@@ -1,13 +1,17 @@
-﻿using System;
+﻿using EmpApp2.Enums;
+using SQLite.Net.Attributes;
+using System;
 
 namespace EmpApp2.Model
 {
     public class EmployeeLog
     {
+        [PrimaryKey]
         public int EmpID { get; set; }
         public LogType LogType { get; set; }
         public DateTime? LogTime { get; set; }
 
+        [Ignore]
         public string LogMessage
         {
             get
@@ -29,10 +33,5 @@ namespace EmpApp2.Model
             }
         }
     }
-
-    public enum LogType
-    {
-        In,
-        Out
-    }
+    
 }

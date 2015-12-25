@@ -1,4 +1,5 @@
-﻿using EmpApp2.Model;
+﻿using EmpApp2.Enums;
+using EmpApp2.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
