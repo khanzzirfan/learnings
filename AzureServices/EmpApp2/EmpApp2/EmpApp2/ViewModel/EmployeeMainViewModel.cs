@@ -1,5 +1,6 @@
 ﻿using EmpApp2.Enums;
 using EmpApp2.Model;
+using EmpApp2.Service;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,6 +14,7 @@ namespace EmpApp2.ViewModel
 {
     public class EmployeeMainViewModel : BaseViewModel
     {
+        public EmployeeDB EmpDb;
         #region ImageKConstants
         public string d1_dessert_v1 = "https://lh3.googleusercontent.com/-Xh8aY2RRwd0/VeFCHSv2lzI/AAAAAAAAAOY/8SY3a6qk7WM/d1_icecream.png";
         public string flkr_image1 = "https://lh3.googleusercontent.com/-Xh8aY2RRwd0/VeFCHSv2lzI/AAAAAAAAAOY/8SY3a6qk7WM/d1_icecream.png";
@@ -28,6 +30,7 @@ namespace EmpApp2.ViewModel
             GetEmployeeDetails();
 
             BtnName = login;
+            EmpDb = new EmployeeDB();
         }
 
         public EmployeeMainViewModel(IDevice device)
@@ -36,11 +39,13 @@ namespace EmpApp2.ViewModel
             Message = String.Format("Hello Xamarin Forms Labs MVVM Basics!! How is your {0} device", device.Manufacturer);
             Title = "Employee Roll Check";
             Message = "Employee Roll Check";
+            EmpDb = new EmployeeDB();
         }
         public EmployeeMainViewModel()
         {
             Title = "Employee Roll Check";
             Message = "Employee Roll Check";
+            EmpDb = new EmployeeDB();
         }
 
         private Command getEmployeesCommand;
@@ -143,7 +148,6 @@ namespace EmpApp2.ViewModel
                 JobTitle = "Xam Developer",
                 ThumbUrl = flkr_image1,
                 EmployeeLogs = empList.ToList(),
-
             };
 
             EmpDetails = empDb;
@@ -151,94 +155,44 @@ namespace EmpApp2.ViewModel
 
         public IEnumerable<EmployeeLog> GetEmployeeLog()
         {
+            EmpDb = new EmployeeDB();
             var dCurrent = DateTime.Now;
-            var emplogDetails = new List<EmployeeLog>() {
-                    new EmployeeLog()
-                    {
-                        EmpID = 1,
-                        LogType= LogType.In,
-                        LogTime= new DateTime(dCurrent.Year,dCurrent.Month,dCurrent.AddDays(-5).Day, 10,00,00),
-                    },
-                    new EmployeeLog()
-                    {
-                        EmpID = 1,
-                        LogType=  LogType.In,
-                        LogTime= new DateTime(dCurrent.Year,dCurrent.Month,dCurrent.AddDays(-4).Day, 10,00,00),
-                    },
-                    new EmployeeLog()
-                    {
-                        EmpID = 1,
-                        LogType=  LogType.In,
-                        LogTime= new DateTime(dCurrent.Year,dCurrent.Month,dCurrent.AddDays(-3).Day, 10,00,00),
-                    },
-                    new EmployeeLog()
-                    {
-                        EmpID = 1 ,
-                        LogType=  LogType.In,
-                        LogTime= new DateTime(dCurrent.Year,dCurrent.Month,dCurrent.AddDays(-2).Day, 10,00,00),
-                    },
+            var empsorted = new List<EmployeeLog>();
+            try
+            {
+                var IempLogs = EmpDb.GetEmployeeLogList();
+                var empLogs = IempLogs.Where(c => c.EmpId == 1).ToList();
 
-                    new EmployeeLog()
-                    {
-                        EmpID = 1 ,
-                        LogType=  LogType.In,
-                        LogTime= new DateTime(dCurrent.Year,dCurrent.Month,dCurrent.AddDays(-1).Day, 10,00,00),
-                    },
+                var emplogDetails = empLogs.Select(c => new EmployeeLog()
+                {
+                    EmpID = c.EmpId,
+                    LogTime = Convert.ToDateTime(c.LogTime),
+                    LogType = c.LogType
+                }).ToList();
+                empsorted = emplogDetails.OrderByDescending(c => c.LogTime).ToList();
+            }
+            catch (Exception ex)
+            {
+                string msg = ex.Message;
+            }
 
-                     new EmployeeLog()
-                    {
-                        EmpID = 1 ,
-                        LogType=  LogType.In,
-                        LogTime= new DateTime(dCurrent.Year,dCurrent.Month,dCurrent.AddDays(0).Day, 10,00,00),
-                    },
-                   new EmployeeLog()
-                    {
-                        EmpID = 1,
-                        LogType= LogType.Out,
-                        LogTime= new DateTime(dCurrent.Year,dCurrent.Month,dCurrent.AddDays(-5).Day, 16,00,00),
-                    },
-                    new EmployeeLog()
-                    {
-                        EmpID = 1,
-                        LogType=  LogType.Out,
-                        LogTime= new DateTime(dCurrent.Year,dCurrent.Month,dCurrent.AddDays(-4).Day, 16,00,00),
-                    },
-                    new EmployeeLog()
-                    {
-                        EmpID = 1,
-                        LogType=  LogType.Out,
-                        LogTime= new DateTime(dCurrent.Year,dCurrent.Month,dCurrent.AddDays(-3).Day, 16,00,00),
-                    },
-                    new EmployeeLog()
-                    {
-                        EmpID =  1,
-                        LogType=  LogType.Out,
-                        LogTime= new DateTime(dCurrent.Year,dCurrent.Month,dCurrent.AddDays(-2).Day, 16,00,00),
-                    },
-                    new EmployeeLog()
-                    {
-                        EmpID =  1,
-                        LogType=  LogType.Out,
-                        LogTime= new DateTime(dCurrent.Year,dCurrent.Month,dCurrent.AddDays(-1).Day, 16,00,00),
-                    },
-                    
-                };
+            
 
-            var empsorted = emplogDetails.OrderByDescending(c => c.LogTime).ToList();
+            
             return empsorted;
         }
 
 
-        private void Sort()
-        {
-            var empdetails = EmpDetails;
-            var sorted = (from emp in EmpDetails.EmployeeLogs
-                         orderby emp.LogTime descending
-                         select emp).ToList<EmployeeLog>();
+        //private void Sort()
+        //{
+        //    var empdetails = EmpDetails;
+        //    var sorted = (from emp in EmpDetails.EmployeeLogs
+        //                 orderby emp.LogTime descending
+        //                 select emp).ToList<EmployeeLog>();
 
 
 
-        }
+        //}
 
     }
 }

@@ -36,7 +36,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="App.cs" />
+    <Compile Include="DL\Employee.cs" />
     <Compile Include="Enums\LogTypeEnum.cs" />
+    <Compile Include="Helpers\DateTimeSQLite.cs" />
     <Compile Include="Helpers\Grouping.cs" />
     <Compile Include="Model\AdminModel.cs" />
     <Compile Include="Model\EmployeeDetails.cs" />

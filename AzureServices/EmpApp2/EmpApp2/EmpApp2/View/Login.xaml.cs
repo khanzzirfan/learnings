@@ -28,6 +28,7 @@ namespace EmpApp2.View
 
         private void OnLoginClicked(object sender, EventArgs e)
         {
+            Navigation.PushAsync(new AdminPage());
             //if (viewModel.CanLogin)
             //{
             //    viewModel
