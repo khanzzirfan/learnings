@@ -23,7 +23,7 @@ namespace EmpApp2.Service
         {
             //Getting conection and Creating table
             _sqlconnection = DependencyService.Get<ISQLite>().GetConnection();
-            //if (CountTable<LogDetails>() !=0)
+            //if (CountTable<LogDetails>() != 0)
             //{
             //    DeleteAll();
             //}

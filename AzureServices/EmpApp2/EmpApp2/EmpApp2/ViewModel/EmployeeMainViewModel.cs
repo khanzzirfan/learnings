@@ -119,10 +119,20 @@ namespace EmpApp2.ViewModel
             try
             {
                 if (btnName == login)
+                {
                     btnName = logOut;
+                    ClockService.Clock(phoneNumber, LogType.In);
+                }
                 else
+                {
                     btnName = login;
+                    ClockService.Clock(phoneNumber, LogType.Out);
+                }
+
+
+                //Update UI;
                 OnPropertyChanged("BtnName");
+                GetEmployeeDetails(phoneNumber);
             }
             catch (Exception ex)
             {
@@ -164,7 +174,11 @@ namespace EmpApp2.ViewModel
             };
 
             EmpDetails = empDb;
+            //Update UI;
+            OnPropertyChanged("EmpDetails");
         }
+
+        
 
         public IEnumerable<EmployeeLog> GetEmployeeLog(string phone)
         {
