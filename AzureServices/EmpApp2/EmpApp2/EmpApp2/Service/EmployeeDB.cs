@@ -5,6 +5,7 @@ using Xamarin.Forms;
 using EmpApp2.Model;
 using System;
 using EmpApp2.DL;
+using EmpApp2.Helpers;
 
 namespace EmpApp2.Service
 {
@@ -22,6 +23,11 @@ namespace EmpApp2.Service
         {
             //Getting conection and Creating table
             _sqlconnection = DependencyService.Get<ISQLite>().GetConnection();
+            //if (CountTable<LogDetails>() !=0)
+            //{
+            //    DeleteAll();
+            //}
+
             if (CountTable<LogDetails>() < 1)
             {
                 _sqlconnection.CreateTable<LogDetails>();
@@ -57,7 +63,7 @@ namespace EmpApp2.Service
             {
                 AddEmployee(data);
                 var dlist = seed.EmpLogDetails(data.Id);
-
+                
                 foreach (var d in dlist)
                 {
                     AddEmployeeLog(d);
@@ -137,9 +143,6 @@ namespace EmpApp2.Service
             {
                 try
                 {
-                    var checktableExists = CountTable<LogDetails>();
-                    var list = _sqlconnection.Table<LogDetails>().ToList(); ;
-
                     _sqlconnection.Insert(log);
                 }
                 catch (Exception ex)
@@ -150,5 +153,18 @@ namespace EmpApp2.Service
             }
         }
 
+        public void DeleteAll()
+        {
+            try
+            {
+                var delLogDetails = _sqlconnection.ExecuteScalar<int>("DELETE FROM [LogDetails]");
+                var delEmployee = _sqlconnection.ExecuteScalar<int>("DELETE FROM [Employee]");
+            }
+            catch (Exception ex)
+            {
+                var msg = ex.Message;
+                //throw;
+            }
+        }
     }
 }

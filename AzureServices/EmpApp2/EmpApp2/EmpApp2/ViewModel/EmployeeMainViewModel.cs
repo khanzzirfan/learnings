@@ -22,13 +22,17 @@ namespace EmpApp2.ViewModel
         public const string logOut = "Check Out";
         #endregion
 
+       
         public EmployeeDetails EmpDetails { get; set; }
-        public EmployeeMainViewModel(Page page)
+        public EmployeeMainViewModel(Page page, string phone)
             : base(page)
         {
             Title = "Employee Roll Check";
-            GetEmployeeDetails();
+            phoneNumber = phone;
 
+            if(!string.IsNullOrEmpty(phoneNumber))
+            GetEmployeeDetails(phone);
+            
             BtnName = login;
             EmpDb = new EmployeeDB();
         }
@@ -54,10 +58,10 @@ namespace EmpApp2.ViewModel
             get
             {
                 return getEmployeesCommand ??
-                    (getEmployeesCommand = new Command(async () => await ExecuteEmployeeLogCommand(), () => { return !IsBusy; }));
+                    (getEmployeesCommand = new Command(async () => await ExecuteEmployeeLogCommand(PhoneNumber), () => { return !IsBusy; }));
             }
         }
-        public async Task ExecuteEmployeeLogCommand()
+        public async Task ExecuteEmployeeLogCommand(string phone)
         {
            
             if (IsBusy)
@@ -71,7 +75,7 @@ namespace EmpApp2.ViewModel
            
             try
             {
-                var empList = GetEmployeeLog();
+                var empList = GetEmployeeLog(phone);
                 var empDb = new EmployeeDetails() {
                     EmpID = 1,
                     EmpName = "James CodeNutz",
@@ -138,22 +142,31 @@ namespace EmpApp2.ViewModel
             set{SetProperty(ref btnName, value);}
         }
 
-        public void GetEmployeeDetails()
+        private string phoneNumber;
+        public string PhoneNumber
         {
-            var empList = GetEmployeeLog();
+            get { return phoneNumber; }
+            set { SetProperty(ref phoneNumber, value); }
+        }
+
+        public void GetEmployeeDetails(string phone)
+        {
+            var empList = GetEmployeeLog(phone);
+            var emp = EmpDb.GetEmployeeDetails().FirstOrDefault(c => c.Phone == phone);
+
             var empDb = new EmployeeDetails()
             {
-                EmpID = 1,
-                EmpName = "James CodeNutz",
-                JobTitle = "Xam Developer",
-                ThumbUrl = flkr_image1,
+                EmpID = emp.Id,
+                EmpName = emp.Name,
+                JobTitle = emp.JobTitle,
+                ThumbUrl = emp.ThumbUrl,
                 EmployeeLogs = empList.ToList(),
             };
 
             EmpDetails = empDb;
         }
 
-        public IEnumerable<EmployeeLog> GetEmployeeLog()
+        public IEnumerable<EmployeeLog> GetEmployeeLog(string phone)
         {
             EmpDb = new EmployeeDB();
             var dCurrent = DateTime.Now;
@@ -161,7 +174,11 @@ namespace EmpApp2.ViewModel
             try
             {
                 var IempLogs = EmpDb.GetEmployeeLogList();
-                var empLogs = IempLogs.Where(c => c.EmpId == 1).ToList();
+                var empDetails = EmpDb.GetEmployeeDetails();
+                var firstEmp = empDetails.FirstOrDefault(c => c.Phone == phone);
+                var empId = firstEmp.Id;
+                
+                var empLogs = IempLogs.Where(c => c.EmpId == empId).ToList();
 
                 var emplogDetails = empLogs.Select(c => new EmployeeLog()
                 {
@@ -169,15 +186,13 @@ namespace EmpApp2.ViewModel
                     LogTime = Convert.ToDateTime(c.LogTime),
                     LogType = c.LogType
                 }).ToList();
-                empsorted = emplogDetails.OrderByDescending(c => c.LogTime).ToList();
+
+                empsorted = emplogDetails.OrderByDescending(c => c.LogTime.Value).ToList();
             }
             catch (Exception ex)
             {
                 string msg = ex.Message;
             }
-
-            
-
             
             return empsorted;
         }
@@ -189,8 +204,6 @@ namespace EmpApp2.ViewModel
         //    var sorted = (from emp in EmpDetails.EmployeeLogs
         //                 orderby emp.LogTime descending
         //                 select emp).ToList<EmployeeLog>();
-
-
 
         //}
 

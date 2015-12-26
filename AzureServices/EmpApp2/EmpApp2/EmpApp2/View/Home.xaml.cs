@@ -15,7 +15,7 @@ namespace EmpApp2.View
             InitializeComponent();
             BtnGo.Clicked += async (sender, e) =>
              {
-                 await Navigation.PushAsync(new EmployeeMainPage());
+                 await Navigation.PushAsync(new EmployeeMainPage("505 585 456"));
              };
 
             ButtonAdmin.Clicked += async (sender, e) => {

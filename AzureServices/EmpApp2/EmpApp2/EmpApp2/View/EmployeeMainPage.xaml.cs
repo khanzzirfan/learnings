@@ -12,11 +12,11 @@ namespace EmpApp2.View
     public partial class EmployeeMainPage : ContentPage
     {
         public EmployeeMainViewModel viewModel;
-        public EmployeeMainPage()
+        
+        public EmployeeMainPage(string phone)
         {
             InitializeComponent();
-            BindingContext = viewModel = new EmployeeMainViewModel(this);
-            
+            BindingContext = viewModel = new EmployeeMainViewModel(this, phone);
         }
 
         protected override void OnAppearing()
@@ -25,12 +25,12 @@ namespace EmpApp2.View
             if (viewModel.EmpDetails!=null || viewModel.IsBusy)
                 return;
 
-            viewModel.GetEmployeesCommand.Execute(null);
+            //viewModel.GetEmployeesCommand.Execute(null);
         }
 
         public async void OnItemSelected(object sender, ItemTappedEventArgs args)
         {
-
+            list.SelectedItem = null;
         }
 
     }
