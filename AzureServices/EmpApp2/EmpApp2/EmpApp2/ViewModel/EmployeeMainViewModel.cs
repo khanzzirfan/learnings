@@ -27,7 +27,7 @@ namespace EmpApp2.ViewModel
         public EmployeeMainViewModel(Page page, string phone)
             : base(page)
         {
-            Title = "Employee Roll Check";
+            Title = "Employee Roll Checker";
             phoneNumber = phone;
 
             if(!string.IsNullOrEmpty(phoneNumber))
@@ -41,13 +41,13 @@ namespace EmpApp2.ViewModel
             : base(device)
         {
             Message = String.Format("Hello Xamarin Forms Labs MVVM Basics!! How is your {0} device", device.Manufacturer);
-            Title = "Employee Roll Check";
+            Title = "Employee Roll Checker";
             Message = "Employee Roll Check";
             EmpDb = new EmployeeDB();
         }
         public EmployeeMainViewModel()
         {
-            Title = "Employee Roll Check";
+            Title = "Employee Roll Checker";
             Message = "Employee Roll Check";
             EmpDb = new EmployeeDB();
         }

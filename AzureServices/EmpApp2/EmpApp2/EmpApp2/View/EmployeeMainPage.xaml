@@ -50,7 +50,7 @@
              WidthRequest="150"
              HorizontalOptions="Start"
              VerticalOptions ="Start"
-             BorderColor="#3498DB"
+             BorderColor="#FFFFFF"
              BorderThickness="4">
                   <controls:CircleImage.Source>
                     <UriImageSource Uri="{Binding EmpDetails.ImageUri}"
@@ -68,7 +68,8 @@
                  VerticalOptions="Center"
                  HorizontalOptions="Center"
                  FontSize="Medium"
-                 TextColor="White"
+                 TextColor="Black"
+                 FontAttributes="Bold"
                  Text="{Binding EmpDetails.EmpName}"/>
           </StackLayout>
          
@@ -78,14 +79,15 @@
               VerticalOptions="Center"
               HorizontalOptions="Center"
               FontSize="Medium"
-              TextColor="White"
+              TextColor="Black"
+              FontAttributes="Bold"
               Text="{Binding EmpDetails.JobTitle}"/>
 
           <Button
              x:Name="BtnLogin"
              Grid.Row="2"
              Grid.Column="1"
-             BackgroundColor="#3498DB"
+             BackgroundColor="#FFA500"
              BorderRadius="0"
              TextColor="White"
              Command="{Binding CheckInCommand}"

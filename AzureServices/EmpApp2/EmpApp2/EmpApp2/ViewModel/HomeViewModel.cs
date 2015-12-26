@@ -14,13 +14,14 @@ namespace EmpApp2.ViewModel
             : base(page)
         {
             IsBusy = true;
+            Title = "Employee Roll Checker";
         }
 
         public HomeViewModel(IDevice device)
             : base(device)
         {
             Message = String.Format("Hello Xamarin Forms Labs MVVM Basics!! How is your {0} device", device.Manufacturer);
-            Title = "EmployeeApp";
+            Title = "Employee Roll Checker";
             Message = "HomeModel";
             IsBusy = true;
 
@@ -37,7 +38,7 @@ namespace EmpApp2.ViewModel
 
         public HomeViewModel()
         {
-            Title = "EmployeeApp";
+            Title = "Employee Roll Checker";
             Message = "HomeModel";
             IsBusy = true;
 

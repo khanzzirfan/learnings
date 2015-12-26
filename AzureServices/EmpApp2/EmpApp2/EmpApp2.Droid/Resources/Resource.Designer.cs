@@ -4010,32 +4010,68 @@ namespace EmpApp2.Droid
 		public partial class Color
 		{
 			
-			// aapt resource value: 0x7f080052
-			public const int abc_background_cache_hint_selector_material_dark = 2131230802;
+			// aapt resource value: 0x7f080069
+			public const int AppBlue = 2131230825;
 			
-			// aapt resource value: 0x7f080053
-			public const int abc_background_cache_hint_selector_material_light = 2131230803;
+			// aapt resource value: 0x7f080072
+			public const int CustomWhite1 = 2131230834;
 			
-			// aapt resource value: 0x7f080054
-			public const int abc_color_highlight_material = 2131230804;
+			// aapt resource value: 0x7f080073
+			public const int Customgrey1 = 2131230835;
+			
+			// aapt resource value: 0x7f080057
+			public const int DarkGrey = 2131230807;
+			
+			// aapt resource value: 0x7f080056
+			public const int DimGrey = 2131230806;
+			
+			// aapt resource value: 0x7f080055
+			public const int LightGrey = 2131230805;
+			
+			// aapt resource value: 0x7f08008e
+			public const int MainPage_DarkRed = 2131230862;
+			
+			// aapt resource value: 0x7f08008f
+			public const int MainPage_DarkRed2 = 2131230863;
+			
+			// aapt resource value: 0x7f080090
+			public const int MainPage_DarkRedGradient = 2131230864;
+			
+			// aapt resource value: 0x7f08008d
+			public const int MainPage_Maroon = 2131230861;
+			
+			// aapt resource value: 0x7f08005b
+			public const int Saddle_Brown = 2131230811;
+			
+			// aapt resource value: 0x7f080058
+			public const int Silver = 2131230808;
+			
+			// aapt resource value: 0x7f080095
+			public const int abc_background_cache_hint_selector_material_dark = 2131230869;
+			
+			// aapt resource value: 0x7f080096
+			public const int abc_background_cache_hint_selector_material_light = 2131230870;
+			
+			// aapt resource value: 0x7f080097
+			public const int abc_color_highlight_material = 2131230871;
 			
 			// aapt resource value: 0x7f080004
 			public const int abc_input_method_navigation_guard = 2131230724;
 			
-			// aapt resource value: 0x7f080055
-			public const int abc_primary_text_disable_only_material_dark = 2131230805;
+			// aapt resource value: 0x7f080098
+			public const int abc_primary_text_disable_only_material_dark = 2131230872;
 			
-			// aapt resource value: 0x7f080056
-			public const int abc_primary_text_disable_only_material_light = 2131230806;
+			// aapt resource value: 0x7f080099
+			public const int abc_primary_text_disable_only_material_light = 2131230873;
 			
-			// aapt resource value: 0x7f080057
-			public const int abc_primary_text_material_dark = 2131230807;
+			// aapt resource value: 0x7f08009a
+			public const int abc_primary_text_material_dark = 2131230874;
 			
-			// aapt resource value: 0x7f080058
-			public const int abc_primary_text_material_light = 2131230808;
+			// aapt resource value: 0x7f08009b
+			public const int abc_primary_text_material_light = 2131230875;
 			
-			// aapt resource value: 0x7f080059
-			public const int abc_search_url_text = 2131230809;
+			// aapt resource value: 0x7f08009c
+			public const int abc_search_url_text = 2131230876;
 			
 			// aapt resource value: 0x7f080005
 			public const int abc_search_url_text_normal = 2131230725;
@@ -4046,17 +4082,35 @@ namespace EmpApp2.Droid
 			// aapt resource value: 0x7f080007
 			public const int abc_search_url_text_selected = 2131230727;
 			
-			// aapt resource value: 0x7f08005a
-			public const int abc_secondary_text_material_dark = 2131230810;
+			// aapt resource value: 0x7f08009d
+			public const int abc_secondary_text_material_dark = 2131230877;
 			
-			// aapt resource value: 0x7f08005b
-			public const int abc_secondary_text_material_light = 2131230811;
+			// aapt resource value: 0x7f08009e
+			public const int abc_secondary_text_material_light = 2131230878;
+			
+			// aapt resource value: 0x7f080054
+			public const int accent = 2131230804;
 			
 			// aapt resource value: 0x7f080008
 			public const int accent_material_dark = 2131230728;
 			
 			// aapt resource value: 0x7f080009
 			public const int accent_material_light = 2131230729;
+			
+			// aapt resource value: 0x7f080092
+			public const int actionbar_navy = 2131230866;
+			
+			// aapt resource value: 0x7f080093
+			public const int actionbar_navy2 = 2131230867;
+			
+			// aapt resource value: 0x7f08007b
+			public const int appWhite = 2131230843;
+			
+			// aapt resource value: 0x7f08006f
+			public const int aqua = 2131230831;
+			
+			// aapt resource value: 0x7f08005e
+			public const int background = 2131230814;
 			
 			// aapt resource value: 0x7f08000a
 			public const int background_floating_material_dark = 2131230730;
@@ -4069,6 +4123,15 @@ namespace EmpApp2.Droid
 			
 			// aapt resource value: 0x7f08000d
 			public const int background_material_light = 2131230733;
+			
+			// aapt resource value: 0x7f080065
+			public const int black = 2131230821;
+			
+			// aapt resource value: 0x7f080060
+			public const int bluedark = 2131230816;
+			
+			// aapt resource value: 0x7f08005f
+			public const int bluelight = 2131230815;
 			
 			// aapt resource value: 0x7f08000e
 			public const int bright_foreground_disabled_material_dark = 2131230734;
@@ -4093,6 +4156,12 @@ namespace EmpApp2.Droid
 			
 			// aapt resource value: 0x7f080015
 			public const int button_material_light = 2131230741;
+			
+			// aapt resource value: 0x7f08006c
+			public const int buttonblue = 2131230828;
+			
+			// aapt resource value: 0x7f08007a
+			public const int cWhite = 2131230842;
 			
 			// aapt resource value: 0x7f080047
 			public const int calendar_active_month_bg = 2131230791;
@@ -4124,8 +4193,8 @@ namespace EmpApp2.Droid
 			// aapt resource value: 0x7f080050
 			public const int calendar_text_selected = 2131230800;
 			
-			// aapt resource value: 0x7f08005c
-			public const int calendar_text_selector = 2131230812;
+			// aapt resource value: 0x7f08009f
+			public const int calendar_text_selector = 2131230879;
 			
 			// aapt resource value: 0x7f080051
 			public const int calendar_text_unselectable = 2131230801;
@@ -4141,6 +4210,27 @@ namespace EmpApp2.Droid
 			
 			// aapt resource value: 0x7f080003
 			public const int cardview_shadow_start_color = 2131230723;
+			
+			// aapt resource value: 0x7f080094
+			public const int color_action_bar = 2131230868;
+			
+			// aapt resource value: 0x7f080076
+			public const int dark_garyV3 = 2131230838;
+			
+			// aapt resource value: 0x7f080074
+			public const int dark_grayV1 = 2131230836;
+			
+			// aapt resource value: 0x7f080075
+			public const int dark_grayV2 = 2131230837;
+			
+			// aapt resource value: 0x7f080071
+			public const int darkgrey1 = 2131230833;
+			
+			// aapt resource value: 0x7f08007e
+			public const int davys_gray = 2131230846;
+			
+			// aapt resource value: 0x7f08007f
+			public const int deep_sparkle = 2131230847;
 			
 			// aapt resource value: 0x7f08003e
 			public const int design_fab_shadow_end_color = 2131230782;
@@ -4181,11 +4271,47 @@ namespace EmpApp2.Droid
 			// aapt resource value: 0x7f080019
 			public const int dim_foreground_material_light = 2131230745;
 			
+			// aapt resource value: 0x7f08007d
+			public const int dim_gray = 2131230845;
+			
+			// aapt resource value: 0x7f08006d
+			public const int dskyblue = 2131230829;
+			
+			// aapt resource value: 0x7f08006e
+			public const int dskyblue1 = 2131230830;
+			
+			// aapt resource value: 0x7f080080
+			public const int ebony = 2131230848;
+			
+			// aapt resource value: 0x7f080081
+			public const int feldgrau = 2131230849;
+			
 			// aapt resource value: 0x7f08001a
 			public const int foreground_material_dark = 2131230746;
 			
 			// aapt resource value: 0x7f08001b
 			public const int foreground_material_light = 2131230747;
+			
+			// aapt resource value: 0x7f080059
+			public const int gainsboro = 2131230809;
+			
+			// aapt resource value: 0x7f080085
+			public const int genre = 2131230853;
+			
+			// aapt resource value: 0x7f08006a
+			public const int goldrod = 2131230826;
+			
+			// aapt resource value: 0x7f080083
+			public const int goshtWhite = 2131230851;
+			
+			// aapt resource value: 0x7f080062
+			public const int greendark = 2131230818;
+			
+			// aapt resource value: 0x7f080061
+			public const int greenlight = 2131230817;
+			
+			// aapt resource value: 0x7f08005d
+			public const int grey = 2131230813;
 			
 			// aapt resource value: 0x7f08001c
 			public const int highlighted_text_material_dark = 2131230748;
@@ -4193,11 +4319,32 @@ namespace EmpApp2.Droid
 			// aapt resource value: 0x7f08001d
 			public const int highlighted_text_material_light = 2131230749;
 			
+			// aapt resource value: 0x7f080078
+			public const int hint_bg = 2131230840;
+			
 			// aapt resource value: 0x7f08001e
 			public const int hint_foreground_material_dark = 2131230750;
 			
 			// aapt resource value: 0x7f08001f
 			public const int hint_foreground_material_light = 2131230751;
+			
+			// aapt resource value: 0x7f08006b
+			public const int lightblue = 2131230827;
+			
+			// aapt resource value: 0x7f080087
+			public const int list_divider = 2131230855;
+			
+			// aapt resource value: 0x7f080089
+			public const int list_row_end_color = 2131230857;
+			
+			// aapt resource value: 0x7f08008b
+			public const int list_row_hover_end_color = 2131230859;
+			
+			// aapt resource value: 0x7f08008a
+			public const int list_row_hover_start_color = 2131230858;
+			
+			// aapt resource value: 0x7f080088
+			public const int list_row_start_color = 2131230856;
 			
 			// aapt resource value: 0x7f080020
 			public const int material_blue_grey_800 = 2131230752;
@@ -4235,6 +4382,18 @@ namespace EmpApp2.Droid
 			// aapt resource value: 0x7f08002b
 			public const int material_grey_900 = 2131230763;
 			
+			// aapt resource value: 0x7f080064
+			public const int orangedark = 2131230820;
+			
+			// aapt resource value: 0x7f080063
+			public const int orangelight = 2131230819;
+			
+			// aapt resource value: 0x7f080052
+			public const int primary = 2131230802;
+			
+			// aapt resource value: 0x7f080053
+			public const int primary_dark = 2131230803;
+			
 			// aapt resource value: 0x7f08002c
 			public const int primary_dark_material_dark = 2131230764;
 			
@@ -4259,11 +4418,17 @@ namespace EmpApp2.Droid
 			// aapt resource value: 0x7f080033
 			public const int primary_text_disabled_material_light = 2131230771;
 			
+			// aapt resource value: 0x7f080079
+			public const int relativeDivider = 2131230841;
+			
 			// aapt resource value: 0x7f080034
 			public const int ripple_material_dark = 2131230772;
 			
 			// aapt resource value: 0x7f080035
 			public const int ripple_material_light = 2131230773;
+			
+			// aapt resource value: 0x7f080070
+			public const int seagreen = 2131230832;
 			
 			// aapt resource value: 0x7f080036
 			public const int secondary_text_default_material_dark = 2131230774;
@@ -4277,23 +4442,59 @@ namespace EmpApp2.Droid
 			// aapt resource value: 0x7f080039
 			public const int secondary_text_disabled_material_light = 2131230777;
 			
+			// aapt resource value: 0x7f080077
+			public const int silver_v1 = 2131230839;
+			
+			// aapt resource value: 0x7f080084
+			public const int silverv2 = 2131230852;
+			
+			// aapt resource value: 0x7f080066
+			public const int skyblue = 2131230822;
+			
+			// aapt resource value: 0x7f08005a
+			public const int snow = 2131230810;
+			
+			// aapt resource value: 0x7f08007c
+			public const int sonic_silver = 2131230844;
+			
+			// aapt resource value: 0x7f080067
+			public const int steelblue = 2131230823;
+			
 			// aapt resource value: 0x7f08003a
 			public const int switch_thumb_disabled_material_dark = 2131230778;
 			
 			// aapt resource value: 0x7f08003b
 			public const int switch_thumb_disabled_material_light = 2131230779;
 			
-			// aapt resource value: 0x7f08005d
-			public const int switch_thumb_material_dark = 2131230813;
+			// aapt resource value: 0x7f0800a0
+			public const int switch_thumb_material_dark = 2131230880;
 			
-			// aapt resource value: 0x7f08005e
-			public const int switch_thumb_material_light = 2131230814;
+			// aapt resource value: 0x7f0800a1
+			public const int switch_thumb_material_light = 2131230881;
 			
 			// aapt resource value: 0x7f08003c
 			public const int switch_thumb_normal_material_dark = 2131230780;
 			
 			// aapt resource value: 0x7f08003d
 			public const int switch_thumb_normal_material_light = 2131230781;
+			
+			// aapt resource value: 0x7f080068
+			public const int transparent = 2131230824;
+			
+			// aapt resource value: 0x7f08008c
+			public const int tryBlue1 = 2131230860;
+			
+			// aapt resource value: 0x7f080091
+			public const int tryBlue2 = 2131230865;
+			
+			// aapt resource value: 0x7f080082
+			public const int wenge = 2131230850;
+			
+			// aapt resource value: 0x7f08005c
+			public const int white = 2131230812;
+			
+			// aapt resource value: 0x7f080086
+			public const int year = 2131230854;
 			
 			static Color()
 			{
@@ -4487,6 +4688,24 @@ namespace EmpApp2.Droid
 			
 			// aapt resource value: 0x7f060008
 			public const int abc_text_size_title_material_toolbar = 2131099656;
+			
+			// aapt resource value: 0x7f06006b
+			public const int activity_horizontal_margin = 2131099755;
+			
+			// aapt resource value: 0x7f06006c
+			public const int activity_vertical_margin = 2131099756;
+			
+			// aapt resource value: 0x7f06006d
+			public const int booktableEdittext_height = 2131099757;
+			
+			// aapt resource value: 0x7f06006e
+			public const int booktableEdittext_height2 = 2131099758;
+			
+			// aapt resource value: 0x7f06006f
+			public const int booktableEdittext_heightv3 = 2131099759;
+			
+			// aapt resource value: 0x7f060070
+			public const int buttonview_width = 2131099760;
 			
 			// aapt resource value: 0x7f060066
 			public const int calendar_day_headers_paddingbottom = 2131099750;
@@ -5376,6 +5595,28 @@ namespace EmpApp2.Droid
 			}
 		}
 		
+		public partial class InputType
+		{
+			
+			// aapt resource value: 0x7f0c0001
+			public const int inputType_email = 2131492865;
+			
+			// aapt resource value: 0x7f0c0000
+			public const int inputType_phone = 2131492864;
+			
+			// aapt resource value: 0x7f0c0002
+			public const int inputType_text = 2131492866;
+			
+			static InputType()
+			{
+				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
+			}
+			
+			private InputType()
+			{
+			}
+		}
+		
 		public partial class Integer
 		{
 			
@@ -5393,6 +5634,21 @@ namespace EmpApp2.Droid
 			
 			// aapt resource value: 0x7f0a0005
 			public const int design_snackbar_text_max_lines = 2131361797;
+			
+			// aapt resource value: 0x7f0a000a
+			public const int len_comment = 2131361802;
+			
+			// aapt resource value: 0x7f0a0008
+			public const int len_email = 2131361800;
+			
+			// aapt resource value: 0x7f0a0009
+			public const int len_name = 2131361801;
+			
+			// aapt resource value: 0x7f0a0007
+			public const int len_phone = 2131361799;
+			
+			// aapt resource value: 0x7f0a0006
+			public const int max_length = 2131361798;
 			
 			// aapt resource value: 0x7f0a0004
 			public const int status_bar_notification_info_maxnum = 2131361796;
@@ -5588,6 +5844,9 @@ namespace EmpApp2.Droid
 			// aapt resource value: 0x7f05001e
 			public const int Hello = 2131034142;
 			
+			// aapt resource value: 0x7f05002e
+			public const int Separator = 2131034158;
+			
 			// aapt resource value: 0x7f05000b
 			public const int abc_action_bar_home_description = 2131034123;
 			
@@ -5642,17 +5901,56 @@ namespace EmpApp2.Droid
 			// aapt resource value: 0x7f05001d
 			public const int appbar_scrolling_view_behavior = 2131034141;
 			
+			// aapt resource value: 0x7f05002f
+			public const int bookDate = 2131034159;
+			
+			// aapt resource value: 0x7f050034
+			public const int bookEmail = 2131034164;
+			
+			// aapt resource value: 0x7f050031
+			public const int bookGuests = 2131034161;
+			
+			// aapt resource value: 0x7f050032
+			public const int bookName = 2131034162;
+			
+			// aapt resource value: 0x7f050033
+			public const int bookPhone = 2131034163;
+			
+			// aapt resource value: 0x7f050030
+			public const int bookTime = 2131034160;
+			
 			// aapt resource value: 0x7f050021
 			public const int day_name_format = 2131034145;
 			
+			// aapt resource value: 0x7f050035
+			public const int dividerColor = 2131034165;
+			
+			// aapt resource value: 0x7f050036
+			public const int dividerHeight = 2131034166;
+			
+			// aapt resource value: 0x7f05003a
+			public const int emailsTab = 2131034170;
+			
 			// aapt resource value: 0x7f050024
 			public const int full_date_format = 2131034148;
+			
+			// aapt resource value: 0x7f050038
+			public const int generalTab = 2131034168;
 			
 			// aapt resource value: 0x7f050022
 			public const int invalid_date = 2131034146;
 			
 			// aapt resource value: 0x7f050020
 			public const int library_name = 2131034144;
+			
+			// aapt resource value: 0x7f050025
+			public const int linkedin = 2131034149;
+			
+			// aapt resource value: 0x7f05003b
+			public const int logHistoryTab = 2131034171;
+			
+			// aapt resource value: 0x7f050026
+			public const int menu_settings = 2131034150;
 			
 			// aapt resource value: 0x7f050023
 			public const int month_name_format = 2131034147;
@@ -5692,6 +5990,33 @@ namespace EmpApp2.Droid
 			
 			// aapt resource value: 0x7f05001c
 			public const int status_bar_notification_info_overflow = 2131034140;
+			
+			// aapt resource value: 0x7f050028
+			public const int strCity = 2131034152;
+			
+			// aapt resource value: 0x7f05002a
+			public const int strTemp = 2131034154;
+			
+			// aapt resource value: 0x7f050029
+			public const int strWeather = 2131034153;
+			
+			// aapt resource value: 0x7f05002c
+			public const int strWindSpeed = 2131034156;
+			
+			// aapt resource value: 0x7f050039
+			public const int tasksTab = 2131034169;
+			
+			// aapt resource value: 0x7f050027
+			public const int title_activity_weather = 2131034151;
+			
+			// aapt resource value: 0x7f05002b
+			public const int txtTemp = 2131034155;
+			
+			// aapt resource value: 0x7f05002d
+			public const int txtWindSpeed = 2131034157;
+			
+			// aapt resource value: 0x7f050037
+			public const int whatson_tab_label = 2131034167;
 			
 			static String()
 			{
@@ -6155,6 +6480,18 @@ namespace EmpApp2.Droid
 			
 			// aapt resource value: 0x7f070006
 			public const int CardView_Light = 2131165190;
+			
+			// aapt resource value: 0x7f070149
+			public const int MyTheme = 2131165513;
+			
+			// aapt resource value: 0x7f07014b
+			public const int MyTheme_ActionBar_TitleTextStyle = 2131165515;
+			
+			// aapt resource value: 0x7f07014a
+			public const int MyTheme_ActionBarStyle = 2131165514;
+			
+			// aapt resource value: 0x7f070148
+			public const int MyTheme_Base = 2131165512;
 			
 			// aapt resource value: 0x7f070016
 			public const int Platform_AppCompat = 2131165206;

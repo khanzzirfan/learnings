@@ -17,17 +17,17 @@ namespace EmpApp2.ViewModel
         public LoginViewModel(Page page)
             : base(page)
         {
-            Title = "Employee Roll Check";
+            Title = "Employee Roll Checker";
         }
 
         public LoginViewModel(IDevice device)
             : base(device)
         {
-            Title = "Employee Roll Check";
+            Title = "Employee Roll Checker";
         }
         public LoginViewModel()
         {
-            Title = "Employee Roll Check";
+            Title = "Employee Roll Checker";
         }
 
 

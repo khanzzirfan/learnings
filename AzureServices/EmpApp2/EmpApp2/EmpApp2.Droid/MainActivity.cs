@@ -10,10 +10,12 @@ using Android.OS;
 using EmpApp2.ViewModel;
 using XLabs.Ioc;
 using XLabs.Platform.Device;
+using Android.Graphics.Drawables;
+using ImageCircle.Forms.Plugin.Droid;
 
 namespace EmpApp2.Droid
 {
-    [Activity(Label = "EmpApp2", Icon = "@drawable/icon", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
+    [Activity(Label = "Employee Roll Checker", Icon = "@drawable/icon", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsApplicationActivity
     {
         protected override void OnCreate(Bundle bundle)
@@ -24,6 +26,8 @@ namespace EmpApp2.Droid
             if (!Resolver.IsSet) SetIoc();
 
             LoadApplication(new App());
+            ImageCircleRenderer.Init();
+            ActionBar.SetIcon(new ColorDrawable(Resources.GetColor(Android.Resource.Color.Transparent)));
         }
 
         private void SetIoc()
