@@ -7,6 +7,7 @@ using UIKit;
 using XLabs.Ioc;
 using EmpApp2.ViewModel;
 using XLabs.Platform.Device;
+using ImageCircle.Forms.Plugin.iOS;
 
 namespace EmpApp2.iOS
 {
@@ -25,10 +26,19 @@ namespace EmpApp2.iOS
         //
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
+            UINavigationBar.Appearance.BarTintColor = UIColor.FromRGB(43, 132, 211); //bar background
+            UINavigationBar.Appearance.TintColor = UIColor.White; //Tint color of button items
+            UINavigationBar.Appearance.SetTitleTextAttributes(new UITextAttributes()
+            {
+                Font = UIFont.FromName("HelveticaNeue-Light", (nfloat)20f),
+                TextColor = UIColor.White
+            });
+
             global::Xamarin.Forms.Forms.Init();
             if (!Resolver.IsSet)
                 SetIoc();
 
+            ImageCircleRenderer.Init();
             LoadApplication(new App());
 
             return base.FinishedLaunching(app, options);

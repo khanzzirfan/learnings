@@ -167,7 +167,6 @@
     <AndroidResource Include="Resources\drawable\vlogodesign.jpg" />
     <AndroidResource Include="Resources\drawable\empImage.png" />
     <AndroidResource Include="Resources\values\colors.xml" />
-    <AndroidResource Include="Resources\values\Strings.xml" />
     <AndroidResource Include="Resources\values\styles.xml" />
     <AndroidResource Include="Resources\values-v21\styles.xml" />
   </ItemGroup>
