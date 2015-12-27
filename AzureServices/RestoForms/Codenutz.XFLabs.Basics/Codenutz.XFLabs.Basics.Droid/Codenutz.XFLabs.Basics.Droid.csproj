@@ -203,6 +203,7 @@
     <AndroidResource Include="Resources\values\colors.xml" />
     <AndroidResource Include="Resources\values-v21\styles.xml" />
     <AndroidResource Include="Resources\values\Strings.xml" />
+    <AndroidResource Include="Resources\values\theme.xml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Codenutz.XFLabs.Basics\Codenutz.XFLabs.Basics.csproj">

@@ -1,6 +1,7 @@
 ﻿using Autofac;
 using Codenutz.XFLabs.Basics.ViewModel;
 using Foundation;
+using ImageCircle.Forms.Plugin.iOS;
 using UIKit;
 using XLabs.Ioc;
 using XLabs.Ioc.Autofac;
@@ -16,12 +17,20 @@ namespace Codenutz.XFLabs.Basics.iOS
 	{
 		public override bool FinishedLaunching(UIApplication app, NSDictionary options)
 		{
-			global::Xamarin.Forms.Forms.Init();
+            UINavigationBar.Appearance.BarTintColor = UIColor.FromRGB(43, 132, 211); //bar background
+            UINavigationBar.Appearance.TintColor = UIColor.White; //Tint color of button items
+            UINavigationBar.Appearance.SetTitleTextAttributes(new UITextAttributes()
+            {
+                Font = UIFont.FromName("HelveticaNeue-Light", (nfloat)20f),
+                TextColor = UIColor.White
+            });
+            global::Xamarin.Forms.Forms.Init();
 
 			if (!Resolver.IsSet)
 				SetIoc();
 
-			LoadApplication(new App());
+            ImageCircleRenderer.Init();
+            LoadApplication(new App());
 
 			return base.FinishedLaunching(app, options);
 		}

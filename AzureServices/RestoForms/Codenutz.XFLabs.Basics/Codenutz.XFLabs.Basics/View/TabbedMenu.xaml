@@ -9,8 +9,8 @@
   
   <TabbedPage.ItemTemplate>
     <DataTemplate>
-      <ContentPage Title="{Binding MenuCategory}" Icon="monkeyicon.png">
-        <StackLayout Padding="0,2,0,2" Spacing="0" BackgroundColor="#f4f4f4">
+      <ContentPage Title="{Binding MenuCategory}" Icon="monkeyicon.png" BackgroundColor="Gray">
+        <StackLayout Padding="0,2,0,2" Spacing="0">
           <ListView x:Name="list" ItemsSource="{Binding MenuList}"
                  ItemTapped="OnItemSelected"
                  VerticalOptions="FillAndExpand"

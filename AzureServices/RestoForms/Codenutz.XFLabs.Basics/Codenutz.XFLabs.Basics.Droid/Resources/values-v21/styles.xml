@@ -2,9 +2,9 @@
 <resources>
   <style name="MyTheme" parent="@android:style/Theme.Material.Light.DarkActionBar">
     <item name="android:windowBackground">@android:color/white</item>
-    <item name="android:colorPrimaryDark">#2b3b45</item>
-    <item name="android:colorPrimary">#33393D</item>
-    <item name="android:colorAccent">#FF4081</item>
+    <item name="android:colorPrimaryDark">@color/primary_dark</item>
+    <item name="android:colorPrimary">@color/primary</item>
+    <item name="android:colorAccent">@color/accent</item>
     <item name="android:windowContentTransitions">true</item>
     <item name="android:windowAllowEnterTransitionOverlap">true</item>
     <item name="android:windowAllowReturnTransitionOverlap">true</item>

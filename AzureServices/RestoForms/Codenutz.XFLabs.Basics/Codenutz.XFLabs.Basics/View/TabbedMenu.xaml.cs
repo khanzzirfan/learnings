@@ -48,7 +48,6 @@ namespace Codenutz.XFLabs.Basics.View
             var v = new MenuViewModel(this, "");
             var source = v.MenuCollection;
             this.ItemsSource = source;
-
             BindingContext = viewModel = new MenuViewModel(this, "");
         }
 
