@@ -6,6 +6,8 @@ using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 using Codenutz.XFLabs.Basics.Model;
+using XLabs.Platform.Device;
+
 namespace Codenutz.XFLabs.Basics.ViewModel
 {
     public class RestaurantViewModel : BaseViewModel
@@ -24,6 +26,14 @@ namespace Codenutz.XFLabs.Basics.ViewModel
             //this.ExecuteGetRestoDetails();
             RestoPage = GetRestoPage().FirstOrDefault();
         }
+
+        public RestaurantViewModel(IDevice device):base(device)
+        {
+            Message = String.Format("Hello Xamarin Forms Labs MVVM Basics!! How is your {0} device", device.Manufacturer);
+        }
+
+        public RestaurantViewModel()
+        { }
 
         private async Task ExecuteGetRestoDetails()
         {

@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
+using XLabs.Platform.Device;
 
 namespace Codenutz.XFLabs.Basics.ViewModel
 {
@@ -30,6 +31,14 @@ namespace Codenutz.XFLabs.Basics.ViewModel
             this.ExecuteGetStoresCommand();
 
         }
+
+        public SearchViewModel(IDevice device):base(device)
+        {
+            Message = String.Format("Hello Xamarin Forms Labs MVVM Basics!! How is your {0} device", device.Manufacturer);
+        }
+
+        public SearchViewModel()
+        { }
         private string _mainText = string.Empty;
         public string MainText
         {

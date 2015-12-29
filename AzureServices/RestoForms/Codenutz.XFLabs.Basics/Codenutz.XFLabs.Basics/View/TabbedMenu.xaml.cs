@@ -32,6 +32,7 @@ namespace Codenutz.XFLabs.Basics.View
                 Order = ToolbarItemOrder.Primary,
                 Icon = "ic_action_info.png",
                 Priority = 1,
+                
                 Command = new Command(() => this.LoadStorePage(restoName)),
                
             });

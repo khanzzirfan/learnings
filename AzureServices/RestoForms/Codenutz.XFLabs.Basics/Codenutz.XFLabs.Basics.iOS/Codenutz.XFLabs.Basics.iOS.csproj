@@ -247,10 +247,10 @@
     <BundleResource Include="Resources\dine2.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\ic_action_info.png" />
+    <AndroidResource Include="Resources\ic_action_info.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\ic_action_location.png" />
+    <AndroidResource Include="Resources\ic_action_location.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

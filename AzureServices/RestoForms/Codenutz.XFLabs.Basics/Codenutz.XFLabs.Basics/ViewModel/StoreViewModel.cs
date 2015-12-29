@@ -3,6 +3,8 @@ using Codenutz.XFLabs.Basics.Helpers;
 using Codenutz.XFLabs.Basics.Model;
 using Plugin.ExternalMaps;
 using Plugin.Messaging;
+using XLabs.Platform.Device;
+using System;
 
 namespace Codenutz.XFLabs.Basics.ViewModel
 {
@@ -25,6 +27,14 @@ namespace Codenutz.XFLabs.Basics.ViewModel
         {
             this.Store = store;
         }
+
+        public StoreViewModel(IDevice device):base(device)
+        {
+            Message = String.Format("Hello Xamarin Forms Labs MVVM Basics!! How is your {0} device", device.Manufacturer);
+        }
+
+        public StoreViewModel()
+        { }
 
         Command navigateCommand;
         public Command NavigateCommand

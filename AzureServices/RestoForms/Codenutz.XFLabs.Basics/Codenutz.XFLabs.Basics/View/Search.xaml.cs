@@ -36,7 +36,7 @@ namespace Codenutz.XFLabs.Basics.View
                 return;
 
             //Navigation.PushAsync(new RestaurantPage(searchOption.Title));
-
+            // Navigation.PushAsync(new ReserveTable("My Restaurant"));
             Navigation.PushAsync(new TabbedMenu(searchOption.Title));
             // Reset the selected item
             list.SelectedItem = null;

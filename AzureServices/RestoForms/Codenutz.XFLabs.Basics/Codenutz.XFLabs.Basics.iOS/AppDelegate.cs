@@ -2,6 +2,7 @@
 using Codenutz.XFLabs.Basics.ViewModel;
 using Foundation;
 using ImageCircle.Forms.Plugin.iOS;
+using System;
 using UIKit;
 using XLabs.Ioc;
 using XLabs.Ioc.Autofac;

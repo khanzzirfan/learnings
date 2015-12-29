@@ -9,6 +9,7 @@ using Xamarin.Forms;
 using System.Windows.Input;
 using System.ComponentModel;
 using XLabs.Forms.Mvvm;
+using XLabs.Platform.Device;
 
 namespace Codenutz.XFLabs.Basics.ViewModel
 {
@@ -58,6 +59,13 @@ namespace Codenutz.XFLabs.Basics.ViewModel
             //});
         }
 
+        public MenuViewModel(IDevice device):base(device)
+        {
+            Message = String.Format("Hello Xamarin Forms Labs MVVM Basics!! How is your {0} device", device.Manufacturer);
+        }
+
+        public MenuViewModel()
+        { }
 
         private Command getMenuList;
         public Command GetMenuList
