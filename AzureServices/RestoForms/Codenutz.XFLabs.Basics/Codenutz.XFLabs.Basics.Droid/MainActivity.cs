@@ -4,6 +4,7 @@ using Android.Graphics.Drawables;
 using Android.OS;
 using Autofac;
 using Codenutz.XFLabs.Basics.ViewModel;
+using Xamarin.Forms.Platform.Android;
 using XLabs.Forms;
 using XLabs.Ioc;
 using XLabs.Ioc.Autofac;
@@ -13,7 +14,7 @@ namespace Codenutz.XFLabs.Basics.Droid
 {
 	[Activity(Label = "Reserve Table", Icon = "@drawable/icon", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
 	public class MainActivity : XFormsApplicationDroid
-	{
+    {
 		protected override void OnCreate(Bundle bundle)
 		{
 			base.OnCreate(bundle);

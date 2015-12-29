@@ -8,7 +8,7 @@
 	           IsBusy="{Binding IsBusy}"
              >
   <ContentPage.Content>
-    <ScrollView>
+    <ScrollView BackgroundColor="White">
       <Grid Padding="10" RowSpacing="10" ColumnSpacing="10">
         <Grid.RowDefinitions>
           <RowDefinition Height="Auto"/>

@@ -22,9 +22,9 @@
     </ResourceDictionary>
   </ContentPage.Resources>
 
-  <ContentPage.Content Padding="0">
+  <ContentPage.Content Padding="0" BackgroundColor="White">
     <Grid RowSpacing="0"
-          ColumnSpacing="0">
+          ColumnSpacing="0" BackgroundColor="White">
       <Grid.RowDefinitions>
         <RowDefinition Height="3*"/>
         <RowDefinition Height="2*"/>

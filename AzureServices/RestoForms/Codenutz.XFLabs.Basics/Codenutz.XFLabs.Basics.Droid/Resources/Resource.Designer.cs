@@ -2530,41 +2530,41 @@ namespace Codenutz.XFLabs.Basics.Droid
 		public partial class Color
 		{
 			
-			// aapt resource value: 0x7f060077
-			public const int AppBlue = 2131099767;
+			// aapt resource value: 0x7f060074
+			public const int AppBlue = 2131099764;
 			
-			// aapt resource value: 0x7f060080
-			public const int CustomWhite1 = 2131099776;
+			// aapt resource value: 0x7f06007d
+			public const int CustomWhite1 = 2131099773;
 			
-			// aapt resource value: 0x7f060081
-			public const int Customgrey1 = 2131099777;
+			// aapt resource value: 0x7f06007e
+			public const int Customgrey1 = 2131099774;
 			
-			// aapt resource value: 0x7f060065
-			public const int DarkGrey = 2131099749;
-			
-			// aapt resource value: 0x7f060064
-			public const int DimGrey = 2131099748;
-			
-			// aapt resource value: 0x7f060063
-			public const int LightGrey = 2131099747;
-			
-			// aapt resource value: 0x7f060060
-			public const int MainPage_DarkRed = 2131099744;
+			// aapt resource value: 0x7f060062
+			public const int DarkGrey = 2131099746;
 			
 			// aapt resource value: 0x7f060061
-			public const int MainPage_DarkRed2 = 2131099745;
+			public const int DimGrey = 2131099745;
 			
-			// aapt resource value: 0x7f06009c
-			public const int MainPage_DarkRedGradient = 2131099804;
+			// aapt resource value: 0x7f060060
+			public const int LightGrey = 2131099744;
+			
+			// aapt resource value: 0x7f060099
+			public const int MainPage_DarkRed = 2131099801;
+			
+			// aapt resource value: 0x7f06009a
+			public const int MainPage_DarkRed2 = 2131099802;
 			
 			// aapt resource value: 0x7f06009b
-			public const int MainPage_Maroon = 2131099803;
+			public const int MainPage_DarkRedGradient = 2131099803;
 			
-			// aapt resource value: 0x7f060069
-			public const int Saddle_Brown = 2131099753;
+			// aapt resource value: 0x7f060098
+			public const int MainPage_Maroon = 2131099800;
 			
 			// aapt resource value: 0x7f060066
-			public const int Silver = 2131099750;
+			public const int Saddle_Brown = 2131099750;
+			
+			// aapt resource value: 0x7f060063
+			public const int Silver = 2131099747;
 			
 			// aapt resource value: 0x7f0600a0
 			public const int abc_background_cache_hint_selector_material_dark = 2131099808;
@@ -2617,20 +2617,20 @@ namespace Codenutz.XFLabs.Basics.Droid
 			// aapt resource value: 0x7f060013
 			public const int accent_material_light = 2131099667;
 			
+			// aapt resource value: 0x7f06009d
+			public const int actionbar_navy = 2131099805;
+			
 			// aapt resource value: 0x7f06009e
-			public const int actionbar_navy = 2131099806;
+			public const int actionbar_navy2 = 2131099806;
 			
-			// aapt resource value: 0x7f06005f
-			public const int actionbar_navy2 = 2131099743;
+			// aapt resource value: 0x7f060086
+			public const int appWhite = 2131099782;
 			
-			// aapt resource value: 0x7f060089
-			public const int appWhite = 2131099785;
+			// aapt resource value: 0x7f06007a
+			public const int aqua = 2131099770;
 			
-			// aapt resource value: 0x7f06007d
-			public const int aqua = 2131099773;
-			
-			// aapt resource value: 0x7f06006c
-			public const int background = 2131099756;
+			// aapt resource value: 0x7f060069
+			public const int background = 2131099753;
 			
 			// aapt resource value: 0x7f060014
 			public const int background_floating_material_dark = 2131099668;
@@ -2644,14 +2644,14 @@ namespace Codenutz.XFLabs.Basics.Droid
 			// aapt resource value: 0x7f060017
 			public const int background_material_light = 2131099671;
 			
-			// aapt resource value: 0x7f060073
-			public const int black = 2131099763;
+			// aapt resource value: 0x7f060070
+			public const int black = 2131099760;
 			
-			// aapt resource value: 0x7f06006e
-			public const int bluedark = 2131099758;
+			// aapt resource value: 0x7f06006b
+			public const int bluedark = 2131099755;
 			
-			// aapt resource value: 0x7f06006d
-			public const int bluelight = 2131099757;
+			// aapt resource value: 0x7f06006a
+			public const int bluelight = 2131099754;
 			
 			// aapt resource value: 0x7f060018
 			public const int bright_foreground_disabled_material_dark = 2131099672;
@@ -2677,11 +2677,11 @@ namespace Codenutz.XFLabs.Basics.Droid
 			// aapt resource value: 0x7f06001f
 			public const int button_material_light = 2131099679;
 			
-			// aapt resource value: 0x7f06007a
-			public const int buttonblue = 2131099770;
+			// aapt resource value: 0x7f060077
+			public const int buttonblue = 2131099767;
 			
-			// aapt resource value: 0x7f060088
-			public const int cWhite = 2131099784;
+			// aapt resource value: 0x7f060085
+			public const int cWhite = 2131099781;
 			
 			// aapt resource value: 0x7f060051
 			public const int calendar_active_month_bg = 2131099729;
@@ -2770,23 +2770,23 @@ namespace Codenutz.XFLabs.Basics.Droid
 			// aapt resource value: 0x7f0600ac
 			public const int common_signin_btn_text_light = 2131099820;
 			
-			// aapt resource value: 0x7f060084
-			public const int dark_garyV3 = 2131099780;
-			
-			// aapt resource value: 0x7f060082
-			public const int dark_grayV1 = 2131099778;
-			
-			// aapt resource value: 0x7f060083
-			public const int dark_grayV2 = 2131099779;
+			// aapt resource value: 0x7f060081
+			public const int dark_garyV3 = 2131099777;
 			
 			// aapt resource value: 0x7f06007f
-			public const int darkgrey1 = 2131099775;
+			public const int dark_grayV1 = 2131099775;
 			
-			// aapt resource value: 0x7f06008c
-			public const int davys_gray = 2131099788;
+			// aapt resource value: 0x7f060080
+			public const int dark_grayV2 = 2131099776;
 			
-			// aapt resource value: 0x7f06008d
-			public const int deep_sparkle = 2131099789;
+			// aapt resource value: 0x7f06007c
+			public const int darkgrey1 = 2131099772;
+			
+			// aapt resource value: 0x7f060089
+			public const int davys_gray = 2131099785;
+			
+			// aapt resource value: 0x7f06008a
+			public const int deep_sparkle = 2131099786;
 			
 			// aapt resource value: 0x7f060048
 			public const int design_fab_shadow_end_color = 2131099720;
@@ -2827,23 +2827,20 @@ namespace Codenutz.XFLabs.Basics.Droid
 			// aapt resource value: 0x7f060023
 			public const int dim_foreground_material_light = 2131099683;
 			
+			// aapt resource value: 0x7f060088
+			public const int dim_gray = 2131099784;
+			
+			// aapt resource value: 0x7f060078
+			public const int dskyblue = 2131099768;
+			
+			// aapt resource value: 0x7f060079
+			public const int dskyblue1 = 2131099769;
+			
 			// aapt resource value: 0x7f06008b
-			public const int dim_gray = 2131099787;
+			public const int ebony = 2131099787;
 			
-			// aapt resource value: 0x7f06007b
-			public const int dskyblue = 2131099771;
-			
-			// aapt resource value: 0x7f06007c
-			public const int dskyblue1 = 2131099772;
-			
-			// aapt resource value: 0x7f06008e
-			public const int ebony = 2131099790;
-			
-			// aapt resource value: 0x7f060062
-			public const int exprimary = 2131099746;
-			
-			// aapt resource value: 0x7f06008f
-			public const int feldgrau = 2131099791;
+			// aapt resource value: 0x7f06008c
+			public const int feldgrau = 2131099788;
 			
 			// aapt resource value: 0x7f060024
 			public const int foreground_material_dark = 2131099684;
@@ -2851,26 +2848,26 @@ namespace Codenutz.XFLabs.Basics.Droid
 			// aapt resource value: 0x7f060025
 			public const int foreground_material_light = 2131099685;
 			
-			// aapt resource value: 0x7f060067
-			public const int gainsboro = 2131099751;
+			// aapt resource value: 0x7f060064
+			public const int gainsboro = 2131099748;
 			
-			// aapt resource value: 0x7f060093
-			public const int genre = 2131099795;
+			// aapt resource value: 0x7f060090
+			public const int genre = 2131099792;
 			
-			// aapt resource value: 0x7f060078
-			public const int goldrod = 2131099768;
+			// aapt resource value: 0x7f060075
+			public const int goldrod = 2131099765;
 			
-			// aapt resource value: 0x7f060091
-			public const int goshtWhite = 2131099793;
+			// aapt resource value: 0x7f06008e
+			public const int goshtWhite = 2131099790;
 			
-			// aapt resource value: 0x7f060070
-			public const int greendark = 2131099760;
+			// aapt resource value: 0x7f06006d
+			public const int greendark = 2131099757;
 			
-			// aapt resource value: 0x7f06006f
-			public const int greenlight = 2131099759;
+			// aapt resource value: 0x7f06006c
+			public const int greenlight = 2131099756;
 			
-			// aapt resource value: 0x7f06006b
-			public const int grey = 2131099755;
+			// aapt resource value: 0x7f060068
+			public const int grey = 2131099752;
 			
 			// aapt resource value: 0x7f060026
 			public const int highlighted_text_material_dark = 2131099686;
@@ -2878,8 +2875,8 @@ namespace Codenutz.XFLabs.Basics.Droid
 			// aapt resource value: 0x7f060027
 			public const int highlighted_text_material_light = 2131099687;
 			
-			// aapt resource value: 0x7f060086
-			public const int hint_bg = 2131099782;
+			// aapt resource value: 0x7f060083
+			public const int hint_bg = 2131099779;
 			
 			// aapt resource value: 0x7f060028
 			public const int hint_foreground_material_dark = 2131099688;
@@ -2887,23 +2884,23 @@ namespace Codenutz.XFLabs.Basics.Droid
 			// aapt resource value: 0x7f060029
 			public const int hint_foreground_material_light = 2131099689;
 			
-			// aapt resource value: 0x7f060079
-			public const int lightblue = 2131099769;
+			// aapt resource value: 0x7f060076
+			public const int lightblue = 2131099766;
 			
-			// aapt resource value: 0x7f060095
-			public const int list_divider = 2131099797;
+			// aapt resource value: 0x7f060092
+			public const int list_divider = 2131099794;
 			
-			// aapt resource value: 0x7f060097
-			public const int list_row_end_color = 2131099799;
-			
-			// aapt resource value: 0x7f060099
-			public const int list_row_hover_end_color = 2131099801;
-			
-			// aapt resource value: 0x7f060098
-			public const int list_row_hover_start_color = 2131099800;
+			// aapt resource value: 0x7f060094
+			public const int list_row_end_color = 2131099796;
 			
 			// aapt resource value: 0x7f060096
-			public const int list_row_start_color = 2131099798;
+			public const int list_row_hover_end_color = 2131099798;
+			
+			// aapt resource value: 0x7f060095
+			public const int list_row_hover_start_color = 2131099797;
+			
+			// aapt resource value: 0x7f060093
+			public const int list_row_start_color = 2131099795;
 			
 			// aapt resource value: 0x7f06002a
 			public const int material_blue_grey_800 = 2131099690;
@@ -2941,11 +2938,11 @@ namespace Codenutz.XFLabs.Basics.Droid
 			// aapt resource value: 0x7f060035
 			public const int material_grey_900 = 2131099701;
 			
-			// aapt resource value: 0x7f060072
-			public const int orangedark = 2131099762;
+			// aapt resource value: 0x7f06006f
+			public const int orangedark = 2131099759;
 			
-			// aapt resource value: 0x7f060071
-			public const int orangelight = 2131099761;
+			// aapt resource value: 0x7f06006e
+			public const int orangelight = 2131099758;
 			
 			// aapt resource value: 0x7f06005c
 			public const int primary = 2131099740;
@@ -2977,8 +2974,8 @@ namespace Codenutz.XFLabs.Basics.Droid
 			// aapt resource value: 0x7f06003d
 			public const int primary_text_disabled_material_light = 2131099709;
 			
-			// aapt resource value: 0x7f060087
-			public const int relativeDivider = 2131099783;
+			// aapt resource value: 0x7f060084
+			public const int relativeDivider = 2131099780;
 			
 			// aapt resource value: 0x7f06003e
 			public const int ripple_material_dark = 2131099710;
@@ -2986,8 +2983,8 @@ namespace Codenutz.XFLabs.Basics.Droid
 			// aapt resource value: 0x7f06003f
 			public const int ripple_material_light = 2131099711;
 			
-			// aapt resource value: 0x7f06007e
-			public const int seagreen = 2131099774;
+			// aapt resource value: 0x7f06007b
+			public const int seagreen = 2131099771;
 			
 			// aapt resource value: 0x7f060040
 			public const int secondary_text_default_material_dark = 2131099712;
@@ -3001,23 +2998,23 @@ namespace Codenutz.XFLabs.Basics.Droid
 			// aapt resource value: 0x7f060043
 			public const int secondary_text_disabled_material_light = 2131099715;
 			
-			// aapt resource value: 0x7f060085
-			public const int silver_v1 = 2131099781;
+			// aapt resource value: 0x7f060082
+			public const int silver_v1 = 2131099778;
 			
-			// aapt resource value: 0x7f060092
-			public const int silverv2 = 2131099794;
+			// aapt resource value: 0x7f06008f
+			public const int silverv2 = 2131099791;
 			
-			// aapt resource value: 0x7f060074
-			public const int skyblue = 2131099764;
+			// aapt resource value: 0x7f060071
+			public const int skyblue = 2131099761;
 			
-			// aapt resource value: 0x7f060068
-			public const int snow = 2131099752;
+			// aapt resource value: 0x7f060065
+			public const int snow = 2131099749;
 			
-			// aapt resource value: 0x7f06008a
-			public const int sonic_silver = 2131099786;
+			// aapt resource value: 0x7f060087
+			public const int sonic_silver = 2131099783;
 			
-			// aapt resource value: 0x7f060075
-			public const int steelblue = 2131099765;
+			// aapt resource value: 0x7f060072
+			public const int steelblue = 2131099762;
 			
 			// aapt resource value: 0x7f060044
 			public const int switch_thumb_disabled_material_dark = 2131099716;
@@ -3037,23 +3034,26 @@ namespace Codenutz.XFLabs.Basics.Droid
 			// aapt resource value: 0x7f060047
 			public const int switch_thumb_normal_material_light = 2131099719;
 			
-			// aapt resource value: 0x7f060076
-			public const int transparent = 2131099766;
+			// aapt resource value: 0x7f060073
+			public const int transparent = 2131099763;
 			
-			// aapt resource value: 0x7f06009a
-			public const int tryBlue1 = 2131099802;
+			// aapt resource value: 0x7f060097
+			public const int tryBlue1 = 2131099799;
 			
-			// aapt resource value: 0x7f06009d
-			public const int tryBlue2 = 2131099805;
+			// aapt resource value: 0x7f06009c
+			public const int tryBlue2 = 2131099804;
 			
-			// aapt resource value: 0x7f060090
-			public const int wenge = 2131099792;
+			// aapt resource value: 0x7f06008d
+			public const int wenge = 2131099789;
 			
-			// aapt resource value: 0x7f06006a
-			public const int white = 2131099754;
+			// aapt resource value: 0x7f060067
+			public const int white = 2131099751;
 			
-			// aapt resource value: 0x7f060094
-			public const int year = 2131099796;
+			// aapt resource value: 0x7f06005f
+			public const int window_background = 2131099743;
+			
+			// aapt resource value: 0x7f060091
+			public const int year = 2131099793;
 			
 			static Color()
 			{
@@ -4165,6 +4165,9 @@ namespace Codenutz.XFLabs.Basics.Droid
 			// aapt resource value: 0x7f0b0017
 			public const int showTitle = 2131427351;
 			
+			// aapt resource value: 0x7f0b008a
+			public const int sliding_tabs = 2131427466;
+			
 			// aapt resource value: 0x7f0b006d
 			public const int snackbar_action = 2131427437;
 			
@@ -4487,7 +4490,10 @@ namespace Codenutz.XFLabs.Basics.Droid
 			public const int support_simple_spinner_dropdown_item = 2130903091;
 			
 			// aapt resource value: 0x7f030034
-			public const int week = 2130903092;
+			public const int tabs = 2130903092;
+			
+			// aapt resource value: 0x7f030035
+			public const int week = 2130903093;
 			
 			static Layout()
 			{

@@ -6,7 +6,7 @@
 	           IsBusy="{Binding IsBusy}" >
 
   <ContentPage.Content>
-    <StackLayout>
+    <StackLayout BackgroundColor="White">
       <StackLayout HorizontalOptions="Center"
                    Orientation="Horizontal"
                    Spacing="10"

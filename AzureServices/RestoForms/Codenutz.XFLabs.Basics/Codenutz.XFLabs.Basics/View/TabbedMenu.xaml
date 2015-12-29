@@ -9,52 +9,69 @@
   
   <TabbedPage.ItemTemplate>
     <DataTemplate>
-      <ContentPage Title="{Binding MenuCategory}" Icon="monkeyicon.png" BackgroundColor="Gray">
+      <ContentPage Title="{Binding MenuCategory}" Icon="monkeyicon.png" BackgroundColor="White">
         <StackLayout Padding="0,2,0,2" Spacing="0">
           <ListView x:Name="list" ItemsSource="{Binding MenuList}"
                  ItemTapped="OnItemSelected"
                  VerticalOptions="FillAndExpand"
                  SeparatorColor="Black"
-                 RowHeight="96">
+                 HasUnevenRows="true" >
             <ListView.ItemTemplate>
               <DataTemplate>
                 <ViewCell>
-                  <Grid Padding="5" >
+                  <Grid>
+                  <Grid.Padding>
+                    <OnPlatform x:TypeArguments="Thickness">
+                      <OnPlatform.iOS>
+                        10,5,10,5
+                      </OnPlatform.iOS>
+                      <OnPlatform.Android>
+                        10,5,10,5
+                      </OnPlatform.Android>
+                      <OnPlatform.WinPhone>
+                        20,25,20,25
+                      </OnPlatform.WinPhone>
+                    </OnPlatform>
+                  </Grid.Padding>
                     <Grid.RowDefinitions>
-                      <RowDefinition Height="30"></RowDefinition>
-                      <RowDefinition Height="20"></RowDefinition>
-                      <RowDefinition Height="40"></RowDefinition>
-                      <RowDefinition Height="10"></RowDefinition>
+                      <RowDefinition Height="Auto"></RowDefinition>
+                      <RowDefinition Height="Auto"></RowDefinition>
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
                       <ColumnDefinition Width="100"></ColumnDefinition>
                       <ColumnDefinition Width="*"></ColumnDefinition>
                       <ColumnDefinition Width="40"></ColumnDefinition>
                     </Grid.ColumnDefinitions>
-                    <Image Grid.Row="0" Grid.Column="0" Grid.RowSpan="3"  Source="{Binding ThumbUrl}" HeightRequest="91" Aspect="AspectFill"/>
-                    <Image Grid.Row="0" Grid.Column="2" Grid.RowSpan="3" HeightRequest="12"  Source="arrowright_16.png" HorizontalOptions="Center" />
-                    <Label Grid.Row="0" BackgroundColor="Aqua" Grid.Column="1" Text="{Binding Name}" FontSize = "20"  LineBreakMode="TailTruncation"></Label>
-                    <Label Grid.Row="1" BackgroundColor="Blue"  Grid.Column="1" FontSize = "15" Text="Price: $10.00" LineBreakMode="TailTruncation"></Label>
+                    <Image Grid.Row="0" Grid.Column="0" 
+                           Source="{Binding ThumbUrl}" 
+                           HeightRequest="91" Aspect="AspectFill"/>
+                    
+                    <StackLayout Grid.Column="1"
+                             Padding="8"
+                             Spacing="4"
+                             VerticalOptions="Center">
+                      <Label Text="{Binding Name}" FontSize = "Medium"  LineBreakMode="TailTruncation"></Label>
+                      <Label FontSize = "Small" Text="Price: $10.00" LineBreakMode="TailTruncation"></Label>
 
+                      <StackLayout HorizontalOptions="Start"  Orientation="Horizontal">
 
-                    <StackLayout Grid.Row="2" HorizontalOptions="Start"  Grid.Column="1" Orientation="Horizontal">
-
-                      <Label FontSize = "18" BackgroundColor="Aqua" Text="Add:" HorizontalOptions="Start" VerticalOptions="Start"  LineBreakMode="TailTruncation"></Label>
-
-                      <Button Text="+" BackgroundColor="Aqua" HeightRequest="26"  WidthRequest="30" CommandParameter="{Binding Name}" Clicked="AddClicked" VerticalOptions="Start" >    </Button>
-
-                      <!--<Label FontSize = "16" BackgroundColor="Yellow" Text="1" HorizontalOptions="Start" VerticalOptions="Start"  LineBreakMode="TailTruncation"></Label>-->
-
-                      <controls:CheckBox DefaultText="DefaultText" 
-                                         CheckedChanged="OnCheckBoxChanged"
-                                         HeightRequest="30" 
-                                         WidthRequest="30"
-                                         HorizontalOptions="Start"
-                                         VerticalOptions="Start"
+                        <Label FontSize = "Small" Text="Add:" 
+                               HorizontalOptions="Start" 
+                               VerticalOptions="Center"  
+                               LineBreakMode="TailTruncation"></Label>
+                        
+                        <controls:CheckBox DefaultText="DefaultText"
+                                           CheckedChanged="OnCheckBoxChanged"
+                                           HeightRequest="30"
+                                           WidthRequest="30"
+                                           HorizontalOptions="Start"
+                                           VerticalOptions="Start"
                                            />
-
-                      <Button Text="-"  BackgroundColor="Aqua" HeightRequest="26"  WidthRequest="30" CommandParameter="{Binding Name}" Clicked="RemoveClicked"  VerticalOptions="Start">    </Button>
+                      </StackLayout>
                     </StackLayout>
+                    <Image Grid.Row="0" Grid.Column="2" Grid.RowSpan="2" HeightRequest="12"  
+                           Source="arrowright_16.png" HorizontalOptions="Center" />
+                    
                   </Grid>
                 </ViewCell>
               </DataTemplate>

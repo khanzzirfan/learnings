@@ -5,7 +5,7 @@
              Title="{Binding Title}"
 	           IsBusy="{Binding IsBusy}"  >
   <ContentPage.Content>
-    <StackLayout>
+    <StackLayout BackgroundColor="White">
 
   <ScrollView VerticalOptions="FillAndExpand">
     <Grid VerticalOptions="FillAndExpand">
