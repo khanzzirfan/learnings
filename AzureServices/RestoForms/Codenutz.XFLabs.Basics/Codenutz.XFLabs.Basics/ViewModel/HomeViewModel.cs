@@ -16,10 +16,18 @@ namespace Codenutz.XFLabs.Basics.ViewModel
         public HomeViewModel(Page page)
             : base(page)
         {
+            Title = "Reserve Table";
+            HomePage = new ObservableCollection<Home>();
+            this.LoadList();
+            Message = "HomeModel";
         }
 
         public HomeViewModel(IDevice device):base(device)
         {
+            Title = "Reserve Table";
+            HomePage = new ObservableCollection<Home>();
+            this.LoadList();
+            Message = "HomeModel";
             Message = String.Format("Hello Xamarin Forms Labs MVVM Basics!! How is your {0} device", device.Manufacturer);
         }
         public HomeViewModel()

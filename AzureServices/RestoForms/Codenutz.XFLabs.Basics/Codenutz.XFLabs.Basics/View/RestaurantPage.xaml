@@ -25,6 +25,19 @@
   <ContentPage.Content Padding="0" BackgroundColor="White">
     <Grid RowSpacing="0"
           ColumnSpacing="0" BackgroundColor="White">
+      <Grid.Padding>
+        <OnPlatform x:TypeArguments="Thickness">
+          <OnPlatform.iOS>
+            10,5,10,5
+          </OnPlatform.iOS>
+          <OnPlatform.Android>
+            10,5,10,5
+          </OnPlatform.Android>
+          <OnPlatform.WinPhone>
+            20,25,20,25
+          </OnPlatform.WinPhone>
+        </OnPlatform>
+      </Grid.Padding>
       <Grid.RowDefinitions>
         <RowDefinition Height="3*"/>
         <RowDefinition Height="2*"/>
@@ -46,6 +59,19 @@
       <Grid Grid.Row="1" 
             Grid.ColumnSpan="2"
             Padding="5">
+        <Grid.Padding>
+          <OnPlatform x:TypeArguments="Thickness">
+            <OnPlatform.iOS>
+              10,5,10,5
+            </OnPlatform.iOS>
+            <OnPlatform.Android>
+              10,5,10,5
+            </OnPlatform.Android>
+            <OnPlatform.WinPhone>
+              20,25,20,25
+            </OnPlatform.WinPhone>
+          </OnPlatform>
+        </Grid.Padding>
         <Grid.RowDefinitions>
           <RowDefinition Height="30"></RowDefinition>
           <RowDefinition Height="30"></RowDefinition>
