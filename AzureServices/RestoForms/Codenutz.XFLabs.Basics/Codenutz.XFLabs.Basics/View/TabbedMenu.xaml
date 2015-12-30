@@ -78,43 +78,7 @@
             </ListView.ItemTemplate>
           </ListView>
 
-          <StackLayout Padding="0,2,0,0" VerticalOptions="End">
-            <Grid RowSpacing="0"
-                  ColumnSpacing="0"
-                  BackgroundColor="Blue"
-                  >
-              <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
-              </Grid.RowDefinitions>
-              <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-              </Grid.ColumnDefinitions>
-
-              <Button
-				          x:Name="BtnOrderTakeaway"
-				          Grid.Row="0"
-				          BackgroundColor="#3498DB"
-				          BorderRadius="0"
-				          TextColor="White"
-				          Text="Order Takeaway"/>
-
-              <Button
-                x:Name="BtnReserveTable"
-                Grid.Row="0"
-                Clicked="OnReserveTableClicked"
-                Grid.Column="1"
-                BackgroundColor="#81C134"
-                BorderRadius="0"
-                TextColor="White"
-                Text="Reserve Table"/>
-              
-              
-            </Grid>
-          </StackLayout>
         </StackLayout>
-        
-       
       </ContentPage>
     </DataTemplate>
   </TabbedPage.ItemTemplate>

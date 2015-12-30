@@ -31,19 +31,26 @@ namespace Codenutz.XFLabs.Basics.View
                 Name = "About Us",
                 Order = ToolbarItemOrder.Primary,
                 Icon = "ic_action_info.png",
-                Priority = 1,
-                
+                Priority = 2,
                 Command = new Command(() => this.LoadStorePage(restoName)),
-               
             });
 
             this.ToolbarItems.Add(new ToolbarItem
             {
                 Name = "Location",
                 Order = ToolbarItemOrder.Primary,
-                Priority = 0,
-                Icon = "ic_action_location.png",
+                Priority = 1,
+                Icon = "scart48.png",
                 Command = new Command(() => this.LoadStorePage(restoName))
+            });
+
+            this.ToolbarItems.Add(new ToolbarItem
+            {
+                Name = "ReserveTable",
+                Order = ToolbarItemOrder.Primary,
+                Priority = 0,
+                Icon = "calendar25.png",
+                Command = new Command(() => this.ReserveTable(restoName))
             });
 
             var v = new MenuViewModel(this, "");
@@ -52,6 +59,10 @@ namespace Codenutz.XFLabs.Basics.View
             BindingContext = viewModel = new MenuViewModel(this, "");
         }
 
+        public async void ReserveTable(string restoName)
+        {
+            await Navigation.PushAsync(new ReserveTable(restoName));
+        }
         /// <summary>
         /// Call Reserve Table page with specific restaurant page name;
         /// 

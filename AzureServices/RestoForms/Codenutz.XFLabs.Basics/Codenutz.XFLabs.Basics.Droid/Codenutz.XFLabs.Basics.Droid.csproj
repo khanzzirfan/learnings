@@ -53,6 +53,14 @@
     <Reference Include="Autofac">
       <HintPath>..\..\packages\Autofac.3.5.2\lib\portable-net4+sl5+netcore45+wpa81+wp8+MonoAndroid1+MonoTouch1\Autofac.dll</HintPath>
     </Reference>
+    <Reference Include="Badge.Plugin, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xam.Plugin.Badge.1.0.0.0\lib\MonoAndroid10\Badge.Plugin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Badge.Plugin.Abstractions, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xam.Plugin.Badge.1.0.0.0\lib\MonoAndroid10\Badge.Plugin.Abstractions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="ExifLib">
       <HintPath>..\..\packages\ExifLib.PCL.1.0.0\lib\portable-net45+sl50+win+WindowsPhoneApp81+wp80+MonoAndroid10+MonoTouch10\ExifLib.dll</HintPath>
     </Reference>
@@ -213,6 +221,12 @@
     </AndroidResource>
     <AndroidResource Include="Resources\values\Strings.xml" />
     <AndroidResource Include="Resources\values\theme.xml" />
+    <AndroidResource Include="Resources\drawable-hdpi\scart16.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\scart32.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\scart48.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_action_arrow_left.png" />
+    <AndroidResource Include="Resources\drawable\ic_action_arrow_left.png" />
+    <AndroidResource Include="Resources\drawable\calendar25.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Codenutz.XFLabs.Basics\Codenutz.XFLabs.Basics.csproj">
