@@ -26,13 +26,14 @@
         Text="{Binding SearchText}"
         />
 
-      <ListView x:Name="list" ItemsSource="{Binding SearchRestaurants}"
+      <ListView x:Name="list"
+                ItemsSource="{Binding SearchRestaurants}"
                 ItemTapped="OnItemSelected"
                 RowHeight="200">
         <ListView.ItemTemplate>
           <DataTemplate>
             <ViewCell>
-              <Grid RowSpacing="0" ColumnSpacing="0" >
+              <Grid>
                 <Grid.Padding>
                   <OnPlatform x:TypeArguments="Thickness">
                     <OnPlatform.iOS>

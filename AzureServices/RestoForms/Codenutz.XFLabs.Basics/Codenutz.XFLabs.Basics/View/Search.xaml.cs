@@ -34,7 +34,14 @@ namespace Codenutz.XFLabs.Basics.View
             var searchOption = args.Item as SearchRestaurant;
             if (searchOption == null)
                 return;
-            Navigation.PushAsync(new TabbedMenu(searchOption.Title));
+            try
+            {
+                Navigation.PushAsync(new TabbedMenu(searchOption.Title));
+            }
+            catch (Exception ex)
+            {
+                DisplayAlert("Help", "Error loading tabbed view", "OK");
+            }
             
             list.SelectedItem = null;
         }

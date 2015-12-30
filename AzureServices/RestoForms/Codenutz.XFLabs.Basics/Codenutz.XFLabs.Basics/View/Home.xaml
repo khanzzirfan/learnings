@@ -50,18 +50,25 @@
             <ViewCell>
               <Grid Padding="5">
                 <Grid.RowDefinitions>
-                  <RowDefinition Height="30"></RowDefinition>
-                  <RowDefinition Height="30"></RowDefinition>
+                  <RowDefinition Height="50"></RowDefinition>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                   <ColumnDefinition Width="40"></ColumnDefinition>
                   <ColumnDefinition Width="*"></ColumnDefinition>
                   <ColumnDefinition Width="40"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
-                <Image Grid.Row="0" Grid.RowSpan="2" Grid.Column="0" Source="{Binding Image}" Aspect="AspectFill"/>
-                <Label Grid.Row="0" Grid.Column="1"  Text="{Binding OptionSearch}" LineBreakMode="TailTruncation"></Label>
-                <Label Grid.Row="1" Grid.Column="1"  Text="{Binding Description}" Font="Small" TextColor="Gray" LineBreakMode="TailTruncation"></Label>
-                <Image Grid.Row="0" Grid.RowSpan="2" Grid.Column="2" HeightRequest="12"  Source="arrowright_16.png" HorizontalOptions="Center" />
+                <Image Source="{Binding Image}" HeightRequest="42" HorizontalOptions="Center" />
+                <StackLayout Grid.Column="1"
+                            Padding="5"
+                            Spacing="4"
+                            VerticalOptions="Start">
+                  <Label Text="{Binding OptionSearch}" FontSize="Medium" LineBreakMode="NoWrap" />
+                  <Label Text="{Binding Description}" Font="Small" TextColor="Gray" LineBreakMode="TailTruncation"></Label>
+                </StackLayout>
+                
+                <Image Grid.Row="0" 
+                       Grid.Column="2" HeightRequest="12"  
+                       Source="arrowright_16.png" HorizontalOptions="Center" />
               </Grid>
 
             </ViewCell>

@@ -63,15 +63,15 @@ namespace Codenutz.XFLabs.Basics.View
             await Navigation.PushAsync(new ReserveTable(_RestoTitle));
         }
 
-        protected override void OnAppearing()
-        {
-            base.OnAppearing();
-            if (viewModel.MenuCollection.Count > 0 || viewModel.IsBusy)
-                return;
+        //protected override void OnAppearing()
+        //{
+        //    base.OnAppearing();
+        //    if (viewModel.MenuCollection.Count > 0 || viewModel.IsBusy)
+        //        return;
 
-            viewModel.GetMenuList.Execute(null);
-            //viewModel.SearchCommand.Execute(null);
-        }
+        //    viewModel.GetMenuList.Execute(null);
+        //    //viewModel.SearchCommand.Execute(null);
+        //}
 
         public async void OnItemSelected(object sender, ItemTappedEventArgs args)
         {
