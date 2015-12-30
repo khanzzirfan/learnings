@@ -238,7 +238,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\ic_lovred.png" />
+    <AndroidResource Include="Resources\ic_lovred.png" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\arrowright_16.png" />
