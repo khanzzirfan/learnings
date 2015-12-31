@@ -227,6 +227,7 @@
     <AndroidResource Include="Resources\drawable-xhdpi\ic_action_arrow_left.png" />
     <AndroidResource Include="Resources\drawable\ic_action_arrow_left.png" />
     <AndroidResource Include="Resources\drawable\calendar25.png" />
+    <AndroidResource Include="Resources\drawable\homeindicator.xml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Codenutz.XFLabs.Basics\Codenutz.XFLabs.Basics.csproj">

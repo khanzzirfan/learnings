@@ -11,11 +11,7 @@
     <item name="android:windowSharedElementEnterTransition">@android:transition/move</item>
     <item name="android:windowSharedElementExitTransition">@android:transition/move</item>
     <item name="android:actionBarStyle">@style/MyTheme.ActionBarStyle</item>
+   
+    <item name="android:homeAsUpIndicator">@drawable/homeindicator</item>
   </style>
 </resources>
-
-<!--
-<item name="android:colorPrimaryDark">@color/primary_dark</item>
-<item name="android:colorPrimary">@color/primary</item>
-    <item name="android:colorAccent">@color/accent</item>
--->

@@ -5,6 +5,7 @@
   <style name="MyTheme" parent="MyTheme.Base">
     <item name="android:windowBackground">@color/window_background</item>
     <item name="android:actionBarStyle">@style/MyTheme.ActionBarStyle</item>
+    <item name="android:homeAsUpIndicator">@drawable/homeindicator</item>
   </style>
   
   <style name="MyTheme.ActionBarStyle" parent="@android:style/Widget.Holo.Light.ActionBar">
