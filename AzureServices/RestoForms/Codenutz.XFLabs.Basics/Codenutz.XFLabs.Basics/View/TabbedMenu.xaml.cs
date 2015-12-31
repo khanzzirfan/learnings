@@ -14,6 +14,10 @@ namespace Codenutz.XFLabs.Basics.View
     {
         private MenuViewModel viewModel;
         private string _RestoTitle { get; set; }
+        public ToolbarItem AboutUs { get; set; }
+        public ToolbarItem Cart { get; set; }
+        public ToolbarItem Reservation { get; set; }
+
         public string RestoTitle
         {
             get { return _RestoTitle;}
@@ -26,32 +30,36 @@ namespace Codenutz.XFLabs.Basics.View
             InitializeComponent();
             RestoTitle = restoName;
 
-            this.ToolbarItems.Add(new ToolbarItem
+            AboutUs = new ToolbarItem
             {
                 Name = "About Us",
                 Order = ToolbarItemOrder.Primary,
                 Icon = "ic_action_info.png",
                 Priority = 2,
                 Command = new Command(() => this.LoadStorePage(restoName)),
-            });
+            };
 
-            this.ToolbarItems.Add(new ToolbarItem
+            Cart = new ToolbarItem
             {
-                Name = "Location",
+                Name = "Cart",
                 Order = ToolbarItemOrder.Primary,
                 Priority = 1,
                 Icon = "scart48.png",
                 Command = new Command(() => this.LoadStorePage(restoName))
-            });
+            };
 
-            this.ToolbarItems.Add(new ToolbarItem
+            Reservation = new ToolbarItem
             {
                 Name = "ReserveTable",
                 Order = ToolbarItemOrder.Primary,
                 Priority = 0,
                 Icon = "calendar25.png",
                 Command = new Command(() => this.ReserveTable(restoName))
-            });
+            };
+
+            this.ToolbarItems.Add(AboutUs);
+            this.ToolbarItems.Add(Cart);
+            this.ToolbarItems.Add(Reservation);
 
             var v = new MenuViewModel(this, "");
             var source = v.MenuCollection;
@@ -153,6 +161,34 @@ namespace Codenutz.XFLabs.Basics.View
 
         public async void OnCheckBoxChanged(object sender, EventArgs<bool> eventArgs)
         {
+            this.ToolbarItems.Remove(Cart);
+
+            if (eventArgs.Value)
+            {
+                Cart = new ToolbarItem
+                {
+                    Name = "Cart",
+                    Order = ToolbarItemOrder.Primary,
+                    Priority = 1,
+                    Icon = "cartfilled.png",
+                    Command = new Command(() => this.LoadStorePage(RestoTitle))
+                };
+                this.ToolbarItems.Add(Cart);
+            }
+            else
+            {
+                Cart = new ToolbarItem
+                {
+                    Name = "Cart",
+                    Order = ToolbarItemOrder.Primary,
+                    Priority = 1,
+                    Icon = "scart48.png",
+                    Command = new Command(() => this.LoadStorePage(RestoTitle))
+                };
+                this.ToolbarItems.Add(Cart);
+            }
+
+            
 
         }
     }

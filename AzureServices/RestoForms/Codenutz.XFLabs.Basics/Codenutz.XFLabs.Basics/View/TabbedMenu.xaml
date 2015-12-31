@@ -48,7 +48,7 @@
                     
                     <StackLayout Grid.Column="1"
                              Padding="8"
-                             Spacing="4"
+                             Spacing="2"
                              VerticalOptions="Center">
                       <Label Text="{Binding Name}" FontSize = "Medium"  LineBreakMode="TailTruncation"></Label>
                       <Label FontSize = "Small" Text="Price: $10.00" LineBreakMode="TailTruncation"></Label>
