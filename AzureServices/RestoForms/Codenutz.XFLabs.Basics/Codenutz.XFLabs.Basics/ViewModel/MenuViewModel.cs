@@ -254,8 +254,6 @@ namespace Codenutz.XFLabs.Basics.ViewModel
         {
             var navigationPage = new NavigationPage((Page)ViewFactory.CreatePage<ReserveTableViewModel, ReserveTable>());
             NavigationService.NavigateTo<ReserveTable>("");
-           
-
         }
 
 

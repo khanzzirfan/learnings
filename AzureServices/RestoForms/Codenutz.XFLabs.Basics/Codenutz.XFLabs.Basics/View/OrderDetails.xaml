@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Codenutz.XFLabs.Basics.View.OrderDetails"
+             Title="{Binding Title}"
+	           IsBusy="{Binding IsBusy}"
+             >
+  <ContentPage.Content Padding="0">
+    <Grid RowSpacing="0" ColumnSpacing="0" BackgroundColor="White">
+      <Grid.Padding>
+        <OnPlatform x:TypeArguments="Thickness">
+          <OnPlatform.iOS>
+            0,0,0,0
+          </OnPlatform.iOS>
+          <OnPlatform.Android>
+            0,0,0,0
+          </OnPlatform.Android>
+          <OnPlatform.WinPhone>
+            0,0,0,0
+          </OnPlatform.WinPhone>
+        </OnPlatform>
+      </Grid.Padding>
+      <Grid.RowDefinitions>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="*"/>
+        <RowDefinition Height="Auto"/>
+      </Grid.RowDefinitions>
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="*"/>
+      </Grid.ColumnDefinitions>
+      
+      <StackLayout Grid.Row="0">
+        <StackLayout Orientation="Horizontal"
+          Padding="10,5,5,10" HeightRequest="20"
+          BackgroundColor="Yellow">
+          <Label Text="Order Total" FontSize="Medium" FontAttributes="Bold" TextColor="Maroon"  />
+          <Label Text="~~" HorizontalOptions="EndAndExpand"/>
+        </StackLayout>
+
+        <StackLayout Orientation="Horizontal"
+        Padding="10,5,5,10"
+        BackgroundColor="Transparent">
+          <Label Text="Details" FontSize="Small"/>
+        </StackLayout>
+      </StackLayout>
+      <ListView Grid.Row="1"
+				x:Name="list"
+				ItemsSource="{Binding OrderDetail}"
+        ItemTapped="OnItemSelected" 
+        HasUnevenRows="true">
+        <ListView.ItemTemplate>
+          <DataTemplate>
+            <ViewCell>
+              <Grid>
+                <Grid.Padding>
+                  <OnPlatform x:TypeArguments="Thickness">
+                    <OnPlatform.iOS>
+                      10,5,10,5
+                    </OnPlatform.iOS>
+                    <OnPlatform.Android>
+                      10,5,10,5
+                    </OnPlatform.Android>
+                    <OnPlatform.WinPhone>
+                      20,25,20,25
+                    </OnPlatform.WinPhone>
+                  </OnPlatform>
+                </Grid.Padding>
+                <Grid.RowDefinitions>
+                  <RowDefinition Height="Auto"/>
+                  <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                  <ColumnDefinition Width="2*"/>
+                  <ColumnDefinition Width="1*"/>
+                  <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                <Label Text="{Binding MenuName}" FontSize="Small"  TextColor="#3498DB" LineBreakMode="WordWrap"/>
+                <Label Grid.Column="1" Text="{Binding DisplayOrderQuantity}" FontSize="Small"  TextColor="#3498DB" LineBreakMode="NoWrap"/>
+                <Label Grid.Column="2" Text="{Binding TotalAmount}" FontSize="Small"  TextColor="#3498DB" LineBreakMode="NoWrap"/>
+
+              </Grid>
+            </ViewCell>
+          </DataTemplate>
+        </ListView.ItemTemplate>
+      </ListView>
+
+      <StackLayout Grid.Row="2" Padding="1,3,1,1">
+        <Button
+          x:Name="BtnPlaceOrder"
+          BackgroundColor="#3498DB"
+          BorderRadius="0"
+          TextColor="White"
+          Text="Place Order"/>
+      
+        <Button
+          x:Name="BtnClearOrder"
+          BackgroundColor="#3498DB"
+          BorderRadius="0"
+          TextColor="White"
+          Text="Clear Order"/>
+        
+      </StackLayout>
+      
+    </Grid>
+  </ContentPage.Content>
+
+</ContentPage>

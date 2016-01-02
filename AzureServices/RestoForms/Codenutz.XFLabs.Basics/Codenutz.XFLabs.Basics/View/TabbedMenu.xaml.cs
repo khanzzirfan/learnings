@@ -45,7 +45,7 @@ namespace Codenutz.XFLabs.Basics.View
                 Order = ToolbarItemOrder.Primary,
                 Priority = 1,
                 Icon = "scart48.png",
-                Command = new Command(() => this.LoadStorePage(restoName))
+                Command = new Command( () =>  Navigation.PushAsync(new OrderDetails()))
             };
 
             Reservation = new ToolbarItem

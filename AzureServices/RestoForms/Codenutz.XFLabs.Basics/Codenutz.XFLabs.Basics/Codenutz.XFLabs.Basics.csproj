@@ -43,6 +43,7 @@
     <Compile Include="Helpers\Utils.cs" />
     <Compile Include="Model\Home.cs" />
     <Compile Include="Model\Menu.cs" />
+    <Compile Include="Model\OrderDetails.cs" />
     <Compile Include="Model\ReserveTable.cs" />
     <Compile Include="Model\SearchRestaurant.cs" />
     <Compile Include="Model\Store.cs" />
@@ -56,6 +57,7 @@
     <Compile Include="ViewModel\HomeViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\MenuViewModel.cs" />
+    <Compile Include="ViewModel\OrderDetailViewModel.cs" />
     <Compile Include="ViewModel\ReserveTableViewModel.cs" />
     <Compile Include="ViewModel\RestaurantViewModel.cs" />
     <Compile Include="ViewModel\SearchViewModel.cs" />
@@ -65,6 +67,9 @@
     </Compile>
     <Compile Include="View\MainView.xaml.cs">
       <DependentUpon>MainView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\OrderDetails.xaml.cs">
+      <DependentUpon>OrderDetails.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\ReserveTable.xaml.cs">
       <DependentUpon>ReserveTable.xaml</DependentUpon>
@@ -196,7 +201,12 @@
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="View\OrderDetails.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

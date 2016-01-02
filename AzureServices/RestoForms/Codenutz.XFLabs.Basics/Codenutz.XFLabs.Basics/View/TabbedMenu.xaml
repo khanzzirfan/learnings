@@ -4,6 +4,7 @@
              x:Class="Codenutz.XFLabs.Basics.View.TabbedMenu"
              xmlns:controls="clr-namespace:XLabs.Forms.Controls;assembly=XLabs.Forms"
             xmlns:resources ="clr-namespace:Codenutz.XFLabs.Basics.Resx.AppResource;assembly=Codenutz.XFLabs.Basics"
+            xmlns:b="clr-namespace:Xamarin.Behaviors;assembly=Xamarin.Behaviors"
              Title="{Binding Title}"
 	           IsBusy="{Binding IsBusy}" >
   
@@ -60,13 +61,23 @@
                                VerticalOptions="Center"  
                                LineBreakMode="TailTruncation"></Label>
                         
-                        <controls:CheckBox DefaultText="DefaultText"
+                        <controls:CheckBox DefaultText=""
                                            CheckedChanged="OnCheckBoxChanged"
-                                           HeightRequest="30"
-                                           WidthRequest="30"
+                                           HeightRequest="40"
+                                           WidthRequest="35"
                                            HorizontalOptions="Start"
                                            VerticalOptions="Start"
                                            />
+                       
+                        <Label FontSize = "Small" Text="Quantity:"
+                               HorizontalOptions="Start"
+                               VerticalOptions="Center"
+                               LineBreakMode="TailTruncation" />
+
+
+                        <Entry Text="{Binding QuantityOrdered}" Keyboard="Telephone">
+                        </Entry>
+                        
                       </StackLayout>
                     </StackLayout>
                     <Image Grid.Row="0" Grid.Column="2" Grid.RowSpan="2" HeightRequest="12"  
