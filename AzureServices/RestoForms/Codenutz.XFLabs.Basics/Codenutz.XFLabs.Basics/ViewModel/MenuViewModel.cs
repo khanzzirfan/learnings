@@ -13,7 +13,7 @@ using XLabs.Platform.Device;
 
 namespace Codenutz.XFLabs.Basics.ViewModel
 {
-    public class MenuViewModel : BaseViewModel 
+    public class MenuViewModel : BaseViewModel
     {
         #region ImageKConstants
         string d1_dessert_v1 = "https://lh3.googleusercontent.com/-Xh8aY2RRwd0/VeFCHSv2lzI/AAAAAAAAAOY/8SY3a6qk7WM/d1_icecream.png";
@@ -52,20 +52,16 @@ namespace Codenutz.XFLabs.Basics.ViewModel
 
             //Load List;
             this.ExecuteGetMenuCommand();
-
-            //OrderTakeAwayCommand = new Command(() =>
-            //{
-            //     Navigation.PushAsync(new Search());
-            //});
         }
 
-        public MenuViewModel(IDevice device):base(device)
+        public MenuViewModel(IDevice device) : base(device)
         {
             Message = String.Format("Hello Xamarin Forms Labs MVVM Basics!! How is your {0} device", device.Manufacturer);
         }
 
         public MenuViewModel()
-        { }
+        {
+        }
 
         private Command getMenuList;
         public Command GetMenuList
@@ -94,18 +90,20 @@ namespace Codenutz.XFLabs.Basics.ViewModel
                 {
                     new Menu ()
                 {
+                        ID=1,
+                        MenuID=21,
                     Name ="Chicken Afgani",
                     Description ="Afghani Chicken is another specialty recipe of Asian cuisine.",
-
                     MenuCategory = "Chicken",
                     MenuType="Mains",
                     Price=15.00m,
-
                     ThumbUrl=c1_chicken_v1,
                 },
 
                 new Menu ()
                 {
+                     ID=2,
+                        MenuID=22,
                     Name ="Chicken Kebab",
                     Description ="chicken kebab, better known as ‘tavuk şiş’ (tah-VOOK’ SHEESH’), is often served alongside grilled beef and lamb.",
                     MenuCategory = "Lamb",
@@ -115,6 +113,8 @@ namespace Codenutz.XFLabs.Basics.ViewModel
                 },
                 new Menu ()
                 {
+                    ID=3,
+                        MenuID=23,
                     Name ="Chicken Smoked Chicken Smoked",
                     Description ="Smoked Chicken",
                     MenuCategory = "Sea Food",
@@ -124,6 +124,8 @@ namespace Codenutz.XFLabs.Basics.ViewModel
                 },
                 new Menu ()
                 {
+                    ID=4,
+                        MenuID=24,
                     Name ="Butter Chicken",
                     Description ="Smoked Chicken",
                     MenuCategory = "Dessert",
@@ -134,6 +136,8 @@ namespace Codenutz.XFLabs.Basics.ViewModel
 
                 new Menu ()
                 {
+                    ID=5,
+                        MenuID=25,
                     Name ="Chicken Tikka",
                     Description ="Smoked Chicken",
                     MenuCategory = "Sides",
@@ -146,6 +150,8 @@ namespace Codenutz.XFLabs.Basics.ViewModel
 
                  new Menu ()
                 {
+                     ID=6,
+                        MenuID=26,
                     Name ="Chicken Afgani V2",
                     Description ="Afghani Chicken is another specialty recipe of Asian cuisine.",
 
@@ -158,6 +164,8 @@ namespace Codenutz.XFLabs.Basics.ViewModel
 
                 new Menu ()
                 {
+                    ID=7,
+                        MenuID=27,
                     Name ="Chicken Kebab V2",
                     Description ="chicken kebab, better known as ‘tavuk şiş’ (tah-VOOK’ SHEESH’), is often served alongside grilled beef and lamb.",
                     MenuCategory = "Chicken",
@@ -167,6 +175,8 @@ namespace Codenutz.XFLabs.Basics.ViewModel
                 },
                 new Menu ()
                 {
+                    ID=8,
+                        MenuID=28,
                     Name ="Chicken Smoked V2",
                     Description ="Smoked chicken is highly versatile in that it is cooked and ready to slice as cold meat or can be incorporated into a recipe such as our delicious “feed a crowd smoked chicken pie” and give a lovely robust smoky chicken flavour.",
                     MenuCategory = "Chicken",
@@ -176,6 +186,8 @@ namespace Codenutz.XFLabs.Basics.ViewModel
                 },
                 new Menu ()
                 {
+                    ID=9,
+                        MenuID=29,
                     Name ="Butter Chicken V2",
                     Description ="Butter Chicken is among the best known Indian foods all over the world. Its gravy can be made as hot or mild as you like so it suits most palates. Also commonly known as Murg Makhani, Butter Chicken tastes great with Kaali Daal (black lentils), Naans and a green salad.",
                     MenuCategory = "Chicken",
@@ -186,6 +198,8 @@ namespace Codenutz.XFLabs.Basics.ViewModel
 
                 new Menu ()
                 {
+                    ID=10,
+                        MenuID=30,
                     Name ="Chicken Tikka V2",
                     Description ="The word Tikka means bits, pieces or chunks. Chicken Tikka is an easy-to-cook dish in which chicken chunks are marinated in special spices and then grilled on skewers. This is one of India's most popular dishes. Chicken Tikka can also be made into Chicken Tikka Masala, a tasty gravy dish.",
                     MenuCategory = "Chicken",
@@ -204,6 +218,8 @@ namespace Codenutz.XFLabs.Basics.ViewModel
                         MenuCategory = c.Key,
                         MenuList = c.Select(m => new Menu()
                         {
+                            ID = m.ID,
+                            MenuID = m.MenuID,
                             Name = m.Name,
                             Description = m.Description,
                             MenuCategory = m.MenuCategory,
@@ -245,10 +261,6 @@ namespace Codenutz.XFLabs.Basics.ViewModel
         }
 
 
-        // ICommand implementations
-        public ICommand ReserveTableCommand { protected set; get; }
-        public ICommand OrderTakeAwayCommand { protected set; get; }
-
 
         private void GoTo()
         {
@@ -256,8 +268,191 @@ namespace Codenutz.XFLabs.Basics.ViewModel
             NavigationService.NavigateTo<ReserveTable>("");
         }
 
+        #region properties
+
+        private Command<object> unfocusedCommand;
+        public Command<object> UnfocusedCommand
+        {
+            get
+            {
+                return this.unfocusedCommand ?? (this.unfocusedCommand = new Command<object>(
+                  (param) =>
+                  {
+                      var paramValue = param as Menu;
+                      this.Message = string.Format("Unfocused raised with param {0}", param);
+                  },
+                  (param) =>
+                  {
+                      var paramValue = param as Menu;
+                      MenuCollectionUpdate(paramValue);
+                      // CanExecute delegate
+                      return true;
+                  }));
+            }
+        }
+        #endregion
+
+        public void MenuCollectionUpdate(Menu menu)
+        {
+            //var stores = await dataStore.GetStoresAsync();
+            var menulist = new List<Menu>()
+                {
+                    new Menu ()
+                {
+                        ID=1,
+                        MenuID=21,
+                    Name ="Chicken Afgani",
+                    Description ="Afghani Chicken is another specialty recipe of Asian cuisine.",
+                    MenuCategory = "Chicken",
+                    MenuType="Mains",
+                    Price=15.00m,
+                    ThumbUrl=c1_chicken_v1,
+                },
+
+                new Menu ()
+                {
+                     ID=2,
+                        MenuID=22,
+                    Name ="Chicken Kebab",
+                    Description ="chicken kebab, better known as ‘tavuk şiş’ (tah-VOOK’ SHEESH’), is often served alongside grilled beef and lamb.",
+                    MenuCategory = "Lamb",
+                    MenuType="Mains",
+                    Price=20.00m,
+                    ThumbUrl=c1_chicken_v2,
+                },
+                new Menu ()
+                {
+                    ID=3,
+                        MenuID=23,
+                    Name ="Chicken Smoked Chicken Smoked",
+                    Description ="Smoked Chicken",
+                    MenuCategory = "Sea Food",
+                    MenuType="Mains",
+                    Price=15.00m,
+                    ThumbUrl=c1_chicken_v3,
+                },
+                new Menu ()
+                {
+                    ID=4,
+                        MenuID=24,
+                    Name ="Butter Chicken",
+                    Description ="Smoked Chicken",
+                    MenuCategory = "Dessert",
+                    MenuType="Mains",
+                    Price=15.00m,
+                    ThumbUrl=c1_chicken_v4,
+                },
+
+                new Menu ()
+                {
+                    ID=5,
+                        MenuID=25,
+                    Name ="Chicken Tikka",
+                    Description ="Smoked Chicken",
+                    MenuCategory = "Sides",
+                    MenuType="Mains",
+                    Price=15.00m,
+                    ThumbUrl=c1_chicken_v5,
+                },
+
+                //Add Part 2 for long list testing
+
+                 new Menu ()
+                {
+                     ID=6,
+                        MenuID=26,
+                    Name ="Chicken Afgani V2",
+                    Description ="Afghani Chicken is another specialty recipe of Asian cuisine.",
+
+                    MenuCategory = "Chicken",
+                    MenuType="Mains",
+                    Price=15.00m,
+
+                    ThumbUrl=c1_chicken_v1,
+                },
+
+                new Menu ()
+                {
+                    ID=7,
+                        MenuID=27,
+                    Name ="Chicken Kebab V2",
+                    Description ="chicken kebab, better known as ‘tavuk şiş’ (tah-VOOK’ SHEESH’), is often served alongside grilled beef and lamb.",
+                    MenuCategory = "Chicken",
+                    MenuType="Mains",
+                    Price=20.00m,
+                    ThumbUrl=c1_chicken_v2,
+                },
+                new Menu ()
+                {
+                    ID=8,
+                        MenuID=28,
+                    Name ="Chicken Smoked V2",
+                    Description ="Smoked chicken is highly versatile in that it is cooked and ready to slice as cold meat or can be incorporated into a recipe such as our delicious “feed a crowd smoked chicken pie” and give a lovely robust smoky chicken flavour.",
+                    MenuCategory = "Chicken",
+                    MenuType="Mains",
+                    Price=15.00m,
+                    ThumbUrl=c1_chicken_v3,
+                },
+                new Menu ()
+                {
+                    ID=9,
+                        MenuID=29,
+                    Name ="Butter Chicken V2",
+                    Description ="Butter Chicken is among the best known Indian foods all over the world. Its gravy can be made as hot or mild as you like so it suits most palates. Also commonly known as Murg Makhani, Butter Chicken tastes great with Kaali Daal (black lentils), Naans and a green salad.",
+                    MenuCategory = "Chicken",
+                    MenuType="Mains",
+                    Price=15.00m,
+                    ThumbUrl=c1_chicken_v4,
+                },
+
+                new Menu ()
+                {
+                    ID=10,
+                        MenuID=30,
+                    Name ="Chicken Tikka V2",
+                    Description ="The word Tikka means bits, pieces or chunks. Chicken Tikka is an easy-to-cook dish in which chicken chunks are marinated in special spices and then grilled on skewers. This is one of India's most popular dishes. Chicken Tikka can also be made into Chicken Tikka Masala, a tasty gravy dish.",
+                    MenuCategory = "Chicken",
+                    MenuType="Mains",
+                    Price=15.00m,
+                    ThumbUrl=c1_chicken_v5,
+                },
 
 
+                };
+
+            try
+            {
+                menulist.Single(c => c.ID == menu.ID).QuantityOrdered = menu.QuantityOrdered;
+            }
+            catch (Exception ex)
+            {
+                string x = "Y";
+            }
+            
+            
+            var dicMenuCollection = menulist
+                .GroupBy(c => c.MenuCategory)
+                .Select(c => new DisplayMenu()
+                {
+                    MenuCategory = c.Key,
+                    MenuList = c.Select(m => new Menu()
+                    {
+                         ID = m.ID,
+                         MenuID=m.MenuID,
+                        Name = m.Name,
+                        Description = m.Description,
+                        MenuCategory = m.MenuCategory,
+                        MenuType = m.MenuType,
+                        Price = m.Price,
+                        ThumbUrl = m.ThumbUrl
+
+                    }).ToList()
+
+                }).ToList();
+
+            MenuCollection = new ObservableCollection<DisplayMenu>(dicMenuCollection);
+            OnPropertyChanged("MenuCollection");
+        }
 
     }
 }

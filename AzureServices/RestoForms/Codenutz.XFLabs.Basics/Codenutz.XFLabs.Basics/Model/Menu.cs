@@ -12,7 +12,7 @@ namespace Codenutz.XFLabs.Basics.Model
     public class Menu
     {
         public int ID { get; set; }
-        public decimal MenuID { get; set; }
+        public int MenuID { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
         public decimal Price { get; set; }
@@ -21,7 +21,8 @@ namespace Codenutz.XFLabs.Basics.Model
         public string ThumbUrl { get; set; }
         public string LargeUrl { get; set; }
         public string SmallUrl { get; set; }
-        public decimal QuantityOrdered { get; set; }
+
+        public int QuantityOrdered { get; set; }
     }
 
 }

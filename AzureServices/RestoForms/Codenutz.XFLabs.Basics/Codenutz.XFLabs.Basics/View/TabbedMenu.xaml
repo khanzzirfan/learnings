@@ -3,10 +3,17 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Codenutz.XFLabs.Basics.View.TabbedMenu"
              xmlns:controls="clr-namespace:XLabs.Forms.Controls;assembly=XLabs.Forms"
-            xmlns:resources ="clr-namespace:Codenutz.XFLabs.Basics.Resx.AppResource;assembly=Codenutz.XFLabs.Basics"
-            xmlns:b="clr-namespace:Xamarin.Behaviors;assembly=Xamarin.Behaviors"
+             xmlns:resources ="clr-namespace:Codenutz.XFLabs.Basics.Resx.AppResource;assembly=Codenutz.XFLabs.Basics"
+             xmlns:b="clr-namespace:Xamarin.Behaviors;assembly=Xamarin.Behaviors"
+             xmlns:Intlocal="clr-namespace:Codenutz.XFLabs.Basics.Helpers;assembly=Codenutz.XFLabs.Basics"
+             x:Name="TabMenuPage"
              Title="{Binding Title}"
 	           IsBusy="{Binding IsBusy}" >
+  <TabbedPage.Resources>
+    <ResourceDictionary>
+      <Intlocal:IntegerToStringConverter x:Key="DigitConvert"> </Intlocal:IntegerToStringConverter>
+  </ResourceDictionary>
+  </TabbedPage.Resources>
   
   <TabbedPage.ItemTemplate>
     <DataTemplate>
@@ -74,8 +81,16 @@
                                VerticalOptions="Center"
                                LineBreakMode="TailTruncation" />
 
-
-                        <Entry Text="{Binding QuantityOrdered}" Keyboard="Telephone">
+                        <Entry Keyboard="Telephone">
+                          <b:Interaction.Behaviors>
+                            <b:BehaviorCollection>
+                              <b:TextChangedBehavior Text="{Binding QuantityOrdered, Mode=TwoWay}" />
+                              <b:EventToCommand CommandNameContext="{b:RelativeContext TabMenuPage}"
+                                EventName="Unfocused" 
+                                                CommandName="UnfocusedCommand" 
+                                                CommandParameter="{Binding .}" />
+                            </b:BehaviorCollection>
+                          </b:Interaction.Behaviors>
                         </Entry>
                         
                       </StackLayout>
