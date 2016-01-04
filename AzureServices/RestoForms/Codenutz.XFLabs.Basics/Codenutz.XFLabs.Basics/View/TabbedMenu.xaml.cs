@@ -82,16 +82,6 @@ namespace Codenutz.XFLabs.Basics.View
             await Navigation.PushAsync(new ReserveTable(_RestoTitle));
         }
 
-        //protected override void OnAppearing()
-        //{
-        //    base.OnAppearing();
-        //    if (viewModel.MenuCollection.Count > 0 || viewModel.IsBusy)
-        //        return;
-
-        //    viewModel.GetMenuList.Execute(null);
-        //    //viewModel.SearchCommand.Execute(null);
-        //}
-
         public async void OnItemSelected(object sender, ItemTappedEventArgs args)
         {
             var menuItem = args.Item as Menu;
@@ -99,11 +89,11 @@ namespace Codenutz.XFLabs.Basics.View
                 return;
             try
             {
-                await Navigation.PushAsync(new MenuItemDetailPage(RestoTitle,menuItem));
+                Navigation.PushAsync(new MenuItemDetailPage(RestoTitle,menuItem));
             }
             catch (Exception ex)
             {
-              await  DisplayAlert("Help", "Error loading tabbed view", "OK");
+                DisplayAlert("Help", "Error loading tabbed view", "OK");
             }
 
             //list.SelectedItem = null;

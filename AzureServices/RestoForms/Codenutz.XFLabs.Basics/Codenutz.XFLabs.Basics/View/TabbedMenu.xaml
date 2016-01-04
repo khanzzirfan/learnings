@@ -3,17 +3,11 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Codenutz.XFLabs.Basics.View.TabbedMenu"
              xmlns:controls="clr-namespace:XLabs.Forms.Controls;assembly=XLabs.Forms"
-             xmlns:resources ="clr-namespace:Codenutz.XFLabs.Basics.Resx.AppResource;assembly=Codenutz.XFLabs.Basics"
              xmlns:b="clr-namespace:Xamarin.Behaviors;assembly=Xamarin.Behaviors"
              xmlns:Intlocal="clr-namespace:Codenutz.XFLabs.Basics.Helpers;assembly=Codenutz.XFLabs.Basics"
              x:Name="TabMenuPage"
              Title="{Binding Title}"
 	           IsBusy="{Binding IsBusy}" >
-  <TabbedPage.Resources>
-    <ResourceDictionary>
-      <Intlocal:IntegerToStringConverter x:Key="DigitConvert"> </Intlocal:IntegerToStringConverter>
-  </ResourceDictionary>
-  </TabbedPage.Resources>
   
   <TabbedPage.ItemTemplate>
     <DataTemplate>
@@ -69,20 +63,7 @@
                                HorizontalOptions="Start" 
                                VerticalOptions="Center"  
                                LineBreakMode="TailTruncation"></Label>
-                        
-                        <controls:CheckBox DefaultText=""
-                                           CheckedChanged="OnCheckBoxChanged"
-                                           HeightRequest="40"
-                                           WidthRequest="35"
-                                           HorizontalOptions="Start"
-                                           VerticalOptions="Start"
-                                           />
                        
-                        <Label FontSize = "Small" Text="Quantity:"
-                               HorizontalOptions="Start"
-                               VerticalOptions="Center"
-                               LineBreakMode="TailTruncation" />
-
                         <Entry Keyboard="Telephone">
                           <b:Interaction.Behaviors>
                             <b:BehaviorCollection>
