@@ -94,7 +94,19 @@ namespace Codenutz.XFLabs.Basics.View
 
         public async void OnItemSelected(object sender, ItemTappedEventArgs args)
         {
+            var menuItem = args.Item as Menu;
+            if (menuItem == null)
+                return;
+            try
+            {
+                await Navigation.PushAsync(new MenuItemDetailPage(RestoTitle,menuItem));
+            }
+            catch (Exception ex)
+            {
+              await  DisplayAlert("Help", "Error loading tabbed view", "OK");
+            }
 
+            //list.SelectedItem = null;
         }
 
         public async void RemoveClicked(object sender, EventArgs args)

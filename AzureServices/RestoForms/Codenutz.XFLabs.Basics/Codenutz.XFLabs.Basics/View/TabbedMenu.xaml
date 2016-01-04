@@ -19,7 +19,9 @@
     <DataTemplate>
       <ContentPage Title="{Binding MenuCategory}" Icon="ic_lovred.png" BackgroundColor="White">
         <StackLayout Padding="0,2,0,2" Spacing="0">
-          <ListView x:Name="list" ItemsSource="{Binding MenuList}"
+          <ListView 
+            x:Name="list" 
+            ItemsSource="{Binding MenuList}"
                  ItemTapped="OnItemSelected"
                  VerticalOptions="FillAndExpand"
                  SeparatorColor="Black"

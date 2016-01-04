@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Codenutz.XFLabs.Basics.View.MenuItemDetailPage"
+             Title="{Binding Title}"
+	           IsBusy="{Binding IsBusy}" >
+  <ContentPage.Resources>
+    <ResourceDictionary>
+      <OnPlatform x:Key="boxSize"
+                  x:TypeArguments="x:Double"
+                  iOS="50"
+                  Android="50"
+                  WinPhone="75" />
+      <!-- This is only an issue on the iPhone; Android and 
+           WinPhone auto size the row height to the contents. -->
+      <OnPlatform x:Key="rowHeight"
+                  x:TypeArguments="x:Int32"
+                  iOS="60"
+                  Android="60"
+                  WinPhone="85" />
+    </ResourceDictionary>
+  </ContentPage.Resources>
+  <ContentPage.Content Padding="0" BackgroundColor="White">
+    <Grid RowSpacing="0"
+          ColumnSpacing="0" BackgroundColor="White">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="250"/>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="Auto"/>
+      </Grid.RowDefinitions>
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="*"/>
+        <ColumnDefinition Width="*"/>
+      </Grid.ColumnDefinitions>
+
+      <Image
+        x:Name="HeroImage"
+        Grid.ColumnSpan="2"
+				Source="dine2.jpg"
+        Aspect="AspectFill"
+				HorizontalOptions="FillAndExpand"
+				VerticalOptions ="FillAndExpand"/>
+
+      <StackLayout  Grid.Row="1"
+                    Grid.ColumnSpan="2"
+                    Padding="8"
+                    Spacing="2"
+                    VerticalOptions="Center">
+        <Label Text="{Binding Menu.Name}" 
+               FontSize = "Medium"  
+               TextColor="#3498DB"
+               LineBreakMode="TailTruncation" />
+      </StackLayout>
+
+      <StackLayout  Grid.Row="2"
+                    Grid.ColumnSpan="2"
+                    Padding="5"
+                    Spacing="2"
+                    VerticalOptions="Center">
+        <Label Text="{Binding Menu.Description}" 
+               FontSize = "Medium"
+               TextColor="#3498DB"
+               LineBreakMode="WordWrap"/>
+      </StackLayout>
+
+      <StackLayout  Grid.Row="3"
+                    Grid.ColumnSpan="2"
+                    Padding="5"
+                    Spacing="2"
+                    Orientation="Horizontal"
+                    VerticalOptions="Center">
+        <Label Text="Price:" FontSize = "Medium" TextColor="#3498DB" LineBreakMode="TailTruncation"/>
+        <Label Text="{Binding Menu.Price}" FontSize = "Medium" TextColor="#3498DB" LineBreakMode="TailTruncation"/>
+      </StackLayout>
+
+      <StackLayout  Grid.Row="4"
+                    Grid.ColumnSpan="2"
+                    Padding="5"
+                    Spacing="2"
+                    Orientation="Horizontal"
+                    VerticalOptions="Center">
+        <Label Text="Quantity Ordered:" FontSize = "Medium" TextColor="#3498DB" LineBreakMode="TailTruncation"/>
+        <Label Text="{Binding Menu.QuantityOrdered}" FontSize = "Medium" TextColor="#3498DB" LineBreakMode="TailTruncation"/>
+      </StackLayout>
+
+      <StackLayout  Grid.Row="5"
+                    Grid.ColumnSpan="2"
+                    Padding="5"
+                    Spacing="2" 
+                    VerticalOptions="Center">
+        <Button
+				  x:Name="btnAddOrderQuantity"
+				  BackgroundColor="#3498DB"
+				  BorderRadius="0"
+				  TextColor="White"
+				  Text="Add To Order"/>
+      </StackLayout>
+      
+      <StackLayout  Grid.Row="6"
+                    Grid.ColumnSpan="2"
+                    Padding="5"
+                    Spacing="2"
+                    VerticalOptions="Center">
+        <Button
+				  x:Name="btnRemoveOrderQuantity"
+				  BackgroundColor="#3498DB"
+				  BorderRadius="0"
+				  TextColor="White"
+				  Text="Remove Order"/>
+      </StackLayout>
+    </Grid>
+  </ContentPage.Content>
+</ContentPage>
