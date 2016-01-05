@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Codenutz.XFLabs.Basics.View.TabbedMenu"
              xmlns:controls="clr-namespace:XLabs.Forms.Controls;assembly=XLabs.Forms"
-             xmlns:b="clr-namespace:Xamarin.Behaviors;assembly=Xamarin.Behaviors"
+             xmlns:b="clr-namespace:Corcav.Behaviors;assembly=Corcav.Behaviors"
              xmlns:Intlocal="clr-namespace:Codenutz.XFLabs.Basics.Helpers;assembly=Codenutz.XFLabs.Basics"
              x:Name="TabMenuPage"
              Title="{Binding Title}"
