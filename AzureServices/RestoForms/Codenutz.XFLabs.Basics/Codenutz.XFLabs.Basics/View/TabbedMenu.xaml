@@ -9,7 +9,7 @@
   
   <TabbedPage.ItemTemplate>
     <DataTemplate>
-      <ContentPage Title="{Binding MenuCategory}" Icon="ic_lovred.png" BackgroundColor="White">
+      <ContentPage Title="{Binding MenuCategory}" Icon="ic_action_restaurant.png" BackgroundColor="White">
         <StackLayout Padding="0,2,0,2" Spacing="0">
           <ListView 
             x:Name="list" 

@@ -285,6 +285,15 @@
   <ItemGroup>
     <BundleResource Include="Resources\ratingstar.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ic_action_cart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ic_action_calendar_day.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ic_action_restaurant.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

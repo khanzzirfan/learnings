@@ -234,6 +234,9 @@
     <AndroidResource Include="Resources\drawable\homeindicator.xml" />
     <AndroidResource Include="Resources\drawable-hdpi\cartfilled.png" />
     <AndroidResource Include="Resources\drawable\ratingstar.png" />
+    <AndroidResource Include="Resources\drawable\ic_action_cart.png" />
+    <AndroidResource Include="Resources\drawable\ic_action_calendar_day.png" />
+    <AndroidResource Include="Resources\drawable\ic_action_restaurant.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Codenutz.XFLabs.Basics\Codenutz.XFLabs.Basics.csproj">

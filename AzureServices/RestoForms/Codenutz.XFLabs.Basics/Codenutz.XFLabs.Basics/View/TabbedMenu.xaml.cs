@@ -29,6 +29,7 @@ namespace Codenutz.XFLabs.Basics.View
             this.Title = restoName;
             InitializeComponent();
             RestoTitle = restoName;
+            string platformName = Device.OS.ToString();
 
             AboutUs = new ToolbarItem
             {
@@ -44,7 +45,7 @@ namespace Codenutz.XFLabs.Basics.View
                 Name = "Cart",
                 Order = ToolbarItemOrder.Primary,
                 Priority = 1,
-                Icon = "scart48.png",
+                Icon = "ic_action_cart.png",
                 Command = new Command( () =>  Navigation.PushAsync(new OrderDetails()))
             };
 
@@ -53,7 +54,7 @@ namespace Codenutz.XFLabs.Basics.View
                 Name = "ReserveTable",
                 Order = ToolbarItemOrder.Primary,
                 Priority = 0,
-                Icon = "calendar25.png",
+                Icon = "ic_action_calendar_day.png",
                 Command = new Command(() => this.ReserveTable(restoName))
             };
 
