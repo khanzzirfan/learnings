@@ -20,8 +20,9 @@ namespace Codenutz.XFLabs.Basics.Droid
 			base.OnCreate(bundle);
 
 			global::Xamarin.Forms.Forms.Init(this, bundle);
+            global::Xamarin.FormsMaps.Init(this, bundle);
 
-			if(!Resolver.IsSet) SetIoc();
+            if (!Resolver.IsSet) SetIoc();
 
 			LoadApplication(new App());
 

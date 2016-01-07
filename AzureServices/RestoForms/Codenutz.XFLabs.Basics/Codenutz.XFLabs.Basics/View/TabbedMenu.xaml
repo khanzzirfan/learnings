@@ -74,7 +74,7 @@
                                VerticalOptions="Center"  
                                LineBreakMode="TailTruncation"></Label>
                        
-                        <Entry Keyboard="Telephone" FontSize="12">
+                        <Entry Keyboard="Telephone" FontSize="12" WidthRequest="30">
                           <b:Interaction.Behaviors>
                             <b:BehaviorCollection>
                               <b:TextChangedBehavior Text="{Binding QuantityOrdered, Mode=TwoWay}" />

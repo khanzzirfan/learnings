@@ -31,11 +31,12 @@ namespace Codenutz.XFLabs.Basics.View
                 Label = viewModel.Store.Name,
                 Address = viewModel.Store.StreetAddress
             };
-            //MyMap.Pins.Add(pin);
 
-            //MyMap.MoveToRegion(
-            //    MapSpan.FromCenterAndRadius(
-            //        position, Distance.FromMiles(.2)));
+            MyMap.Pins.Add(pin);
+
+            MyMap.MoveToRegion(
+                MapSpan.FromCenterAndRadius(
+                    position, Distance.FromMiles(.2)));
         }
     }
 }

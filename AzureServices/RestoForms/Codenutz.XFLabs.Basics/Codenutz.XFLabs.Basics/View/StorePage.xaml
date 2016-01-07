@@ -233,11 +233,11 @@
 					Command="{Binding NavigateCommand}"
 					VerticalOptions="Center"/>
 
-        <!--<maps:Map Grid.Row="14"
+        <maps:Map Grid.Row="14"
 						Grid.ColumnSpan="3"
 			            x:Name="MyMap"
 			            IsShowingUser="true"
-		        	    MapType="Hybrid"/>-->
+		        	    MapType="Hybrid"/>
       </Grid>
     </ScrollView>
   </ContentPage.Content>

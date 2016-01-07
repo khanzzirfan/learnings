@@ -26,8 +26,9 @@ namespace Codenutz.XFLabs.Basics.iOS
                 TextColor = UIColor.White
             });
             global::Xamarin.Forms.Forms.Init();
+            Xamarin.FormsMaps.Init();
 
-			if (!Resolver.IsSet)
+            if (!Resolver.IsSet)
 				SetIoc();
 
             ImageCircleRenderer.Init();

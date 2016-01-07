@@ -128,10 +128,10 @@ namespace Codenutz.XFLabs.Basics.View
                 Country = "New Zealand",
 
 
-                Latitude = 0,
+                Latitude = -36.891932,
                 LocationCode = "Av pres Rouque Saenz Pena 875",
                 LocationHint = "Buenos Alres C1035AAD",
-                Longitude = 0,
+                Longitude = 174.736355,
                 MondayClose = closeTime,
                 TuesdayClose = closeTime,
                 WednesdayClose = closeTime,
@@ -151,7 +151,7 @@ namespace Codenutz.XFLabs.Basics.View
                 Version = "11",
                 PhoneNumber = "0220778677",
                 State = "Auckland",
-                StreetAddress = "12 Sandringham Auckland",
+                StreetAddress = "12 Sandringham",
                 ZipCode = "1065",
                 ImageUri = new Uri(d1_dessert_v1),
                 Image = d1_dessert_v1
