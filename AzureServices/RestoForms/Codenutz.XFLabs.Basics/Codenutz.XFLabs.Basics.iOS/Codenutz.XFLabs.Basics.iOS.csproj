@@ -250,7 +250,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\ic_lovred.png" />
+    <BundleResource Include="Resources\ic_lovred.png" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\arrowright_16.png" />
@@ -259,7 +259,7 @@
     <BundleResource Include="Resources\dine2.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\ic_action_info.png" />
+    <BundleResource Include="Resources\ic_action_info.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\ic_action_location.png" />
@@ -280,7 +280,7 @@
     <BundleResource Include="Resources\calendar25.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\cartfilled.png" />
+    <BundleResource Include="Resources\cartfilled.png" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\ratingstar.png" />

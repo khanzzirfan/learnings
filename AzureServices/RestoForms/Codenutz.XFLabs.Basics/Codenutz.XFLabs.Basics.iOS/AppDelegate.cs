@@ -27,11 +27,13 @@ namespace Codenutz.XFLabs.Basics.iOS
             });
             global::Xamarin.Forms.Forms.Init();
             Xamarin.FormsMaps.Init();
+            ImageCircleRenderer.Init();
+            Corcav.Behaviors.Infrastructure.Init();
 
             if (!Resolver.IsSet)
 				SetIoc();
 
-            ImageCircleRenderer.Init();
+            
             LoadApplication(new App());
 
 			return base.FinishedLaunching(app, options);
