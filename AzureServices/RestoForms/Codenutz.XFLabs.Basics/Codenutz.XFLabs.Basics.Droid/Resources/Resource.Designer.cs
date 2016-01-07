@@ -3837,8 +3837,8 @@ namespace Codenutz.XFLabs.Basics.Droid
 			// aapt resource value: 0x7f02008a
 			public const int mr_ic_settings_light = 2130837642;
 			
-			// aapt resource value: 0x7f02008f
-			public const int notification_template_icon_bg = 2130837647;
+			// aapt resource value: 0x7f020091
+			public const int notification_template_icon_bg = 2130837649;
 			
 			// aapt resource value: 0x7f02008b
 			public const int ratingstar = 2130837643;
@@ -3851,6 +3851,12 @@ namespace Codenutz.XFLabs.Basics.Droid
 			
 			// aapt resource value: 0x7f02008e
 			public const int scart48 = 2130837646;
+			
+			// aapt resource value: 0x7f02008f
+			public const int tap = 2130837647;
+			
+			// aapt resource value: 0x7f020090
+			public const int Tomato = 2130837648;
 			
 			static Drawable()
 			{

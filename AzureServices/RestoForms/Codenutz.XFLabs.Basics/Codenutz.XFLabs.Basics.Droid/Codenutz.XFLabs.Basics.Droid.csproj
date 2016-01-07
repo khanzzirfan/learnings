@@ -237,6 +237,8 @@
     <AndroidResource Include="Resources\drawable\ic_action_cart.png" />
     <AndroidResource Include="Resources\drawable\ic_action_calendar_day.png" />
     <AndroidResource Include="Resources\drawable\ic_action_restaurant.png" />
+    <AndroidResource Include="Resources\drawable\tap.png" />
+    <AndroidResource Include="Resources\drawable\Tomato.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Codenutz.XFLabs.Basics\Codenutz.XFLabs.Basics.csproj">
