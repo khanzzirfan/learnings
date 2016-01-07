@@ -42,9 +42,9 @@
                       <RowDefinition Height="Auto"></RowDefinition>
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
-                      <ColumnDefinition Width="100"></ColumnDefinition>
+                      <ColumnDefinition Width="96"></ColumnDefinition>
                       <ColumnDefinition Width="*"></ColumnDefinition>
-                      <ColumnDefinition Width="40"></ColumnDefinition>
+                      <ColumnDefinition Width="12"></ColumnDefinition>
                     </Grid.ColumnDefinitions>
                     <Image Grid.Row="0" Grid.Column="0" 
                            Source="{Binding ThumbUrl}" 
@@ -53,18 +53,28 @@
                     <StackLayout Grid.Column="1"
                              Padding="8"
                              Spacing="2"
-                             VerticalOptions="Center">
-                      <Label Text="{Binding Name}" FontSize = "Medium"  LineBreakMode="TailTruncation"></Label>
-                      <Label FontSize = "Small" Text="Price: $10.00" LineBreakMode="TailTruncation"></Label>
+                             VerticalOptions="Start">
+                     
+                      <StackLayout Orientation="Horizontal">
+                        <Label Text="{Binding Name}" FontSize = "18"  LineBreakMode="TailTruncation"></Label>
+                        
+                         <StackLayout Orientation="Horizontal" HorizontalOptions="EndAndExpand" VerticalOptions="Center">
+                          <Image Source="ratingstar.png" HeightRequest="8" WidthRequest="8" />
+                          <Label Text="3.5" FontSize="8" LineBreakMode="NoWrap"/>   
+                        </StackLayout>
+                      
+                      </StackLayout>
+                      
+                      <Label FontSize = "12" Text="Price: $10.00" LineBreakMode="TailTruncation"></Label>
 
                       <StackLayout HorizontalOptions="Start"  Orientation="Horizontal">
 
-                        <Label FontSize = "Small" Text="Add:" 
+                        <Label FontSize = "12" Text="Add:" 
                                HorizontalOptions="Start" 
                                VerticalOptions="Center"  
                                LineBreakMode="TailTruncation"></Label>
                        
-                        <Entry Keyboard="Telephone">
+                        <Entry Keyboard="Telephone" FontSize="12">
                           <b:Interaction.Behaviors>
                             <b:BehaviorCollection>
                               <b:TextChangedBehavior Text="{Binding QuantityOrdered, Mode=TwoWay}" />
@@ -78,8 +88,7 @@
                         
                       </StackLayout>
                     </StackLayout>
-                    <Image Grid.Row="0" Grid.Column="2" Grid.RowSpan="2" HeightRequest="12"  
-                           Source="arrowright_16.png" HorizontalOptions="Center" />
+                    <Image Grid.Row="0" Grid.Column="2" Grid.RowSpan="2" HeightRequest="12"  WidthRequest="12" Source="arrowright_16.png" HorizontalOptions="Center" />
                     
                   </Grid>
                 </ViewCell>

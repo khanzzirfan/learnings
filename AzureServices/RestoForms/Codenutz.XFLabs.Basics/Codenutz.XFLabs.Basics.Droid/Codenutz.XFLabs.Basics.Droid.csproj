@@ -233,6 +233,7 @@
     <AndroidResource Include="Resources\drawable\calendar25.png" />
     <AndroidResource Include="Resources\drawable\homeindicator.xml" />
     <AndroidResource Include="Resources\drawable-hdpi\cartfilled.png" />
+    <AndroidResource Include="Resources\drawable\ratingstar.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Codenutz.XFLabs.Basics\Codenutz.XFLabs.Basics.csproj">

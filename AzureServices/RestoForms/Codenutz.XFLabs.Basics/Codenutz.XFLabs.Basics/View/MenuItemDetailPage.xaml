@@ -40,14 +40,14 @@
       <Image
         x:Name="HeroImage"
         Grid.ColumnSpan="2"
-				Source="dine2.jpg"
+				Source="{Binding Menu.ThumbUrl}"
         Aspect="AspectFill"
 				HorizontalOptions="FillAndExpand"
 				VerticalOptions ="FillAndExpand"/>
 
       <StackLayout  Grid.Row="1"
                     Grid.ColumnSpan="2"
-                    Padding="8"
+                    Padding="5,5,5,10"
                     Spacing="2"
                     VerticalOptions="Center">
         <Label Text="{Binding Menu.Name}" 
@@ -56,17 +56,19 @@
                LineBreakMode="TailTruncation" />
       </StackLayout>
 
-      <StackLayout  Grid.Row="2"
-                    Grid.ColumnSpan="2"
-                    Padding="5"
-                    Spacing="2"
-                    VerticalOptions="Center">
-        <Label Text="{Binding Menu.Description}" 
-               FontSize = "Medium"
-               TextColor="#3498DB"
-               LineBreakMode="WordWrap"/>
-      </StackLayout>
-
+      <ScrollView Grid.Row="2"
+                      Grid.ColumnSpan="2">
+        <StackLayout  
+                      Padding="5"
+                      Spacing="2"
+                      VerticalOptions="Center">
+          <Label Text="{Binding Menu.Description}" 
+                 FontSize = "Medium"
+                 TextColor="#3498DB"
+                 LineBreakMode="WordWrap"/>
+        </StackLayout>
+      </ScrollView>
+      
       <StackLayout  Grid.Row="3"
                     Grid.ColumnSpan="2"
                     Padding="5"

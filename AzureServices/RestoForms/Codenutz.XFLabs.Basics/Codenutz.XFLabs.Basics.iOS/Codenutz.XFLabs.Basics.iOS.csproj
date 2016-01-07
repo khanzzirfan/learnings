@@ -282,6 +282,9 @@
   <ItemGroup>
     <AndroidResource Include="Resources\cartfilled.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ratingstar.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

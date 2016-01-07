@@ -65,6 +65,7 @@ namespace Codenutz.XFLabs.Basics.View
             var source = v.MenuCollection;
             this.ItemsSource = source;
             BindingContext = viewModel = new MenuViewModel(this, "");
+           
         }
 
         public async void ReserveTable(string restoName)
@@ -84,6 +85,7 @@ namespace Codenutz.XFLabs.Basics.View
 
         public async void OnItemSelected(object sender, ItemTappedEventArgs args)
         {
+            
             var menuItem = args.Item as Menu;
             if (menuItem == null)
                 return;
