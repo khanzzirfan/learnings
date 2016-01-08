@@ -15,11 +15,9 @@ namespace Codenutz.XFLabs.Basics.Manager
     public class AppRepository<T> : IRepository<T> where T :class, IBusinessEntity, new()
     {
         RestaurantDB db = null;
-        protected static string dbLocation;
         public AppRepository()
         {
-            var _connection = DependencyService.Get<ISQLite>().GetConnection();
-            db = new RestaurantDB(_connection, dbLocation);
+            db = new RestaurantDB();
         }
         
         public T Get(Expression<Func<T, bool>> predicate)
