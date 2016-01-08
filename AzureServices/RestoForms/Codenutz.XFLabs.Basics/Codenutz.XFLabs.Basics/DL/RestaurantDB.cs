@@ -40,9 +40,16 @@ namespace Codenutz.XFLabs.Basics.DL
 
         public RestaurantDB(SQLiteConnection conn, string path)
         {
-            _connection = conn;
-            //Add All Tables;
-            UpdateDataModel();
+            try
+            {
+                _connection = DependencyService.Get<ISQLite>().GetConnection();
+                //Add All Tables;
+                UpdateDataModel();
+            }
+            catch (Exception ex)
+            {
+                var checkresponse = ex.Message.ToString();
+            }
         }
 
         public void UpdateDataModel()
