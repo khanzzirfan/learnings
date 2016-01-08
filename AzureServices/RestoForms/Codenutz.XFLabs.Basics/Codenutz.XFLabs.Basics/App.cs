@@ -1,4 +1,5 @@
-﻿using Codenutz.XFLabs.Basics.View;
+﻿using Codenutz.XFLabs.Basics.DL;
+using Codenutz.XFLabs.Basics.View;
 using Codenutz.XFLabs.Basics.ViewModel;
 using Xamarin.Forms;
 using XLabs.Forms.Mvvm;
@@ -8,7 +9,8 @@ namespace Codenutz.XFLabs.Basics
 {
 	public class App : Application
 	{
-		public App()
+        static RestaurantDB database;
+        public App()
 		{
 			RegisterViews();
 			//MainPage = new NavigationPage((Page)ViewFactory.CreatePage<MainViewModel, MainView>());
@@ -19,10 +21,22 @@ namespace Codenutz.XFLabs.Basics
 		{
 			ViewFactory.Register<MainView, MainViewModel>();
             ViewFactory.Register<Home, HomeViewModel>();
-            ViewFactory.Register<ReserveTable, ReserveTableViewModel>();
+            
         }
 
-		protected override void OnStart()
+        public static RestaurantDB Database
+        {
+            get
+            {
+                if (database == null)
+                {
+                    database = new RestaurantDB();
+                }
+                return database;
+            }
+        }
+
+        protected override void OnStart()
 		{
 			// Handle when your app starts
 		}

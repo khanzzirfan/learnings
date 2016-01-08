@@ -1,4 +1,7 @@
-﻿using Codenutz.XFLabs.Basics.Model;
+﻿using Codenutz.XFLabs.Basics.DAL;
+using Codenutz.XFLabs.Basics.DL;
+using Codenutz.XFLabs.Basics.Manager;
+using Codenutz.XFLabs.Basics.Model;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -12,30 +15,35 @@ namespace Codenutz.XFLabs.Basics.ViewModel
 {
     public class HomeViewModel:BaseViewModel
     {
-        public ObservableCollection<Home> HomePage { get; set; }
+
+        public ObservableCollection<HomeDAO> HomePage { get; set; }
         public HomeViewModel(Page page)
             : base(page)
         {
             Title = "Reserve Table";
-            HomePage = new ObservableCollection<Home>();
+            HomePage = new ObservableCollection<HomeDAO>();
             this.LoadList();
             Message = "HomeModel";
+            
         }
 
         public HomeViewModel(IDevice device):base(device)
         {
             Title = "Reserve Table";
-            HomePage = new ObservableCollection<Home>();
+            HomePage = new ObservableCollection<HomeDAO>();
             this.LoadList();
             Message = "HomeModel";
-            Message = String.Format("Hello Xamarin Forms Labs MVVM Basics!! How is your {0} device", device.Manufacturer);
+            
+
         }
+
         public HomeViewModel()
         {
             Title = "Reserve Table";
-            HomePage = new ObservableCollection<Home>();
+            HomePage = new ObservableCollection<HomeDAO>();
             this.LoadList();
             Message = "HomeModel";
+            
         }
 
         private void LoadList()
@@ -46,7 +54,11 @@ namespace Codenutz.XFLabs.Basics.ViewModel
                 new Home("Saved Places","by restaurant, city, menu","https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Capuchin_Costa_Rica.jpg/200px-Capuchin_Costa_Rica.jpg"),
                 new Home("City Favourite","by restaurant, city, menu","https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Capuchin_Costa_Rica.jpg/200px-Capuchin_Costa_Rica.jpg"),
             };
-            foreach (var homepage in list)
+
+            var homeRepo = RepositoryManager.HomeRepo();
+            var homeLIst = homeRepo.GetItems();
+
+            foreach (var homepage in homeLIst)
             {
                 //if (string.IsNullOrWhiteSpace(store.Image))
                 //  store.Image = "http://refractored.com/images/wc_small.jpg";

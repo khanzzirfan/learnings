@@ -62,8 +62,8 @@
                             Padding="5"
                             Spacing="4"
                             VerticalOptions="Start">
-                  <Label Text="{Binding OptionSearch}" FontSize="Medium" LineBreakMode="NoWrap" />
-                  <Label Text="{Binding Description}" Font="Small" TextColor="Gray" LineBreakMode="TailTruncation"></Label>
+                  <Label Text="{Binding SearchBy}" FontSize="Medium" LineBreakMode="NoWrap" />
+                  <Label Text="{Binding SearchByDescription}" Font="Small" TextColor="Gray" LineBreakMode="TailTruncation"></Label>
                 </StackLayout>
                 
                 <Image Grid.Row="0" 

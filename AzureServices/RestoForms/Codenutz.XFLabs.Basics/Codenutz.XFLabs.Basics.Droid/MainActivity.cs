@@ -12,7 +12,7 @@ using XLabs.Platform.Device;
 
 namespace Codenutz.XFLabs.Basics.Droid
 {
-	[Activity(Label = "Reserve Table", Icon = "@android:color/transparent", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
+	[Activity(Label = "Reserve Table", Icon = "@drawable/icon", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
 	public class MainActivity : XFormsApplicationDroid
     {
 		protected override void OnCreate(Bundle bundle)

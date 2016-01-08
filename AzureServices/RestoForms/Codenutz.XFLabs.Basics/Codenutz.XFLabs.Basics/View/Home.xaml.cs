@@ -1,4 +1,5 @@
-﻿using Codenutz.XFLabs.Basics.ViewModel;
+﻿using Codenutz.XFLabs.Basics.DAL;
+using Codenutz.XFLabs.Basics.ViewModel;
 using Xamarin.Forms;
 
 namespace Codenutz.XFLabs.Basics.View
@@ -28,7 +29,7 @@ namespace Codenutz.XFLabs.Basics.View
 
         public void OnItemSelected(object sender, ItemTappedEventArgs args)
         {
-            var searchOption = args.Item as Model.Home;
+            var searchOption = args.Item as HomeDAO;
             if (searchOption == null)
                 return;
 
