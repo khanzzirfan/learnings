@@ -80,7 +80,7 @@
 
       <StackLayout Grid.Row="2" Grid.ColumnSpan="2"
                    Orientation="Horizontal" 
-                   BackgroundColor="#33393D"
+                   BackgroundColor="#D1D1D1"
                    Spacing="0" >
 
         <StackLayout HorizontalOptions="CenterAndExpand" Orientation="Horizontal" Spacing="10">

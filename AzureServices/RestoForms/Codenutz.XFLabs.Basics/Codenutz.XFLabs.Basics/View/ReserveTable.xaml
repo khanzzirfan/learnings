@@ -132,7 +132,7 @@
       </ScrollView>
       <Button
 			  x:Name="ButtonSubmitFeedback"
-			  BackgroundColor="#3498DB"
+			  BackgroundColor="#FFA500"
 			  BorderRadius="0"
 			  TextColor="White"
 			  Text="Make Reservation"

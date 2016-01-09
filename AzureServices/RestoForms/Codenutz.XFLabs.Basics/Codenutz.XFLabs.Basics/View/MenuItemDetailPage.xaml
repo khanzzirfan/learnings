@@ -21,7 +21,14 @@
     </ResourceDictionary>
   </ContentPage.Resources>
   <ContentPage.Content Padding="0" BackgroundColor="White">
-    <Grid RowSpacing="0"
+    <StackLayout  BackgroundColor="White">
+      <!--<StackLayout Orientation="Horizontal" VerticalOptions="Start">
+        --><!-- top controls --><!--
+      </StackLayout>-->
+
+      <StackLayout VerticalOptions="StartAndExpand">
+        <!-- middle controls -->
+        <Grid RowSpacing="0"
           ColumnSpacing="0" BackgroundColor="White">
       <Grid.RowDefinitions>
         <RowDefinition Height="250"/>
@@ -52,7 +59,7 @@
                     VerticalOptions="Center">
         <Label Text="{Binding Menu.Name}" 
                FontSize = "Medium"  
-               TextColor="#3498DB"
+               TextColor="#FFA500"
                LineBreakMode="TailTruncation" />
       </StackLayout>
 
@@ -63,8 +70,6 @@
                       Spacing="2"
                       VerticalOptions="Center">
           <Label Text="{Binding Menu.Description}" 
-                 FontSize = "Medium"
-                 TextColor="#3498DB"
                  LineBreakMode="WordWrap"/>
         </StackLayout>
       </ScrollView>
@@ -75,8 +80,8 @@
                     Spacing="2"
                     Orientation="Horizontal"
                     VerticalOptions="Center">
-        <Label Text="Price:" FontSize = "Medium" TextColor="#3498DB" LineBreakMode="TailTruncation"/>
-        <Label Text="{Binding Menu.Price}" FontSize = "Medium" TextColor="#3498DB" LineBreakMode="TailTruncation"/>
+        <Label Text="Price:" LineBreakMode="TailTruncation"/>
+        <Label Text="{Binding Menu.Price}" LineBreakMode="TailTruncation"/>
       </StackLayout>
 
       <StackLayout  Grid.Row="4"
@@ -85,35 +90,41 @@
                     Spacing="2"
                     Orientation="Horizontal"
                     VerticalOptions="Center">
-        <Label Text="Quantity Ordered:" FontSize = "Medium" TextColor="#3498DB" LineBreakMode="TailTruncation"/>
-        <Label Text="{Binding Menu.QuantityOrdered}" FontSize = "Medium" TextColor="#3498DB" LineBreakMode="TailTruncation"/>
+        <Label Text="Quantity Ordered:" LineBreakMode="TailTruncation"/>
+        <Label Text="{Binding Menu.QuantityOrdered}" LineBreakMode="TailTruncation"/>
+      </StackLayout>
+     
+        </Grid>
       </StackLayout>
 
-      <StackLayout  Grid.Row="5"
-                    Grid.ColumnSpan="2"
-                    Padding="5"
-                    Spacing="2" 
-                    VerticalOptions="Center">
-        <Button
-				  x:Name="btnAddOrderQuantity"
-				  BackgroundColor="#3498DB"
-				  BorderRadius="0"
-				  TextColor="White"
-				  Text="Add To Order"/>
+      <StackLayout Orientation="Vertical" VerticalOptions="End">
+        <!-- bottom controls -->
+        <StackLayout 
+                   Padding="3"
+                   Spacing="2"
+                   VerticalOptions="Center">
+          <Button
+            x:Name="btnAddOrderQuantity"
+            BackgroundColor="#FFA500"
+            BorderRadius="0"
+            TextColor="White"
+            Text="Add To Order"/>
+        </StackLayout>
+
+        <StackLayout  
+                      Padding="2"
+                      Spacing="2"
+                      VerticalOptions="Center">
+          <Button
+            x:Name="btnRemoveOrderQuantity"
+            BackgroundColor="#FFA500"
+            BorderRadius="0"
+            TextColor="White"
+            Text="Remove Order"/>
+        </StackLayout>
       </StackLayout>
-      
-      <StackLayout  Grid.Row="6"
-                    Grid.ColumnSpan="2"
-                    Padding="5"
-                    Spacing="2"
-                    VerticalOptions="Center">
-        <Button
-				  x:Name="btnRemoveOrderQuantity"
-				  BackgroundColor="#3498DB"
-				  BorderRadius="0"
-				  TextColor="White"
-				  Text="Remove Order"/>
-      </StackLayout>
-    </Grid>
+    </StackLayout>
+    
+    
   </ContentPage.Content>
 </ContentPage>
