@@ -41,6 +41,7 @@
     <Compile Include="Contracts\BusinessEntityBase.cs" />
     <Compile Include="Contracts\IBusinessEntity.cs" />
     <Compile Include="DAL\HomeDAO.cs" />
+    <Compile Include="DAL\RestaurantsDAO.cs" />
     <Compile Include="DL\RestaurantDB.cs" />
     <Compile Include="DL\SeedDB.cs" />
     <Compile Include="Helpers\DecimalToStringConverter.cs" />

@@ -246,8 +246,6 @@
     <AndroidResource Include="Resources\drawable\ic_action_calendar_day.png" />
     <AndroidResource Include="Resources\drawable\ic_action_restaurant.png" />
     <AndroidResource Include="Resources\drawable\tap.png" />
-    <AndroidResource Include="Resources\drawable\forkknife16.png" />
-    <AndroidResource Include="Resources\drawable\d_coffee2.png" />
     <AndroidResource Include="Resources\drawable\pennepastatomato.png" />
     <AndroidResource Include="Resources\drawable\ic_action_clock.png" />
     <AndroidResource Include="Resources\drawable\ic_action_user.png" />

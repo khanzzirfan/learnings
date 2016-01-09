@@ -13,6 +13,11 @@ namespace Codenutz.XFLabs.Basics.Manager
         {
             return new AppRepository<HomeDAO>();
         }
+
+        public static AppRepository<RestaurantsDAO> RestaurantsRepo()
+        {
+            return new AppRepository<RestaurantsDAO>();
+        }
         
     }
 }

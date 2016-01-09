@@ -1,4 +1,5 @@
-﻿using Codenutz.XFLabs.Basics.Model;
+﻿using Codenutz.XFLabs.Basics.DAL;
+using Codenutz.XFLabs.Basics.Model;
 using Codenutz.XFLabs.Basics.ViewModel;
 using System;
 using System.Collections.Generic;
@@ -32,7 +33,7 @@ namespace Codenutz.XFLabs.Basics.View
 
         public void OnItemSelected(object sender, ItemTappedEventArgs args)
         {
-            var searchOption = args.Item as SearchRestaurant;
+            var searchOption = args.Item as RestaurantsDAO;
             if (searchOption == null)
                 return;
             try

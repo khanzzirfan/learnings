@@ -1,4 +1,7 @@
-﻿using Codenutz.XFLabs.Basics.Model;
+﻿using Codenutz.XFLabs.Basics.DAL;
+using Codenutz.XFLabs.Basics.DL;
+using Codenutz.XFLabs.Basics.Manager;
+
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -12,20 +15,12 @@ namespace Codenutz.XFLabs.Basics.ViewModel
 {
     public class SearchViewModel : BaseViewModel
     {
-        public const string RestoImage1 = "https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Capuchin_Costa_Rica.jpg/200px-Capuchin_Costa_Rica.jpg";
-        public const string RestoImage2 = "https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Capuchin_Costa_Rica.jpg/200px-Capuchin_Costa_Rica.jpg";
-        public const string RestoImage3 = "http://www.google.co.nz/imgres?imgurl=http://www.valueinvestasia.com/wp-content/uploads/2015/01/Singapore-Restaurant-Week-2012-Visual.jpg&imgrefurl=http://www.valueinvestasia.com/2015/02/02/restaurants-cluster/&h=1551&w=2386&tbnid=tJVIspwDhBTlMM:&docid=oTEl6I7d-tLx1M&ei=nCRMVpXkGeXJmAXX9LHICA&tbm=isch&ved=0CEcQMygZMBlqFQoTCJWij821mckCFeUkpgodV3oMiQ";
-        public const string RestoImage4 = "http://www.google.co.nz/imgres?imgurl=http://www.valueinvestasia.com/wp-content/uploads/2015/01/Singapore-Restaurant-Week-2012-Visual.jpg&imgrefurl=http://www.valueinvestasia.com/2015/02/02/restaurants-cluster/&h=1551&w=2386&tbnid=tJVIspwDhBTlMM:&docid=oTEl6I7d-tLx1M&ei=nCRMVpXkGeXJmAXX9LHICA&tbm=isch&ved=0CEcQMygZMBlqFQoTCJWij821mckCFeUkpgodV3oMiQ";
-        public const string RestoImage5 = "http://www.google.co.nz/imgres?imgurl=http://www.valueinvestasia.com/wp-content/uploads/2015/01/Singapore-Restaurant-Week-2012-Visual.jpg&imgrefurl=http://www.valueinvestasia.com/2015/02/02/restaurants-cluster/&h=1551&w=2386&tbnid=tJVIspwDhBTlMM:&docid=oTEl6I7d-tLx1M&ei=nCRMVpXkGeXJmAXX9LHICA&tbm=isch&ved=0CEcQMygZMBlqFQoTCJWij821mckCFeUkpgodV3oMiQ";
-        public const string RestoImage6 = "http://www.google.co.nz/imgres?imgurl=http://www.valueinvestasia.com/wp-content/uploads/2015/01/Singapore-Restaurant-Week-2012-Visual.jpg&imgrefurl=http://www.valueinvestasia.com/2015/02/02/restaurants-cluster/&h=1551&w=2386&tbnid=tJVIspwDhBTlMM:&docid=oTEl6I7d-tLx1M&ei=nCRMVpXkGeXJmAXX9LHICA&tbm=isch&ved=0CEcQMygZMBlqFQoTCJWij821mckCFeUkpgodV3oMiQ";
-
-
-        public ObservableCollection<SearchRestaurant> SearchRestaurants { get; set; }
+        public ObservableCollection<RestaurantsDAO> SearchRestaurants { get; set; }
         public SearchViewModel(Page page)
             : base(page)
         {
             Title = "My Restaurant";
-            SearchRestaurants = new ObservableCollection<SearchRestaurant>();
+            SearchRestaurants = new ObservableCollection<RestaurantsDAO>();
 
             //Load List;
             this.ExecuteGetStoresCommand();
@@ -88,16 +83,8 @@ namespace Codenutz.XFLabs.Basics.ViewModel
                 SearchRestaurants.Clear();
 
                 //var stores = await dataStore.GetStoresAsync();
-                var restolist = new List<SearchRestaurant>()
-                {
-                    new SearchRestaurant("Auckland Resto A", "Level 2 | (480) 792-9275", RestoImage1),
-                    new SearchRestaurant("Waikato Resto B","Level 2 | (480) 792-9275", RestoImage1),
-                    new SearchRestaurant("Hamilton Resto C", "Level 1 | (480) 786-8092", RestoImage1),
-                    new SearchRestaurant("Melbourne Resto D", "Level 2 | (480) 812-0090", RestoImage1),
-                    new SearchRestaurant("Sydney Resto F", "Level 1 | (480) 726-6944", RestoImage1),
-                    new SearchRestaurant("Dunedin Resto G", "Level 2 | (480) 855-1709", RestoImage1),
-
-                };
+                var repo = RepositoryManager.RestaurantsRepo();
+                var restolist = repo.GetItems();
                 foreach (var store in restolist)
                 {
                     //if (string.IsNullOrWhiteSpace(store.Image))
@@ -153,16 +140,8 @@ namespace Codenutz.XFLabs.Basics.ViewModel
                 SearchRestaurants.Clear();
                 //await Task.Delay(2000);
                 //var stores = await dataStore.GetStoresAsync();
-                var restaurants = new List<SearchRestaurant>()
-                {
-                    new SearchRestaurant("Auckland Resto A", "Level 2 | (480) 792-9275", RestoImage1),
-                    new SearchRestaurant("Waikato Resto B","Level 2 | (480) 792-9275", RestoImage1),
-                    new SearchRestaurant("Hamilton Resto C", "Level 1 | (480) 786-8092", RestoImage1),
-                    new SearchRestaurant("Melbourne Resto D", "Level 2 | (480) 812-0090", RestoImage1),
-                    new SearchRestaurant("Sydney Resto F", "Level 1 | (480) 726-6944", RestoImage1),
-                    new SearchRestaurant("Dunedin Resto G", "Level 2 | (480) 855-1709", RestoImage1),
-
-                };
+                var repo = RepositoryManager.RestaurantsRepo();
+                var restaurants = repo.GetItems();
                 var searchlist = restaurants.Where(c => c.Title.ToLower().Contains(_searchText.ToLower())).AsEnumerable();
 
                 foreach (var store in searchlist)
