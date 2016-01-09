@@ -26,9 +26,9 @@
     <Grid RowSpacing="0"
           ColumnSpacing="0" BackgroundColor="White">
       <Grid.RowDefinitions>
-        <RowDefinition Height="3*"/>
-        <RowDefinition Height="2*"/>
-        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="250"/>
+        <RowDefinition Height="8*"/>
+        <RowDefinition Height="1*"/>
       </Grid.RowDefinitions>
       <Grid.ColumnDefinitions>
         <ColumnDefinition Width="*"/>
@@ -38,32 +38,34 @@
       <Image
         x:Name="HeroImage"
         Grid.ColumnSpan="2"
-				Source="dine2.jpg"
+				Source="pennepastatomato.png"
         Aspect="AspectFill"
 				HorizontalOptions="FillAndExpand"
 				VerticalOptions ="FillAndExpand"/>
 
-      <ListView Grid.Row="1" Grid.ColumnSpan="2" ItemTapped="OnItemSelected"
-        x:Name="list" ItemsSource="{Binding HomePage}" RowHeight="65">
+      <ListView Grid.Row="1" 
+                Grid.ColumnSpan="2" ItemTapped="OnItemSelected"
+                x:Name="list" ItemsSource="{Binding HomePage}" 
+                RowHeight="46">
         <ListView.ItemTemplate>
           <DataTemplate>
             <ViewCell>
-              <Grid Padding="5">
+              <Grid Padding="1">
                 <Grid.RowDefinitions>
-                  <RowDefinition Height="50"></RowDefinition>
+                  <RowDefinition Height="46"></RowDefinition>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
-                  <ColumnDefinition Width="40"></ColumnDefinition>
+                  <ColumnDefinition Width="46"></ColumnDefinition>
                   <ColumnDefinition Width="*"></ColumnDefinition>
                   <ColumnDefinition Width="40"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
-                <Image Source="{Binding Image}" HeightRequest="42" HorizontalOptions="Center" />
+                <Image Source="{Binding Image}" HeightRequest="46" VerticalOptions ="FillAndExpand" Aspect="AspectFill"/>
                 <StackLayout Grid.Column="1"
                             Padding="5"
                             Spacing="4"
                             VerticalOptions="Start">
-                  <Label Text="{Binding SearchBy}" FontSize="Medium" LineBreakMode="NoWrap" />
-                  <Label Text="{Binding SearchByDescription}" Font="Small" TextColor="Gray" LineBreakMode="TailTruncation"></Label>
+                  
+                  <Label Text="{Binding SearchBy}" FontSize="16" LineBreakMode="NoWrap" />
                 </StackLayout>
                 
                 <Image Grid.Row="0" 
@@ -76,22 +78,57 @@
         </ListView.ItemTemplate>
       </ListView>
 
-      <Button
-				x:Name="ButtonFindStore"
-				Grid.Row="2"
-				BackgroundColor="#3498DB"
-				BorderRadius="0"
-				TextColor="White"
-				Text="Locations"/>
+      <StackLayout Grid.Row="2" Grid.ColumnSpan="2"
+                   Orientation="Horizontal" 
+                   BackgroundColor="#33393D"
+                   Spacing="0" >
 
-      <Button
-				x:Name="ButtonLeaveFeedback"
-				Grid.Row="2"
-				Grid.Column="1"
-				BackgroundColor="#81C134"
-				BorderRadius="0"
-				TextColor="White"
-				Text="Leave Feedback"/>
+        <StackLayout HorizontalOptions="CenterAndExpand" Orientation="Horizontal" Spacing="10">
+          <Image Source="ic_action_search.png" >
+              <Image.GestureRecognizers>
+                    <TapGestureRecognizer
+                            Tapped="OnTapGestureRecognizerTapped_Search"
+                            NumberOfTapsRequired="1" />
+              </Image.GestureRecognizers>
+          </Image>
+          
+          <Image Source="ic_action_heart.png" VerticalOptions="FillAndExpand">
+            <Image.GestureRecognizers>
+                    <TapGestureRecognizer
+                            Tapped="OnTapGestureRecognizerTapped_Search"
+                            NumberOfTapsRequired="1" />
+              </Image.GestureRecognizers>
+          </Image>
+          <Image Source="ic_action_clock.png" VerticalOptions="FillAndExpand">
+            <Image.GestureRecognizers>
+                    <TapGestureRecognizer
+                            Tapped="OnTapGestureRecognizerTapped_Search"
+                            NumberOfTapsRequired="1" />
+              </Image.GestureRecognizers>
+          </Image>
+          <Image Source="ic_action_user.png" VerticalOptions="FillAndExpand">
+            <Image.GestureRecognizers>
+                    <TapGestureRecognizer
+                            Tapped="OnTapGestureRecognizerTapped_Search"
+                            NumberOfTapsRequired="1" />
+              </Image.GestureRecognizers>
+          </Image>
+          <Image Source="ic_action_cart.png"  VerticalOptions="FillAndExpand">
+            <Image.GestureRecognizers>
+                    <TapGestureRecognizer
+                            Tapped="OnTapGestureRecognizerTapped_Search"
+                            NumberOfTapsRequired="1" />
+              </Image.GestureRecognizers>
+          </Image>
+          <Image Source="ic_action_info.png"  VerticalOptions="FillAndExpand">
+            <Image.GestureRecognizers>
+                    <TapGestureRecognizer
+                            Tapped="OnTapGestureRecognizerTapped_Search"
+                            NumberOfTapsRequired="1" />
+              </Image.GestureRecognizers>
+          </Image>
+        </StackLayout>
+      </StackLayout>
 
     </Grid>
   </ContentPage.Content>

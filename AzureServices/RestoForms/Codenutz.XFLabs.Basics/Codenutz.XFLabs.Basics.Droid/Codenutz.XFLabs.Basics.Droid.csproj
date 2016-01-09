@@ -220,7 +220,6 @@
     <Content Include="Properties\AndroidManifest.xml" />
     <AndroidResource Include="Resources\drawable\ic_lovred.png" />
     <AndroidResource Include="Resources\drawable\arrowright_16.png" />
-    <AndroidResource Include="Resources\drawable\dine2.jpg" />
     <AndroidResource Include="Resources\drawable\ic_action_location.png" />
     <AndroidResource Include="Resources\drawable\ic_action_info.png" />
     <AndroidResource Include="Resources\values\styles.xml">
@@ -247,7 +246,13 @@
     <AndroidResource Include="Resources\drawable\ic_action_calendar_day.png" />
     <AndroidResource Include="Resources\drawable\ic_action_restaurant.png" />
     <AndroidResource Include="Resources\drawable\tap.png" />
-    <AndroidResource Include="Resources\drawable\Tomato.png" />
+    <AndroidResource Include="Resources\drawable\forkknife16.png" />
+    <AndroidResource Include="Resources\drawable\d_coffee2.png" />
+    <AndroidResource Include="Resources\drawable\pennepastatomato.png" />
+    <AndroidResource Include="Resources\drawable\ic_action_clock.png" />
+    <AndroidResource Include="Resources\drawable\ic_action_user.png" />
+    <AndroidResource Include="Resources\drawable\ic_action_heart.png" />
+    <AndroidResource Include="Resources\drawable\ic_action_search.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Codenutz.XFLabs.Basics\Codenutz.XFLabs.Basics.csproj">

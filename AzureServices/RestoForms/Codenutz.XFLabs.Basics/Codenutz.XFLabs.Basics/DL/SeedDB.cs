@@ -21,7 +21,7 @@ namespace Codenutz.XFLabs.Basics.DL
 
         string k1_kebab_v1 = "https://lh3.googleusercontent.com/-YPQi3-4I2aY/VeFCHe7dMrI/AAAAAAAAAOM/1wa21O3L2mk/k1_seek_kebab.png";
         string k1_kebab_v2 = "https://lh3.googleusercontent.com/-1qVD5HMsCIU/VbvmwbAgdgI/AAAAAAAAAJ0/f2YLHJGJMZg/gv_Tkebab.jpg";
-        string k1_kebab_v3 = "https://lh3.googleusercontent.com/-KCdcg0yKW4s/VeFCHUDg2zI/AAAAAAAAAOM/KNDLaBFVDH4/mx_burito.png";
+        
 
         string l1_lamb_v1 = "https://lh3.googleusercontent.com/-rqCpTJhJ5QU/VbvmwUus3kI/AAAAAAAAAMM/GvW4J3P5RrE/gv_lambgrid.jpg";
         string gv_vege = "https://lh3.googleusercontent.com/-xaCacbUrAYA/VbvmwR3NZrI/AAAAAAAAAJ0/SQmh3Q3O1y0/gv_vegev1.jpg";
@@ -35,6 +35,11 @@ namespace Codenutz.XFLabs.Basics.DL
         string k1_spring_rolls = "https://lh3.googleusercontent.com/-oSphV_HtmJg/Vjh50XCiEOI/AAAAAAAAAoc/DCYOoJfmpBg/spring_rolls.png";
         string k1_italian_prawn = "https://lh3.googleusercontent.com/-4SA0Vqw0isU/VjiTsccK1eI/AAAAAAAAApQ/Udpzd-SJ_NU/italian_prawn.png";
 
+        string d_cafe = "https://lh3.googleusercontent.com/-vm6b72KATAk/VpBxkcoHwFI/AAAAAAAAAyc/ZE24_S9jepg/s72/d_coffee5.png";
+        string d_restaurant = "https://lh3.googleusercontent.com/-uXX25lkjlRM/VpBj6U7gwtI/AAAAAAAAAxY/zQC34htSe6s/s72/pennepastatomato.png";
+        string d_takeaway = "https://lh3.googleusercontent.com/-VNRSCEwRUxY/VpB9UwWFF5I/AAAAAAAAAzY/CRkA9ek9Adg/s72/dtakeaway.png";
+        string d_reservation = "https://lh3.googleusercontent.com/-RkNxXlksW24/VpB_OYcokoI/AAAAAAAAAz0/--Q5sTWpxsQ/s72/dclock.png";
+        string d_cityfav = "https://lh3.googleusercontent.com/-pS5AlKfUoWo/VpB_fBmErUI/AAAAAAAAAz8/jACkmww6bok/s72/dcity.jpg";
         #endregion
 
         public SeedDB()
@@ -46,9 +51,14 @@ namespace Codenutz.XFLabs.Basics.DL
         {
             var list = new List<HomeDAO>
             {
-                new HomeDAO() { SearchBy ="Search For",  SearchByDescription = "by restaurant, city, menu", Image= "https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Capuchin_Costa_Rica.jpg/200px-Capuchin_Costa_Rica.jpg" },
-                new HomeDAO(){ SearchBy ="Saved Places", SearchByDescription = "by restaurant, city, menu", Image= "https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Capuchin_Costa_Rica.jpg/200px-Capuchin_Costa_Rica.jpg" },
-                new HomeDAO(){ SearchBy ="City Favourite", SearchByDescription = "by restaurant, city, menu", Image= "https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Capuchin_Costa_Rica.jpg/200px-Capuchin_Costa_Rica.jpg"},
+                new HomeDAO() { SearchBy ="Restaurants",  SearchByDescription = "by restaurant, city, menu", Image= d_restaurant },
+                new HomeDAO(){ SearchBy ="Cafes", SearchByDescription = "by restaurant, city, menu", Image= d_cafe },
+                new HomeDAO(){ SearchBy ="Takeout/delivery", SearchByDescription = "by restaurant, city, menu", Image= d_takeaway},
+                new HomeDAO(){ SearchBy ="Bars", SearchByDescription = "by restaurant, city, menu", Image= k1_spring_rolls},
+                new HomeDAO(){ SearchBy ="Reservations", SearchByDescription = "by restaurant, city, menu", Image= d_reservation},
+                new HomeDAO(){ SearchBy ="Deals", SearchByDescription = "by restaurant, city, menu", Image= k1_prawn},
+                new HomeDAO(){ SearchBy ="City favourite", SearchByDescription = "by restaurant, city, menu", Image= d_cityfav},
+
             };
             return list;
         }

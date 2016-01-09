@@ -43,28 +43,20 @@ namespace Codenutz.XFLabs.Basics.ViewModel
             HomePage = new ObservableCollection<HomeDAO>();
             this.LoadList();
             Message = "HomeModel";
-            
         }
 
+        /// <summary>
+        /// Call the repo manager to load the Home Page Data
+        /// </summary>
         private void LoadList()
         {
-            var list = new List<Home>
-            {
-                new Home("Search For","by restaurant, city, menu","https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Capuchin_Costa_Rica.jpg/200px-Capuchin_Costa_Rica.jpg"),
-                new Home("Saved Places","by restaurant, city, menu","https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Capuchin_Costa_Rica.jpg/200px-Capuchin_Costa_Rica.jpg"),
-                new Home("City Favourite","by restaurant, city, menu","https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Capuchin_Costa_Rica.jpg/200px-Capuchin_Costa_Rica.jpg"),
-            };
-
             var homeRepo = RepositoryManager.HomeRepo();
-            var homeLIst = homeRepo.GetItems();
+            var homeList = homeRepo.GetItems();
 
-            foreach (var homepage in homeLIst)
+            foreach (var homepage in homeList)
             {
-                //if (string.IsNullOrWhiteSpace(store.Image))
-                //  store.Image = "http://refractored.com/images/wc_small.jpg";
                 HomePage.Add(homepage);
             }
-            
         }
     }
 }
