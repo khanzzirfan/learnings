@@ -48,7 +48,6 @@
 			  Grid.Row="0"
 			  FontSize="Medium"
 			  Text="Name:"
-			  TextColor="#3498DB"
 			  VerticalOptions="Center"  />
 
       <Entry
@@ -62,7 +61,6 @@
 			  Grid.Row="1"
 			  FontSize="Medium"
 			  Text="Date:"
-			  TextColor="#3498DB"
 			  VerticalOptions="Center"  />
 
       <DatePicker
@@ -74,7 +72,6 @@
         Grid.Row="2"
         FontSize="Medium"
         Text="Guests:"
-        TextColor="#3498DB"
         VerticalOptions="Center"  />
 
       <Entry
@@ -87,7 +84,6 @@
         Grid.Row="3"
         FontSize="Medium"
         Text="Phone:"
-        TextColor="#3498DB"
         VerticalOptions="Center"  />
 
       <Entry
@@ -100,7 +96,6 @@
         Grid.Row="4"
         FontSize="Medium"
         Text="Email:"
-        TextColor="#3498DB"
         VerticalOptions="Center"  />
 
       <Entry
@@ -113,7 +108,6 @@
        Grid.Row="5"
        FontSize="Medium"
        Text="Comment:"
-       TextColor="#3498DB"
        VerticalOptions="Center"  />
 
       <Editor

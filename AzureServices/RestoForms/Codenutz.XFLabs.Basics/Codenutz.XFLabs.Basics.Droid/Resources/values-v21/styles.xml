@@ -14,5 +14,6 @@
    
     <item name="android:homeAsUpIndicator">@drawable/homeindicator</item>
     <item name="logo">@android:color/transparent</item>
+    <item name="android:logo">@android:color/transparent</item>
   </style>
 </resources>
