@@ -4,6 +4,7 @@ using Android.Graphics.Drawables;
 using Android.OS;
 using Autofac;
 using Codenutz.XFLabs.Basics.ViewModel;
+using FFImageLoading.Forms.Droid;
 using Xamarin.Forms.Platform.Android;
 using XLabs.Forms;
 using XLabs.Ioc;
@@ -21,6 +22,7 @@ namespace Codenutz.XFLabs.Basics.Droid
 
 			global::Xamarin.Forms.Forms.Init(this, bundle);
             global::Xamarin.FormsMaps.Init(this, bundle);
+            CachedImageRenderer.Init();
 
             if (!Resolver.IsSet) SetIoc();
 

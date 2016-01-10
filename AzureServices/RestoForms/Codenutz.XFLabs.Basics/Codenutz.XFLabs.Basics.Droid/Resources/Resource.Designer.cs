@@ -26,6 +26,9 @@ namespace Codenutz.XFLabs.Basics.Droid
 		
 		public static void UpdateIdValues()
 		{
+			global::FFImageLoading.Forms.Droid.Resource.String.ApplicationName = global::Codenutz.XFLabs.Basics.Droid.Resource.String.ApplicationName;
+			global::FFImageLoading.Forms.Droid.Resource.String.Hello = global::Codenutz.XFLabs.Basics.Droid.Resource.String.Hello;
+			global::FFImageLoading.Forms.Droid.Resource.String.library_name = global::Codenutz.XFLabs.Basics.Droid.Resource.String.library_name;
 			global::SQLite.Net.Platform.XamarinAndroid.Resource.String.ApplicationName = global::Codenutz.XFLabs.Basics.Droid.Resource.String.ApplicationName;
 			global::SQLite.Net.Platform.XamarinAndroid.Resource.String.Hello = global::Codenutz.XFLabs.Basics.Droid.Resource.String.Hello;
 			global::Xamarin.Forms.Platform.Resource.Animation.abc_fade_in = global::Codenutz.XFLabs.Basics.Droid.Resource.Animation.abc_fade_in;

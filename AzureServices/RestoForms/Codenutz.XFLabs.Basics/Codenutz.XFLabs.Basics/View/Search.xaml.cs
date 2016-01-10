@@ -1,6 +1,7 @@
 ﻿using Codenutz.XFLabs.Basics.DAL;
 using Codenutz.XFLabs.Basics.Model;
 using Codenutz.XFLabs.Basics.ViewModel;
+using FFImageLoading.Forms;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,6 +20,10 @@ namespace Codenutz.XFLabs.Basics.View
         {
             InitializeComponent();
             BindingContext = viewModel = new SearchViewModel(this);
+
+            //var cachedImage = new CachedImage() {
+            //     VerticalOptions = LayoutOptions.FillAndExpand, HorizontalOptions = LayoutOptions.FillAndExpand 
+            //};
         }
 
         protected override void OnAppearing()

@@ -1,5 +1,6 @@
 ﻿using Autofac;
 using Codenutz.XFLabs.Basics.ViewModel;
+using FFImageLoading.Forms.Touch;
 using Foundation;
 using ImageCircle.Forms.Plugin.iOS;
 using System;
@@ -29,6 +30,7 @@ namespace Codenutz.XFLabs.Basics.iOS
             Xamarin.FormsMaps.Init();
             ImageCircleRenderer.Init();
             Corcav.Behaviors.Infrastructure.Init();
+            CachedImageRenderer.Init();
 
             if (!Resolver.IsSet)
 				SetIoc();

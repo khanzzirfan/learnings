@@ -41,11 +41,11 @@ namespace Codenutz.XFLabs.Basics.DL
         string d_reservation = "https://lh3.googleusercontent.com/-RkNxXlksW24/VpB_OYcokoI/AAAAAAAAAz0/--Q5sTWpxsQ/s72/dclock.png";
         string d_cityfav = "https://lh3.googleusercontent.com/-pS5AlKfUoWo/VpB_fBmErUI/AAAAAAAAAz8/jACkmww6bok/s72/dcity.jpg";
 
-        string r_allegiopizza = "https://lh3.googleusercontent.com/-wPdOpoq1ww8/VpF2wgHfQNI/AAAAAAAAA4E/d4GT0SAs0tk/s72/r_pizzaresto3.png";
-        string r_cassia = "https://lh3.googleusercontent.com/-cFaqHxud7Ds/VpFqgAsMGLI/AAAAAAAAA1M/IV0z4N-kIjw/s72/IndianResto2.jpg";
-        string r_orbit = "https://lh3.googleusercontent.com/-pS5AlKfUoWo/VpB_fBmErUI/AAAAAAAAA0E/YXBvW8kwGgU/s72/dcity.jpg";
-        string r_baduzi = "https://lh3.googleusercontent.com/-P4DPkX-SwlA/VpFqgHt0JDI/AAAAAAAAA1M/kBfQAzIdvNc/s72/Badzui.png";
-        string r_cocasden = "https://lh3.googleusercontent.com/-_CntJZdkaY8/VpFsOM0tO4I/AAAAAAAAA2E/2d7KrfM6PX4/s72/cafeHanoi.jpg";
+        string r_allegiopizza = "https://lh3.googleusercontent.com/-1LLEeLmn8Mk/VpHHKKTLT1I/AAAAAAAAA7Y/_QFN_XEcu2c/r_pizzaresto.png";
+        string r_cassia = "https://lh3.googleusercontent.com/-cFaqHxud7Ds/VpFqgAsMGLI/AAAAAAAAA1M/IV0z4N-kIjw/IndianResto2.jpg";
+        string r_orbit = "https://lh3.googleusercontent.com/-pS5AlKfUoWo/VpB_fBmErUI/AAAAAAAAA0E/YXBvW8kwGgU/dcity.jpg";
+        string r_baduzi = "https://lh3.googleusercontent.com/-P4DPkX-SwlA/VpFqgHt0JDI/AAAAAAAAA1M/kBfQAzIdvNc/Badzui.png";
+        string r_cocasden = "https://lh3.googleusercontent.com/-_CntJZdkaY8/VpFsOM0tO4I/AAAAAAAAA2E/2d7KrfM6PX4/cafeHanoi.jpg";
 
         #endregion
 
@@ -58,11 +58,11 @@ namespace Codenutz.XFLabs.Basics.DL
         {
             var list = new List<RestaurantsDAO>()
             {
-                new RestaurantsDAO() { Title="Allegio Pizza", Address="7 Quay Street", City="Auckland", Image=r_allegiopizza },
-                new RestaurantsDAO() { Title="Cooco's Den", Address="120 Langstrasse", City="Auckland", Image=r_cocasden },
-                new RestaurantsDAO() { Title="Orbit 360", Address="72/78 Victoria St", City="Auckland", Image=r_orbit },
-                new RestaurantsDAO() { Title="Baduzzi", Address="0-26 Fish Lane", City="Auckland", Image=r_baduzi },
-                new RestaurantsDAO() { Title="Cassia", Address="5 Fort Ln", City="Auckland", Image=r_cassia }
+                new RestaurantsDAO() { Title="Allegio Pizza", Address="7 Quay Street,", City="Auckland", Image=r_allegiopizza },
+                new RestaurantsDAO() { Title="Cooco's Den", Address="120 Langstrasse,", City="Auckland", Image=r_cocasden },
+                new RestaurantsDAO() { Title="Orbit 360", Address="72/78 Victoria St,", City="Auckland", Image=r_orbit },
+                new RestaurantsDAO() { Title="Baduzzi", Address="0-26 Fish Lane,", City="Auckland", Image=r_baduzi },
+                new RestaurantsDAO() { Title="Cassia", Address="5 Fort Ln,", City="Auckland", Image=r_cassia }
             };
 
             return list;

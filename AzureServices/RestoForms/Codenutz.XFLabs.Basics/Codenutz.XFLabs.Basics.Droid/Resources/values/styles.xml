@@ -18,7 +18,6 @@
     <item name="android:titleTextStyle">@style/MyTheme.ActionBar.TitleTextStyle</item>
     <item name="android:background">@color/primary</item>
     
-  
   </style>
  
   <style name="MyTheme.ActionBar.TitleTextStyle" parent="@android:style/TextAppearance.Holo.Widget.ActionBar.Title">
