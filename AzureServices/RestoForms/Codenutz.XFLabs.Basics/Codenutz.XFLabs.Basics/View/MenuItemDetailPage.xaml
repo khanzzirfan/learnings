@@ -81,7 +81,7 @@
                     Orientation="Horizontal"
                     VerticalOptions="Center">
         <Label Text="Price:" LineBreakMode="TailTruncation"/>
-        <Label Text="{Binding Menu.Price}" LineBreakMode="TailTruncation"/>
+        <Label Text="{Binding Menu.Price, StringFormat='{0:C}'}" LineBreakMode="TailTruncation"/>
       </StackLayout>
 
       <StackLayout  Grid.Row="4"

@@ -1,4 +1,5 @@
-﻿using Codenutz.XFLabs.Basics.Model;
+﻿using Codenutz.XFLabs.Basics.DAL;
+using Codenutz.XFLabs.Basics.Model;
 using Codenutz.XFLabs.Basics.ViewModel;
 using System;
 using System.Collections.Generic;
@@ -13,7 +14,7 @@ namespace Codenutz.XFLabs.Basics.View
     public partial class MenuItemDetailPage : ContentPage
     {
         MenuItemDetailVM viewModel;
-        public MenuItemDetailPage(string storeName, Menu menu)
+        public MenuItemDetailPage(string storeName, MenuDAO menu)
         {
             InitializeComponent();
             BindingContext = viewModel = new MenuItemDetailVM(this, storeName, menu);

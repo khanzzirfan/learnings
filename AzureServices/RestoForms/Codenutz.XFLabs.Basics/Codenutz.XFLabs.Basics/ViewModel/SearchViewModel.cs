@@ -16,10 +16,11 @@ namespace Codenutz.XFLabs.Basics.ViewModel
     public class SearchViewModel : BaseViewModel
     {
         public ObservableCollection<RestaurantsDAO> SearchRestaurants { get; set; }
+        public string titleString = "Search Restaurants";
         public SearchViewModel(Page page)
             : base(page)
         {
-            Title = "My Restaurant";
+            Title = titleString;
             SearchRestaurants = new ObservableCollection<RestaurantsDAO>();
 
             //Load List;

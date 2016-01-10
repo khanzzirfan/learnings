@@ -63,7 +63,7 @@
                       
                       </StackLayout>
                       
-                      <Label FontSize = "12" Text="Price: $10.00" LineBreakMode="TailTruncation"></Label>
+                      <Label FontSize = "12" Text="{Binding Price, StringFormat='{0:C}'}" LineBreakMode="TailTruncation"></Label>
 
                       <StackLayout HorizontalOptions="Start"  Orientation="Horizontal">
 

@@ -1,4 +1,5 @@
-﻿using Codenutz.XFLabs.Basics.Model;
+﻿using Codenutz.XFLabs.Basics.DAL;
+using Codenutz.XFLabs.Basics.Model;
 using Codenutz.XFLabs.Basics.ViewModel;
 using System;
 using System.Collections.Generic;
@@ -65,7 +66,7 @@ namespace Codenutz.XFLabs.Basics.View
             var v = new MenuViewModel(this, "");
             var source = v.MenuCollection;
             this.ItemsSource = source;
-            BindingContext = viewModel = new MenuViewModel(this, "");
+            BindingContext = viewModel = new MenuViewModel(this, RestoTitle);
            
         }
 
@@ -87,12 +88,12 @@ namespace Codenutz.XFLabs.Basics.View
         public async void OnItemSelected(object sender, ItemTappedEventArgs args)
         {
             
-            var menuItem = args.Item as Menu;
+            var menuItem = args.Item as MenuDAO;
             if (menuItem == null)
                 return;
             try
             {
-                Navigation.PushAsync(new MenuItemDetailPage(RestoTitle,menuItem));
+                Navigation.PushAsync(new MenuItemDetailPage(RestoTitle, menuItem));
             }
             catch (Exception ex)
             {
@@ -115,7 +116,7 @@ namespace Codenutz.XFLabs.Basics.View
             var parameter = item.CommandParameter.ToString();
         }
 
-        #region dataset
+        #region dataset_StorePage
         private async Task<int> LoadStorePage(string storeName)
         {
             string d1_dessert_v1 = "https://lh3.googleusercontent.com/-Xh8aY2RRwd0/VeFCHSv2lzI/AAAAAAAAAOY/8SY3a6qk7WM/d1_icecream.png";

@@ -45,6 +45,7 @@ namespace Codenutz.XFLabs.Basics.DL
             {
                 _connection.CreateTable<HomeDAO>();
                 _connection.CreateTable<RestaurantsDAO>();
+                _connection.CreateTable<MenuDAO>();
                 SeedDatabase();
             }
         }
@@ -52,11 +53,18 @@ namespace Codenutz.XFLabs.Basics.DL
         public void SeedDatabase()
         {
             SeedDB seedDB = new SeedDB();
+            //Display List objects
             var homeDAOList = seedDB.HomeObjectsList();
             this.SaveItems(homeDAOList);
-
+            
+            //restaurants list;
             var restaurantlist = seedDB.RestaurantObjectList();
             this.SaveItems<RestaurantsDAO>(restaurantlist);
+
+            //MenuDAO list;
+            var menuList = seedDB.MenuObjectList();
+            this.SaveItems<MenuDAO>(menuList);
+
         }
 
         public IEnumerable<T> GetItems<T>() where T :class, IBusinessEntity, new()

@@ -3,14 +3,16 @@
 using Xamarin.Forms;
 using Codenutz.XFLabs.Basics.Model;
 using XLabs.Platform.Device;
+using Codenutz.XFLabs.Basics.DAL;
+
 namespace Codenutz.XFLabs.Basics.ViewModel
 {
     public class MenuItemDetailVM : BaseViewModel
     {
-        public Menu Menu { get; set; }
+        public MenuDAO Menu { get; set; }
         public string StoreName { get; set; }
 
-        public MenuItemDetailVM(Page page, string restoName, Menu menu)
+        public MenuItemDetailVM(Page page, string restoName, MenuDAO menu)
             : base(page)
         {
             Title = restoName;

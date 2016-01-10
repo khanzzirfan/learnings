@@ -34,7 +34,7 @@
           Padding="10,5,5,10" HeightRequest="20"
           BackgroundColor="#F5F5F5">
           <Label Text="Order Total" FontSize="Medium" FontAttributes="Bold" TextColor="Black"  />
-          <Label Text="$250.00" HorizontalOptions="EndAndExpand"/>
+          <Label Text="$650.00" HorizontalOptions="EndAndExpand"/>
         </StackLayout>
 
         <StackLayout Orientation="Horizontal"

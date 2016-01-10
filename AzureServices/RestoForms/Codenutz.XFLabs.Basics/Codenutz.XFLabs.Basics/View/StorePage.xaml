@@ -57,7 +57,7 @@
         <Button
 					x:Name="ButtonFindStore"
 					Grid.Row="2"
-					BackgroundColor="#3498DB"
+					BackgroundColor="#FFA500"
 					BorderRadius="0"
 					TextColor="White"
 					Image="phone.png"
@@ -78,7 +78,7 @@
 					FontAttributes="Bold"
 					FontSize="Medium"
 					Text="Store Hours"
-					TextColor="#3498DB" />
+					TextColor="#FFA500" />
 
         <Label
 					Grid.Row="4"
@@ -206,7 +206,7 @@
 					FontAttributes="Bold"
 					FontSize="Medium"
 					Text="Location"
-					TextColor="#3498DB"/>
+					TextColor="#FFA500"/>
 
         <Label
 					Grid.Row="12"
@@ -225,7 +225,7 @@
         <Button
 					Grid.Row="12"
 					Grid.RowSpan="2"
-					BackgroundColor="#3498DB"
+					BackgroundColor="#FFA500"
 					BorderRadius="0"
 					TextColor="White"
 					Image="navigation.png"
