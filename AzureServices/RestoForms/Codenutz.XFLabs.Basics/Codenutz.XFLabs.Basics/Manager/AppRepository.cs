@@ -19,10 +19,10 @@ namespace Codenutz.XFLabs.Basics.Manager
         {
             db = new RestaurantDB();
         }
-        
-        public T Get(Expression<Func<T, bool>> predicate)
+
+        public IQueryable<T> SearchFor(Expression<Func<T, bool>> predicate)
         {
-            throw new NotImplementedException();
+            return db.SearchFor<T>(predicate);
         }
 
         public T GetItem(int id)

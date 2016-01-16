@@ -23,5 +23,15 @@ namespace Codenutz.XFLabs.Basics.Manager
         {
             return new AppRepository<MenuDAO>();
         }
+
+        public static AppRepository<OrderDetailDAO> OrderDetailRepo()
+        {
+            return new AppRepository<OrderDetailDAO>();
+        }
+
+        public static AppRepository<OrderDAO> OrderRepo()
+        {
+            return new AppRepository<OrderDAO>();
+        }
     }
 }

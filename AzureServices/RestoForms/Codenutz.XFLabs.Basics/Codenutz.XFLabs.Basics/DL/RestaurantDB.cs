@@ -5,6 +5,7 @@ using SQLite.Net;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
@@ -35,19 +36,41 @@ namespace Codenutz.XFLabs.Basics.DL
             {
                 var checkresponse = ex.Message.ToString();
             }
-            
+
         }
-        
+
         public void UpdateDataModel()
         {
+            var seedData = false;
             // create the tables
             if (CountTable<HomeDAO>() < 1)
             {
+                seedData = true;
                 _connection.CreateTable<HomeDAO>();
-                _connection.CreateTable<RestaurantsDAO>();
-                _connection.CreateTable<MenuDAO>();
-                SeedDatabase();
             }
+
+            if (CountTable<RestaurantsDAO>() < 1)
+            {
+                _connection.CreateTable<RestaurantsDAO>();
+            }
+
+            if (CountTable<MenuDAO>() < 1)
+            {
+                _connection.CreateTable<MenuDAO>();
+            }
+
+            if (CountTable<OrderDetailDAO>() < 1)
+            {
+                _connection.CreateTable<OrderDetailDAO>();
+            }
+
+            if (CountTable<OrderDAO>() < 1)
+            {
+                _connection.CreateTable<OrderDAO>();
+            }
+
+            if (seedData)
+                SeedDatabase();
         }
 
         public void SeedDatabase()
@@ -56,7 +79,7 @@ namespace Codenutz.XFLabs.Basics.DL
             //Display List objects
             var homeDAOList = seedDB.HomeObjectsList();
             this.SaveItems(homeDAOList);
-            
+
             //restaurants list;
             var restaurantlist = seedDB.RestaurantObjectList();
             this.SaveItems<RestaurantsDAO>(restaurantlist);
@@ -67,7 +90,7 @@ namespace Codenutz.XFLabs.Basics.DL
 
         }
 
-        public IEnumerable<T> GetItems<T>() where T :class, IBusinessEntity, new()
+        public IEnumerable<T> GetItems<T>() where T : class, IBusinessEntity, new()
         {
             lock (locker)
             {
@@ -138,7 +161,7 @@ namespace Codenutz.XFLabs.Basics.DL
         }
 
 
-        public IEnumerable<T> FindById<T>(int id) where T :class, IBusinessEntity, new()
+        public IEnumerable<T> FindById<T>(int id) where T : class, IBusinessEntity, new()
         {
             lock (locker)
             {
@@ -179,6 +202,10 @@ namespace Codenutz.XFLabs.Basics.DL
             return 1;
         }
 
-
+        public IQueryable<T> SearchFor<T>(Expression<Func<T, bool>> predicate) where T : class, IBusinessEntity, new()
+        {
+            return _connection.Table<T>().Where(predicate).AsQueryable();
+        }
+        
     }
 }

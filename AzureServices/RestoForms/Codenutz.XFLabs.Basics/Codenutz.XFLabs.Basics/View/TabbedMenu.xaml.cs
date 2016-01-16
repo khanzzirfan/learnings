@@ -74,9 +74,9 @@ namespace Codenutz.XFLabs.Basics.View
         {
             await Navigation.PushAsync(new ReserveTable(restoName));
         }
+
         /// <summary>
         /// Call Reserve Table page with specific restaurant page name;
-        /// 
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>

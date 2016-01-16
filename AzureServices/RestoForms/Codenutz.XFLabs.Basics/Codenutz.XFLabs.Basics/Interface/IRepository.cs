@@ -13,7 +13,7 @@ namespace Codenutz.XFLabs.Basics.Interface
         T GetItem(int id);
         int SaveItem(T entity);
         int DeleteItem(T entity);
-        T Get(Expression<Func<T, bool>> predicate);
+        IQueryable<T> SearchFor(Expression<Func<T, bool>> predicate);
         List<T> FindById(int id);
     }
 

@@ -87,8 +87,7 @@ namespace Codenutz.XFLabs.Basics.ViewModel
             try
             {
                 MenuCollection.Clear();
-                var menuRepo = RepositoryManager.MenuRepo();
-                var menulist = menuRepo.GetItems();
+                var menulist = GetMenuItems();
                 
                 var dicMenuCollection = menulist
                     .GroupBy(c => c.MenuCategory)
@@ -171,29 +170,24 @@ namespace Codenutz.XFLabs.Basics.ViewModel
         }
         #endregion
 
-        public void MenuCollectionUpdate(MenuDAO menu)
+        public async void MenuCollectionUpdate(MenuDAO menu)
         {
-            var menuRepo = RepositoryManager.MenuRepo();
-            var menulist = menuRepo.GetItems();
+            var showAlert = false;
+            var menulist = new List<MenuDAO>();
             try
             {
-                menulist.Single(c => c.ID == menu.ID).QuantityOrdered = menu.QuantityOrdered;
-            }
-            catch (Exception ex)
-            {
-                string x = "Y";
-            }
-            
-            
-            var dicMenuCollection = menulist
+                AddOrderItem(menu); //Add order to menu
+                menulist = GetMenuItems(); // Get new menu list;
+
+                var dicMenuCollection = menulist
                 .GroupBy(c => c.MenuCategory)
                 .Select(c => new DisplayMenu()
                 {
                     MenuCategory = c.Key,
                     MenuList = c.Select(m => new MenuDAO()
                     {
-                         ID = m.ID,
-                         MenuID=m.MenuID,
+                        ID = m.ID,
+                        MenuID = m.MenuID,
                         Name = m.Name,
                         Description = m.Description,
                         MenuCategory = m.MenuCategory,
@@ -205,9 +199,72 @@ namespace Codenutz.XFLabs.Basics.ViewModel
 
                 }).ToList();
 
-            MenuCollection = new ObservableCollection<DisplayMenu>(dicMenuCollection);
-            OnPropertyChanged("MenuCollection");
+                MenuCollection = new ObservableCollection<DisplayMenu>(dicMenuCollection);
+                OnPropertyChanged("MenuCollection");
+            }
+            catch (Exception ex)
+            {
+                showAlert = true;
+            }
+
+            if (showAlert)
+                await page.DisplayAlert("Uh Oh :(", "Unable to update menu order.", "OK");
+            
         }
+
+        /// <summary>
+        /// Return MenuItems along with the existing quantity ordered;
+        /// If there is no existing order, then quantity ordered column will be zero;
+        /// </summary>
+        /// <returns></returns>
+        public List<MenuDAO> GetMenuItems()
+        {
+            var menuRepo = RepositoryManager.MenuRepo();
+            var odrepo = RepositoryManager.OrderDetailRepo();
+            var menulist = menuRepo.GetItems();
+            for (int i = 0; i < menulist.Count(); i++)
+            {
+                var menuId = menulist[i].MenuID;
+                var existingOrder = odrepo.SearchFor(c => c.MenuID == menuId);
+                if (existingOrder.Any())
+                    menulist[i].QuantityOrdered = existingOrder.FirstOrDefault().Quantity;
+            }
+
+            return menulist;
+        }
+
+        public void AddOrderItem(MenuDAO menu)
+        {
+            var odrepo = RepositoryManager.OrderDetailRepo();
+            var odList = odrepo.GetItems().ToList();
+            var existingOrder = odrepo.SearchFor(c => c.MenuID == menu.MenuID);
+            if (existingOrder.Any())
+            {
+                var item = odrepo.GetItem(existingOrder.FirstOrDefault().ID);
+                item.Quantity = menu.QuantityOrdered;
+                item.TotalAmount = menu.Price * menu.QuantityOrdered;
+                item.TaxAmount = menu.Price * menu.QuantityOrdered * 0.10m;
+                odrepo.SaveItem(item);
+            }
+            else
+            {
+                var item = new OrderDetailDAO()
+                {
+                    MenuID = menu.MenuID,
+                    Price = menu.Price,
+                    Quantity = menu.QuantityOrdered,
+                    RestaurantId = 1,
+                    TotalAmount = menu.Price * menu.QuantityOrdered,
+                    TaxAmount = menu.Price * menu.QuantityOrdered * 0.10m,
+                };
+                odrepo.SaveItem(item);
+            }
+
+            var checklist = odrepo.GetItems().ToList();
+        }
+
+
+
 
     }
 }

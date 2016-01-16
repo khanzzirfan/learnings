@@ -20,111 +20,71 @@
                   WinPhone="85" />
     </ResourceDictionary>
   </ContentPage.Resources>
-  <ContentPage.Content Padding="0" BackgroundColor="White">
-    <StackLayout  BackgroundColor="White">
-      <!--<StackLayout Orientation="Horizontal" VerticalOptions="Start">
-        --><!-- top controls --><!--
-      </StackLayout>-->
-
-      <StackLayout VerticalOptions="StartAndExpand">
-        <!-- middle controls -->
-        <Grid RowSpacing="0"
-          ColumnSpacing="0" BackgroundColor="White">
-      <Grid.RowDefinitions>
-        <RowDefinition Height="250"/>
-        <RowDefinition Height="Auto"/>
-        <RowDefinition Height="Auto"/>
-        <RowDefinition Height="Auto"/>
-        <RowDefinition Height="Auto"/>
-        <RowDefinition Height="Auto"/>
-        <RowDefinition Height="Auto"/>
-      </Grid.RowDefinitions>
-      <Grid.ColumnDefinitions>
-        <ColumnDefinition Width="*"/>
-        <ColumnDefinition Width="*"/>
-      </Grid.ColumnDefinitions>
-
+  <ContentPage.Content Padding="0">
+   <StackLayout BackgroundColor="White">
+     <!-- top controls -->
+    <StackLayout Orientation="Vertical" VerticalOptions="Start">
+      
       <Image
-        x:Name="HeroImage"
-        Grid.ColumnSpan="2"
-				Source="{Binding Menu.ThumbUrl}"
-        Aspect="AspectFill"
-				HorizontalOptions="FillAndExpand"
-				VerticalOptions ="FillAndExpand"/>
-
-      <StackLayout  Grid.Row="1"
-                    Grid.ColumnSpan="2"
-                    Padding="5,5,5,10"
-                    Spacing="2"
-                    VerticalOptions="Center">
+          x:Name="HeroImage"
+				  HeightRequest="200"
+          Source="{Binding Menu.ThumbUrl}"
+          Aspect="AspectFill"
+				  HorizontalOptions="FillAndExpand"
+				  VerticalOptions ="FillAndExpand"/>
+    
+      <StackLayout Orientation="Vertical" Padding="0,2,0,2" Spacing="2">
         <Label Text="{Binding Menu.Name}" 
                FontSize = "Medium"  
                TextColor="#FFA500"
                LineBreakMode="TailTruncation" />
-      </StackLayout>
-
-      <ScrollView Grid.Row="2"
-                      Grid.ColumnSpan="2">
-        <StackLayout  
-                      Padding="5"
-                      Spacing="2"
-                      VerticalOptions="Center">
-          <Label Text="{Binding Menu.Description}" 
-                 LineBreakMode="WordWrap"/>
-        </StackLayout>
-      </ScrollView>
       
-      <StackLayout  Grid.Row="3"
-                    Grid.ColumnSpan="2"
-                    Padding="5"
-                    Spacing="2"
-                    Orientation="Horizontal"
-                    VerticalOptions="Center">
-        <Label Text="Price:" LineBreakMode="TailTruncation"/>
-        <Label Text="{Binding Menu.Price, StringFormat='{0:C}'}" LineBreakMode="TailTruncation"/>
-      </StackLayout>
-
-      <StackLayout  Grid.Row="4"
-                    Grid.ColumnSpan="2"
-                    Padding="5"
-                    Spacing="2"
-                    Orientation="Horizontal"
-                    VerticalOptions="Center">
-        <Label Text="Quantity Ordered:" LineBreakMode="TailTruncation"/>
-        <Label Text="{Binding Menu.QuantityOrdered}" LineBreakMode="TailTruncation"/>
+        <ScrollView>
+          <StackLayout>
+            <Label Text="{Binding Menu.Description}" 
+                   LineBreakMode="WordWrap"/>
+          </StackLayout>
+        </ScrollView>  
+        
+         <StackLayout Orientation="Horizontal"
+                      VerticalOptions="Center">
+            <Label Text="Price:" LineBreakMode="TailTruncation"/>
+            <Label Text="{Binding Menu.Price, StringFormat='{0:C}'}" LineBreakMode="TailTruncation"/>
+        </StackLayout>
+      
+        <StackLayout  Orientation="Horizontal"
+                      VerticalOptions="Center">
+            <Label Text="Quantity Ordered:" LineBreakMode="TailTruncation"/>
+            <Label Text="{Binding Menu.QuantityOrdered}" LineBreakMode="TailTruncation"/>
+        </StackLayout>
       </StackLayout>
      
-        </Grid>
-      </StackLayout>
+    </StackLayout>
+    
+     <!-- middle controls -->
+    <StackLayout VerticalOptions="CenterAndExpand">
+      
+    </StackLayout>
 
-      <StackLayout Orientation="Vertical" VerticalOptions="End">
-        <!-- bottom controls -->
-        <StackLayout 
-                   Padding="3"
-                   Spacing="2"
-                   VerticalOptions="Center">
-          <Button
+     <!-- bottom controls -->
+    <StackLayout Orientation="Vertical" Padding="2" Spacing="2" VerticalOptions="End">
+        
+        <Button
             x:Name="btnAddOrderQuantity"
             BackgroundColor="#FFA500"
             BorderRadius="0"
             TextColor="White"
             Text="Add To Order"/>
-        </StackLayout>
-
-        <StackLayout  
-                      Padding="2"
-                      Spacing="2"
-                      VerticalOptions="Center">
-          <Button
+    
+        <Button
             x:Name="btnRemoveOrderQuantity"
             BackgroundColor="#FFA500"
             BorderRadius="0"
             TextColor="White"
             Text="Remove Order"/>
-        </StackLayout>
-      </StackLayout>
+    
     </StackLayout>
-    
-    
+  </StackLayout>
+  
   </ContentPage.Content>
 </ContentPage>
