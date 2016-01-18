@@ -14,10 +14,16 @@ namespace Codenutz.XFLabs.Basics.DAL
         [PrimaryKey, AutoIncrement]
         public int ID { get; set; }
         [Indexed]
-        public int RestaurantId {get;set;}
+        public int StoreId {get;set;}
 
+        public string Name { get; set; }
         public DateTime Date { get; set; }
+        public string PickupTime { get; set; }
+        public string Phone { get; set; }
+        public decimal Amount { get; set; }
+        public string Comment { get; set; }
 
-        public bool OrderComplete { get; set; }
+        public bool IsOrderComplete { get; set; }
+
     }
 }

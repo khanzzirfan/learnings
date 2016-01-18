@@ -46,10 +46,12 @@ namespace Codenutz.XFLabs.Basics.ViewModel
 
         //public ObservableCollection<Menu> MenuCollection { get; set; }
         public ObservableCollection<DisplayMenu> MenuCollection { get; set; }
-        public MenuViewModel(Page page, string restoName)
+        public int StoreId { get; set; }
+        public MenuViewModel(Page page, string restoName, int storeId)
             : base(page)
         {
             Title = restoName;
+            StoreId = storeId;
             MenuCollection = new ObservableCollection<DisplayMenu>();
 
             //Load List;
@@ -103,15 +105,15 @@ namespace Codenutz.XFLabs.Basics.ViewModel
                             MenuCategory = m.MenuCategory,
                             MenuType = m.MenuType,
                             Price = m.Price,
-                            ThumbUrl = m.ThumbUrl
+                            ThumbUrl = m.ThumbUrl,
+                            QuantityOrdered= m.QuantityOrdered,
 
                         }).ToList()
 
                     }).ToList();
 
                 MenuCollection = new ObservableCollection<DisplayMenu>(dicMenuCollection);
-
-
+                
                 //foreach (var m in menulist)
                 //{
                 //    //if (string.IsNullOrWhiteSpace(store.Image))
@@ -240,13 +242,16 @@ namespace Codenutz.XFLabs.Basics.ViewModel
             var existingOrder = odrepo.SearchFor(c => c.MenuID == menu.MenuID);
             if (existingOrder.Any())
             {
-                var item = odrepo.GetItem(existingOrder.FirstOrDefault().ID);
-                item.Quantity = menu.QuantityOrdered;
-                item.TotalAmount = menu.Price * menu.QuantityOrdered;
-                item.TaxAmount = menu.Price * menu.QuantityOrdered * 0.10m;
-                odrepo.SaveItem(item);
+                var oditem = odrepo.GetItem(existingOrder.FirstOrDefault().ID);
+                oditem.Quantity = menu.QuantityOrdered;
+                oditem.TotalAmount = menu.Price * menu.QuantityOrdered;
+                oditem.TaxAmount = menu.Price * menu.QuantityOrdered * 0.10m;
+                if (oditem.Quantity < 1)
+                    odrepo.DeleteItem(oditem);
+                else
+                    odrepo.SaveItem(oditem);
             }
-            else
+            else if (menu.QuantityOrdered > 0)
             {
                 var item = new OrderDetailDAO()
                 {

@@ -43,39 +43,39 @@ namespace Codenutz.XFLabs.Basics.DL
         {
             var seedData = false;
             // create the tables
-            if (CountTable<HomeDAO>() < 1)
+            if (CountTable<BuildVersion>() < 1)
             {
                 seedData = true;
+                _connection.CreateTable<BuildVersion>();
+            }
+
+            if (!_connection.Table<BuildVersion>().Any(c => c.IsCurrentVersion))
+            {
+                seedData = true;
+                //Drop all tables because new version of build has been deployed;
+                this.DeleteAllTables();
+                //Create all tables again;
                 _connection.CreateTable<HomeDAO>();
-            }
-
-            if (CountTable<RestaurantsDAO>() < 1)
-            {
                 _connection.CreateTable<RestaurantsDAO>();
-            }
-
-            if (CountTable<MenuDAO>() < 1)
-            {
                 _connection.CreateTable<MenuDAO>();
-            }
-
-            if (CountTable<OrderDetailDAO>() < 1)
-            {
                 _connection.CreateTable<OrderDetailDAO>();
-            }
-
-            if (CountTable<OrderDAO>() < 1)
-            {
                 _connection.CreateTable<OrderDAO>();
             }
-
             if (seedData)
+            {
                 SeedDatabase();
+                UpdateBuildVersion();
+            }
+            
         }
 
         public void SeedDatabase()
         {
             SeedDB seedDB = new SeedDB();
+            //Add Build Table
+            var buildTab = seedDB.BuildVersion();
+            this.SaveItem(buildTab);
+           
             //Display List objects
             var homeDAOList = seedDB.HomeObjectsList();
             this.SaveItems(homeDAOList);
@@ -195,9 +195,22 @@ namespace Codenutz.XFLabs.Basics.DL
             {
                 var delQuery = @"DROP TABLE HomeDAO";
                 _connection.Execute(delQuery);
+
+                delQuery = @"DROP TABLE RestaurantsDAO";
+                _connection.Execute(delQuery);
+
+                delQuery = @"DROP TABLE MenuDAO";
+                _connection.Execute(delQuery);
+
+                delQuery = @"DROP TABLE OrderDetailDAO";
+                _connection.Execute(delQuery);
+
+                delQuery = @"DROP TABLE OrderDAO";
+                _connection.Execute(delQuery);
             }
             catch (Exception ex)
             {
+
             }
             return 1;
         }
@@ -206,6 +219,20 @@ namespace Codenutz.XFLabs.Basics.DL
         {
             return _connection.Table<T>().Where(predicate).AsQueryable();
         }
-        
+
+
+        //Get Menu Name;
+        public string GetMenuNameById(int menuID)
+        {
+            return _connection.Table<MenuDAO>().FirstOrDefault(c => c.MenuID == menuID).Name;
+        }
+
+        public void UpdateBuildVersion()
+        {
+            var build = this.GetItem<BuildVersion>(1);
+            var buildItems = this.GetItems<BuildVersion>();
+            build.IsCurrentVersion = true;
+            SaveItem<BuildVersion>(build);
+        }
     }
 }

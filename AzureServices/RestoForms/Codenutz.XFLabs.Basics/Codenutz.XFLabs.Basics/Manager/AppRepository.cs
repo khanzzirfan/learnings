@@ -60,5 +60,19 @@ namespace Codenutz.XFLabs.Basics.Manager
             return db.FindById<T>(id).ToList();
         }
 
+
+        //Additional Methods for menu repository
+        public string GetMenuNameById(int menuId)
+        {
+            return db.GetMenuNameById(menuId);
+        }
+
+        /// <summary>
+        /// Updates all the build version;
+        /// </summary>
+        public void UpdateBuild()
+        {
+            db.UpdateBuildVersion();
+        }
     }
 }

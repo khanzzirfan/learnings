@@ -40,6 +40,7 @@
     <Compile Include="App.cs" />
     <Compile Include="Contracts\BusinessEntityBase.cs" />
     <Compile Include="Contracts\IBusinessEntity.cs" />
+    <Compile Include="DAL\BuildVersion.cs" />
     <Compile Include="DAL\HomeDAO.cs" />
     <Compile Include="DAL\MenuDAO.cs" />
     <Compile Include="DAL\OrderDAO.cs" />
@@ -74,6 +75,7 @@
     <Compile Include="ViewModel\MenuItemDetailVM.cs" />
     <Compile Include="ViewModel\MenuViewModel.cs" />
     <Compile Include="ViewModel\OrderDetailViewModel.cs" />
+    <Compile Include="ViewModel\OrderInfoViewModel.cs" />
     <Compile Include="ViewModel\ReserveTableViewModel.cs" />
     <Compile Include="ViewModel\RestaurantViewModel.cs" />
     <Compile Include="ViewModel\SearchViewModel.cs" />
@@ -89,6 +91,9 @@
     </Compile>
     <Compile Include="View\OrderDetails.xaml.cs">
       <DependentUpon>OrderDetails.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\OrderInformation.xaml.cs">
+      <DependentUpon>OrderInformation.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\ReserveTable.xaml.cs">
       <DependentUpon>ReserveTable.xaml</DependentUpon>
@@ -250,6 +255,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Service\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="View\OrderInformation.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

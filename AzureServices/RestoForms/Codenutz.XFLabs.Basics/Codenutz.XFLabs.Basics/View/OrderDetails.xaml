@@ -34,7 +34,7 @@
           Padding="10,5,5,10" HeightRequest="20"
           BackgroundColor="#F5F5F5">
           <Label Text="Order Total" FontSize="Medium" FontAttributes="Bold" TextColor="Black"  />
-          <Label Text="$650.00" HorizontalOptions="EndAndExpand"/>
+          <Label Text="{Binding TotalAmount, StringFormat='{0:C}'}" HorizontalOptions="EndAndExpand"/>
         </StackLayout>
 
         <StackLayout Orientation="Horizontal"
@@ -90,7 +90,8 @@
           BackgroundColor="#FFA500"
           BorderRadius="0"
           TextColor="White"
-          Text="Place Order"/>
+          Text="Place Order"
+         />
       
         <Button
           x:Name="BtnClearOrder"

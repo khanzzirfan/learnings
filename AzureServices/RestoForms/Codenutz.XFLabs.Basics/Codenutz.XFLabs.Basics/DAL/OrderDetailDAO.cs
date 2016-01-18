@@ -17,6 +17,9 @@ namespace Codenutz.XFLabs.Basics.DAL
         public int MenuID { get; set; }
         [Indexed]
         public int RestaurantId { get; set; }
+        [Indexed]
+        public int OrderId { get; set; }
+
         public int Quantity { get; set; }
         public decimal Price { get; set; }
         public decimal TotalAmount { get; set; }

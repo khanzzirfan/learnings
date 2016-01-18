@@ -18,18 +18,19 @@ namespace Codenutz.XFLabs.Basics.View
         public ToolbarItem AboutUs { get; set; }
         public ToolbarItem Cart { get; set; }
         public ToolbarItem Reservation { get; set; }
-
+        public int StoreId { get; set; }
         public string RestoTitle
         {
             get { return _RestoTitle;}
             set { _RestoTitle = value; }
         }
 
-        public TabbedMenu(string restoName)
+        public TabbedMenu(string restoName, int storeId)
         {
             this.Title = restoName;
             InitializeComponent();
             RestoTitle = restoName;
+            StoreId = storeId;
             string platformName = Device.OS.ToString();
 
             AboutUs = new ToolbarItem
@@ -47,7 +48,7 @@ namespace Codenutz.XFLabs.Basics.View
                 Order = ToolbarItemOrder.Primary,
                 Priority = 1,
                 Icon = "ic_action_cart.png",
-                Command = new Command( () =>  Navigation.PushAsync(new OrderDetails()))
+                Command = new Command( () =>  Navigation.PushAsync(new OrderDetails(RestoTitle,StoreId)))
             };
 
             Reservation = new ToolbarItem
@@ -63,10 +64,10 @@ namespace Codenutz.XFLabs.Basics.View
             this.ToolbarItems.Add(Cart);
             this.ToolbarItems.Add(Reservation);
 
-            var v = new MenuViewModel(this, "");
+            var v = new MenuViewModel(this, restoName, StoreId);
             var source = v.MenuCollection;
             this.ItemsSource = source;
-            BindingContext = viewModel = new MenuViewModel(this, RestoTitle);
+            BindingContext = viewModel = new MenuViewModel(this, RestoTitle,StoreId);
            
         }
 

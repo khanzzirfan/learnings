@@ -40,7 +40,8 @@ namespace Codenutz.XFLabs.Basics.View
                 return;
             try
             {
-                Navigation.PushAsync(new TabbedMenu(searchOption.Title));
+                //Pass storeName, storeID;
+                Navigation.PushAsync(new TabbedMenu(searchOption.Title,searchOption.StoreId));
             }
             catch (Exception ex)
             {

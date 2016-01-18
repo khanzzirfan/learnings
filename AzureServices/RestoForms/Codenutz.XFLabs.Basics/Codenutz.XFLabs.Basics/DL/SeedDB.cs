@@ -54,13 +54,24 @@ namespace Codenutz.XFLabs.Basics.DL
 
         }
 
+        public BuildVersion BuildVersion()
+        {
+            var buildversionid = new BuildVersion()
+            {
+                versionId = 1,
+                IsCurrentVersion = false,
+            };
+
+            return buildversionid;
+        }
+
         public List<MenuDAO> MenuObjectList()
         {
             var list = new List<MenuDAO>()
             {
                   new MenuDAO ()
                 {
-                    StoreID=1,
+                    StoreID= 101,
                     MenuID=21,
                     Name ="Chicken Afgani",
                     Description ="Afghani Chicken is another specialty recipe of Asian cuisine.",
@@ -72,7 +83,7 @@ namespace Codenutz.XFLabs.Basics.DL
 
                   new MenuDAO ()
                 {
-                    StoreID=1,
+                    StoreID=101,
                     MenuID=22,
                     Name ="Chicken Kebab",
                     Description ="chicken kebab, better known as ‘tavuk şiş’ (tah-VOOK’ SHEESH’), is often served alongside grilled beef and lamb.",
@@ -83,7 +94,7 @@ namespace Codenutz.XFLabs.Basics.DL
                 },
                   new MenuDAO ()
                 {
-                    StoreID=1,
+                    StoreID=101,
                         MenuID=23,
                     Name ="Chicken Smoked",
                     Description ="Smoked Chicken",
@@ -94,7 +105,7 @@ namespace Codenutz.XFLabs.Basics.DL
                 },
                 new MenuDAO ()
                 {
-                    StoreID=1,
+                    StoreID=101,
                         MenuID=24,
                     Name ="Butter Chicken",
                     Description ="Smoked Chicken",
@@ -106,7 +117,7 @@ namespace Codenutz.XFLabs.Basics.DL
 
                 new MenuDAO ()
                 {
-                    StoreID=1,
+                    StoreID=101,
                         MenuID=25,
                     Name ="Chicken Tikka",
                     Description ="Smoked Chicken",
@@ -120,7 +131,7 @@ namespace Codenutz.XFLabs.Basics.DL
 
                  new MenuDAO ()
                 {
-                    StoreID=1,
+                    StoreID=101,
                         MenuID=26,
                     Name ="Chicken Afgani",
                     Description ="Afghani Chicken is another specialty recipe of Asian cuisine.",
@@ -134,7 +145,7 @@ namespace Codenutz.XFLabs.Basics.DL
 
                  new MenuDAO ()
                 {
-                    StoreID=1,
+                    StoreID=101,
                         MenuID=27,
                     Name ="Chicken Kebab",
                     Description ="chicken kebab, better known as ‘tavuk şiş’ (tah-VOOK’ SHEESH’), is often served alongside grilled beef and lamb.",
@@ -145,7 +156,7 @@ namespace Codenutz.XFLabs.Basics.DL
                 },
                 new MenuDAO ()
                 {
-                    StoreID=1,
+                    StoreID=101,
                         MenuID=28,
                     Name ="Chicken Smoked",
                     Description ="Smoked chicken is highly versatile in that it is cooked and ready to slice as cold meat or can be incorporated into a recipe such as our delicious “feed a crowd smoked chicken pie” and give a lovely robust smoky chicken flavour.",
@@ -156,7 +167,7 @@ namespace Codenutz.XFLabs.Basics.DL
                 },
                 new MenuDAO ()
                 {
-                    StoreID=1,
+                    StoreID=101,
                         MenuID=29,
                     Name ="Butter Chicken",
                     Description ="Butter Chicken is among the best known Indian foods all over the world. Its gravy can be made as hot or mild as you like so it suits most palates. Also commonly known as Murg Makhani, Butter Chicken tastes great with Kaali Daal (black lentils), Naans and a green salad.",
@@ -168,7 +179,7 @@ namespace Codenutz.XFLabs.Basics.DL
 
                 new MenuDAO ()
                 {
-                    StoreID=1,
+                    StoreID=101,
                         MenuID=30,
                     Name ="Chicken Tikka",
                     Description ="The word Tikka means bits, pieces or chunks. Chicken Tikka is an easy-to-cook dish in which chicken chunks are marinated in special spices and then grilled on skewers. This is one of India's most popular dishes. Chicken Tikka can also be made into Chicken Tikka Masala, a tasty gravy dish.",
@@ -189,11 +200,11 @@ namespace Codenutz.XFLabs.Basics.DL
         {
             var list = new List<RestaurantsDAO>()
             {
-                new RestaurantsDAO() { Title="Allegio Pizza", Address="7 Quay Street,", City="Auckland", Image=r_allegiopizza },
-                new RestaurantsDAO() { Title="Cooco's Den", Address="120 Langstrasse,", City="Auckland", Image=r_cocasden },
-                new RestaurantsDAO() { Title="Orbit 360", Address="72/78 Victoria St,", City="Auckland", Image=r_orbit },
-                new RestaurantsDAO() { Title="Baduzzi", Address="0-26 Fish Lane,", City="Auckland", Image=r_baduzi },
-                new RestaurantsDAO() { Title="Cassia", Address="5 Fort Ln,", City="Auckland", Image=r_cassia }
+                new RestaurantsDAO() {StoreId=101, Title="Allegio Pizza", Address="7 Quay Street,", City="Auckland", Image=r_allegiopizza },
+                new RestaurantsDAO() {StoreId=102, Title="Cooco's Den", Address="120 Langstrasse,", City="Auckland", Image=r_cocasden },
+                new RestaurantsDAO() {StoreId=103, Title="Orbit 360", Address="72/78 Victoria St,", City="Auckland", Image=r_orbit },
+                new RestaurantsDAO() {StoreId=104, Title="Baduzzi", Address="0-26 Fish Lane,", City="Auckland", Image=r_baduzi },
+                new RestaurantsDAO() {StoreId=105, Title="Cassia", Address="5 Fort Ln,", City="Auckland", Image=r_cassia }
             };
 
             return list;

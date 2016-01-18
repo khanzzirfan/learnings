@@ -11,11 +11,19 @@ namespace Codenutz.XFLabs.Basics.View
 {
     public partial class OrderDetails : ContentPage
     {
-        OrderDetailViewModel viewModel;
-        public OrderDetails()
+        public OrderDetailViewModel viewModel;
+        public int StoreId { get; set; }
+        public string StoreName { get; set; }
+        public OrderDetails(string storeName, int storeId)
         {
             InitializeComponent();
+            StoreId = storeId;
+            StoreName = storeName;
             BindingContext = viewModel = new OrderDetailViewModel(this);
+            BtnPlaceOrder.Clicked += async (sender, e) => {
+                await Navigation.PushAsync(new OrderInformation(StoreName,StoreId));
+            };
+
         }
 
         protected override void OnAppearing()

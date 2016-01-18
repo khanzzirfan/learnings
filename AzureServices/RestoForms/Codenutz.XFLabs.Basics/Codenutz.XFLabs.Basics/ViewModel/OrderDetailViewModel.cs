@@ -1,4 +1,5 @@
-﻿using Codenutz.XFLabs.Basics.Model;
+﻿using Codenutz.XFLabs.Basics.Manager;
+using Codenutz.XFLabs.Basics.Model;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -14,9 +15,7 @@ namespace Codenutz.XFLabs.Basics.ViewModel
     {
         public ObservableCollection<OrderDetails> OrderDetail { get; set; }
         const string title = "My Order";
-        public string Intro { get { return "Monkey Header"; } }
-        public string Summary { get { return " There were " + 10 + " monkeys"; } }
-
+        
         public OrderDetailViewModel(Page page)
             : base(page)
         {
@@ -76,35 +75,36 @@ namespace Codenutz.XFLabs.Basics.ViewModel
 
         private void GetOrderDetailsList()
         {
-            var list = new List<OrderDetails>
+            var odrepo = RepositoryManager.OrderDetailRepo();
+            var orderitems = odrepo.GetItems().ToList();
+            var list = orderitems.Select(c => new OrderDetails()
             {
-                new OrderDetails(){ID=1,MenuID=1,MenuName="Chicken Afgani",Price=10.0m,Quantity = 3},
-                new OrderDetails(){ID=2,MenuID=2,MenuName="Chicken Tandoori",Price=12.0m,Quantity = 1},
-                new OrderDetails(){ID=3,MenuID=3,MenuName="Chicken Kebab",Price=13.0m,Quantity = 1},
-                new OrderDetails(){ID=4,MenuID=4,MenuName="Chicken Mughali",Price=14.0m,Quantity = 5},
-                new OrderDetails(){ID=5,MenuID=5,MenuName="Chicken Kadai",Price=15.0m,Quantity = 7},
+                ID = c.ID,
+                MenuID = c.MenuID,
+                MenuName = odrepo.GetMenuNameById(c.MenuID),
+                Price = c.Price,
+                Quantity = c.Quantity,
+            }).ToList();
 
-                new OrderDetails(){ID=1,MenuID=1,MenuName="Chicken Afgani",Price=10.0m,Quantity = 3},
-                new OrderDetails(){ID=2,MenuID=2,MenuName="Chicken Tandoori",Price=12.0m,Quantity = 1},
-                new OrderDetails(){ID=3,MenuID=3,MenuName="Chicken Kebab",Price=13.0m,Quantity = 1},
-                new OrderDetails(){ID=4,MenuID=4,MenuName="Chicken Mughali",Price=14.0m,Quantity = 5},
-                new OrderDetails(){ID=5,MenuID=5,MenuName="Chicken Kadai",Price=15.0m,Quantity = 7},
-
-                new OrderDetails(){ID=1,MenuID=1,MenuName="Chicken Afgani",Price=10.0m,Quantity = 3},
-                new OrderDetails(){ID=2,MenuID=2,MenuName="Chicken Tandoori",Price=12.0m,Quantity = 1},
-                new OrderDetails(){ID=3,MenuID=3,MenuName="Chicken Kebab",Price=13.0m,Quantity = 1},
-                new OrderDetails(){ID=4,MenuID=4,MenuName="Chicken Mughali",Price=14.0m,Quantity = 5},
-                new OrderDetails(){ID=5,MenuID=5,MenuName="Chicken Kadai",Price=15.0m,Quantity = 7},
-            };
+            TotalAmount = list.Sum(c => c.Price * c.Quantity);
+            OnPropertyChanged("TotalAmount");
 
             foreach (var od in list)
             {
-                //if (string.IsNullOrWhiteSpace(store.Image))
-                //  store.Image = "http://refractored.com/images/wc_small.jpg";
                 OrderDetail.Add(od);
             }
 
         }
+
+
+        #region properties
+        decimal totalAmount= 0.0m;
+        public decimal TotalAmount
+        {
+            get { return totalAmount; }
+            set { SetProperty(ref totalAmount, value); }
+        }
+        #endregion
 
 
     }
