@@ -48,7 +48,10 @@
     <Compile Include="DAL\RestaurantsDAO.cs" />
     <Compile Include="DL\RestaurantDB.cs" />
     <Compile Include="DL\SeedDB.cs" />
+    <Compile Include="Helpers\BindablePicker.cs" />
+    <Compile Include="Helpers\DateTimeHelper.cs" />
     <Compile Include="Helpers\DecimalToStringConverter.cs" />
+    <Compile Include="Helpers\EnumerableExtensions.cs" />
     <Compile Include="Helpers\ImageHelper.cs" />
     <Compile Include="Helpers\IntegerToStringConverter.cs" />
     <Compile Include="Helpers\TranslateExtension.cs" />
@@ -63,6 +66,7 @@
     <Compile Include="Model\ReserveTable.cs" />
     <Compile Include="Model\SearchRestaurant.cs" />
     <Compile Include="Model\Store.cs" />
+    <Compile Include="Model\Time.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Resx\AppResource.Designer.cs">
       <AutoGen>True</AutoGen>

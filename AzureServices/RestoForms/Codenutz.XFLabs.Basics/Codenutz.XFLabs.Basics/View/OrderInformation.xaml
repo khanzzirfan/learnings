@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Codenutz.XFLabs.Basics.View.OrderInformation"
+             xmlns:local="clr-namespace:Codenutz.XFLabs.Basics.Helpers;assembly=Codenutz.XFLabs.Basics"
              Title="{Binding Title}"
 	           IsBusy="{Binding IsBusy}"
              >
@@ -41,11 +42,6 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="Auto"/>
           </Grid.RowDefinitions>
           <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto"/>
@@ -82,12 +78,11 @@
             Text="Time:"
             VerticalOptions="Center"  />
 
-          <Entry
-            Grid.Row="2"
-            Grid.Column="1"
-            Text="{Binding Time}"
-            Keyboard="Default"/>
-          
+          <local:BindablePicker  Grid.Row="2"
+                                 Grid.Column="1" 
+                                 ItemsSource="{Binding TimePickerList}" 
+                                 SelectedItem="{Binding SelectedTime, Mode=TwoWay}" />
+            
           <Label
             Grid.Row="3"
             FontSize="Medium"

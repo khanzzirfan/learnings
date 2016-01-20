@@ -1,8 +1,10 @@
 ﻿using Codenutz.XFLabs.Basics.DAL;
+using Codenutz.XFLabs.Basics.Helpers;
 using Codenutz.XFLabs.Basics.Manager;
 using Codenutz.XFLabs.Basics.Model;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,23 +17,25 @@ namespace Codenutz.XFLabs.Basics.ViewModel
     {
         public int StoreId { get; set; }
         public OrderDAO OrderInformation { get; set; }
-
+        
         public OrderInfoViewModel(Page page, string restoName, int storeId)
             : base(page)
         {
             Title = restoName;
             StoreId = storeId;
+            TimePickerList = new ObservableCollection<string>();
         }
 
         public OrderInfoViewModel(IDevice device) : base(device)
         {
+            TimePickerList = new ObservableCollection<string>();
             Message = String.Format("Hello Xamarin Forms Labs MVVM Basics!! How is your {0} device", device.Manufacturer);
         }
 
 
         public OrderInfoViewModel()
         {
-
+            TimePickerList = new ObservableCollection<string>();
         }
 
         private Command getOrderTotal;
@@ -58,7 +62,13 @@ namespace Codenutz.XFLabs.Basics.ViewModel
                 var odItems = odrepo.GetItems();
                 var total = odItems.Sum(c => c.Price * c.Quantity);
                 OrderTotal = total;
-                OnPropertyChanged("OrderTotal");
+               
+                TimePickerList.Clear();
+                var timelist = GetTimeList().ToList();
+                foreach (var t in timelist)
+                {
+                    TimePickerList.Add(t);
+                }
             }
             catch (Exception ex)
             {
@@ -73,6 +83,7 @@ namespace Codenutz.XFLabs.Basics.ViewModel
 
             if (showAlert)
                 await page.DisplayAlert("Uh Oh :(", "Unable to gather order information.", "OK");
+            OnPropertyChanged("OrderTotal");
 
         }
 
@@ -137,14 +148,14 @@ namespace Codenutz.XFLabs.Basics.ViewModel
 
             var orderItem = new OrderDAO()
             {
-                Comment = this.Comment,
-                Name = this.Name,
-                Date = this.Date,
-                Phone = this.Phone,
-                PickupTime = this.Time,
+                Comment = Comment,
+                Name = Name,
+                Date = Date,
+                Phone = Phone,
+                PickupTime = SelectedTime,
                 IsOrderComplete = true,
                 Amount = amount,
-                StoreId = this.StoreId,
+                StoreId = StoreId,
             };
 
             //Save Order Item
@@ -180,7 +191,7 @@ namespace Codenutz.XFLabs.Basics.ViewModel
                 return false;
             }
 
-            if (string.IsNullOrEmpty(Time))
+            if (string.IsNullOrEmpty(SelectedTime))
             {
                 page.DisplayAlert("Enter TIme", "Please enter order pickup time.", "OK");
                 return false;
@@ -244,6 +255,34 @@ namespace Codenutz.XFLabs.Basics.ViewModel
         #endregion
 
 
-
+        public IEnumerable<string> GetTimeList()
+        {
+            var currentDate = DateTime.Now;
+            var timeNow = new DateTime(currentDate.Year, currentDate.Month, currentDate.Day, 11, 00, 00);
+            var timeSource = DateTimeHelper.GetHalfHourInterval(timeNow).ToList();
+            return timeSource;
+        }
+        
+        private ObservableCollection<string> timePickerList;
+        public ObservableCollection<string> TimePickerList
+        {
+            get {return timePickerList;}
+            set
+            {
+                timePickerList = value;
+                OnPropertyChanged("TimePickerList");
+            }
+        }
+        
+        private string selectedTime;
+        public string SelectedTime
+        {
+            get { return selectedTime; }
+            set
+            {
+                selectedTime = value;
+                OnPropertyChanged("SelectedTime");
+            }
+        }
     }
 }

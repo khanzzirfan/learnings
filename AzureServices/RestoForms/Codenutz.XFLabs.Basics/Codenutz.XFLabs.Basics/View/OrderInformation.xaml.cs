@@ -21,6 +21,7 @@ namespace Codenutz.XFLabs.Basics.View
             StoreId = storeId;
 
             BindingContext = viewModel = new OrderInfoViewModel(this,StoreName,StoreId);
+            
         }
 
         protected override void OnAppearing()
@@ -30,6 +31,7 @@ namespace Codenutz.XFLabs.Basics.View
             //    return;
 
             viewModel.GetOrderTotal.Execute(null);
+            
         }
 
     }
