@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Contact Manager</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/knockout")
+    @RenderSection("scripts", required: false)
+</head>
+<body>
+    <div class="container-narrow">
+        <div class="masthead">
+            <ul class="nav nav-pills pull-right">
+
+            </ul>
+            <h3 class="text-muted"> Contact Manager </h3>
+        </div>
+    </div>
+    <div id="body" class="container">
+        @RenderSection("featured", required: false)
+        @RenderBody()
+        <hr />
+    </div>
+    <div id="footer">
+        <div class="container">
+            <footer>
+                <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            </footer>
+        </div>
+    </div>
+
+</body>
+</html>
