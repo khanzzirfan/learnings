@@ -13,5 +13,10 @@ namespace Application.Web.Controllers
         {
             return View();
         }
+
+        public ActionResult CreateEdit()
+        {
+            return View();
+        }
     }
 }

@@ -1,0 +1,85 @@
+﻿
+@{
+    ViewBag.Title = "CreateEdit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>CreateEdit</h2>
+
+<table class="table">
+    <tr>
+        <th colspan="3">Profile Information</th>
+    </tr>
+    <tr></tr>
+    
+    <tbody data-bind="with: profile">
+        <tr>
+            <td><input class="input-lg" data-bind="value: FirstName" placeholder="First Name"/></td>
+            <td><input class="input-lg" data-bind="value: LastName" placeholder="Last Name"/></td>
+            <td><input class="input-lg" data-bind="value: Email" placeholder="Email"/></td>
+        </tr>
+    </tbody>
+</table>
+<table class="table">
+    <tr>
+        <th colspan="3"></th>
+    </tr>
+    <tr></tr>
+    <tbody data-bind="foreach: phoneNumbers">
+        <tr>
+            <td>
+                <select data-bind="options: PhoneTypeData, value:PhoneTypeId, optionsValue: 'PhoneTypeId', optionsText:'Name', optionsCaption:'Select Phone Type...'"></select>
+            </td>
+            <td>
+                <input class="input-lg" data-bind="value: Number", placeholder="Number"/>
+            </td>
+            <td>
+                <a class="btn btn-sm btn-danger" href="#" data-bind="click: $parent.removePhone">X</a>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p>
+    <button class="btn btn-sm btn-primary" data-bind="click: addPhone"> Add New Phone</button>
+</p>
+
+<table class="table">
+    <tr>
+        <th colspan="5"> Address Information</th>
+    </tr>
+    <tbody data-bind="foreach: addresses">
+        <tr>
+            <td colspan="5">
+                <select data-bind="options: AddressTypeData, value: AddressTypeId, optionsValue: 'AddressTypeId', optionsText: 'Name', optionsCaption: 'Select Address Type...'"></select>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input class="input-lg" data-bind="value: AddressLine1" />
+                <p style="padding-top:5px;"> <input class="input-lg" data-bind="value: State" /></p>
+            </td>
+            <td>
+                <input class="input-lg" data-bind="value: AddressLine2" />
+                <p style="padding-top: 5px;"><input class="input-lg" data-bind="value: Country" /></p>
+            </td>
+            <td>
+                <input class="input-lg" data-bind="value: City" />
+                <p style="padding-top: 5px;">
+                    <input class="input-lg" data-bind="value: ZipCode" />
+                    <a class="btn btn-sm btn-danger" href="#" data-bind="click: $root.removeAddress">X</a>
+                </p>
+            </td>
+
+        </tr>
+
+
+    </tbody>
+</table>
+<p>
+    <button class="btn btn-sm btn-primary" data-bind="click: addAddress"> Add New Address</button>
+</p>
+
+<button class="btn btn-sm btn-success" data-bind="click: saveProfile">Save Profile</button>
+<input class="btn btn-sm btn-primary" type="button" value="Back To Profile List" data-bind="click: $root.backToProfileList"/>
+
+<script src="~/Scripts/CreateEdit.js"></script>

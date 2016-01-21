@@ -12,7 +12,7 @@ var DummyProfile = [
         "LastName": "Cena",
         "Email": "john@cena.com"
     }
-]
+];
 
 var ProfilesViewModel = function () {
     var self = this;
@@ -23,21 +23,25 @@ var ProfilesViewModel = function () {
     //public data properties;
     self.Profiles = ko.observableArray([]);
     refresh();
+
+
+    self.createProfile = function () {
+        window.location.href = '/Contact/CreateEdit/0';
+    };
+
+    self.editProfile = function (profile) {
+        window.location.href = '/Contact/CreateEdit/' + profile.ProfileId;
+    };
+
+    self.removeProfile = function (profile) {
+        if (confirm("Are you sure you want to delete this profile?")) {
+            self.Profiles.remove(profile);
+        }
+    };
+
 };
 
-self.createProfile = function()
-{
-    alert("Create new profile.");
-};
 
-self.editProfile = function (profile) {
-    alert("Edit this profile with profile id as: " + profile.ProfileId);
-};
 
-self.removeProfile = function (profile)
-{
-    if (confirm("Are you sure you want to delete this profile?")) {
-        self.Profiles.remove(profile);
-    }
-};
+//Activate Knockout
 ko.applyBindings(new ProfilesViewModel());
