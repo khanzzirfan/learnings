@@ -65,10 +65,7 @@ namespace Codenutz.XFLabs.Basics.ViewModel
                
                 TimePickerList.Clear();
                 var timelist = GetTimeList().ToList();
-                foreach (var t in timelist)
-                {
-                    TimePickerList.Add(t);
-                }
+                TimePickerList = new ObservableCollection<string>(timelist);
             }
             catch (Exception ex)
             {
