@@ -108,7 +108,7 @@
            Grid.ColumnSpan="1"
            HeightRequest="150"
            Text="{Binding Comment}"
-           Keyboard="Text"
+           Keyboard="Default"
            BackgroundColor="#103498DB" 			/>
 
         </Grid>
