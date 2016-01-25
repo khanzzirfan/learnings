@@ -1,0 +1,25 @@
+﻿@model ChristiaanVerwijs.MvcSiteWithEntityFramework.WebSite.Models.ApplicationListViewModel
+
+@{
+    ViewBag.Title = "List of applications";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<p>These are your applications.</p>
+<ul class="list-group">
+    @foreach (var item in Model.Applications)
+    {
+        <div class="row applicationlist">
+            <div class="col-md-1">
+                <a class="btn btn-default btn-xs" href="@Url.Action("Edit", new { @id = item.Id })"><span class="glyphicon glyphicon-edit"></span></a>
+                <a class="btn btn-danger btn-xs" href="@Url.Action("Delete", new { @id = item.Id })"><span class="glyphicon glyphicon-remove"></span></a>
+            </div>
+            <div class="col-md-9">@Html.DisplayFor(modelItem => item.Name)</div>
+        </div>
+        
+        <hr />
+    }
+</ul>
+
+@Html.ActionLink("Create new application", "Create", null, new { @class = "btn btn-primary" })
+<br />

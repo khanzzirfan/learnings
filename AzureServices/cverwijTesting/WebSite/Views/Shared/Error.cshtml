@@ -1,0 +1,9 @@
+﻿@model System.Web.Mvc.HandleErrorInfo
+@{
+    ViewBag.Title = "Sorry, an error occured";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<p>Whoops! Something went wrong. A detailed warning is shown below:</p>
+<p class="alert alert-danger">@Model.Exception.ToString()</p>
+@Html.ActionLink("Back to index", "Index", "Application", null, new { @class = "btn btn-primary" })

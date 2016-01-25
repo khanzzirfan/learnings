@@ -1,0 +1,8 @@
+﻿TO CREATE THE INITIAL MIGRATION (TO CREATE THE DATABASE FROM SCRATCH)
+- Add-Migration InitialCreate -StartUpProjectName "WebSite" -ProjectName "Repositories"
+
+TO ADD A NEW MIGRATION FOR CHANGES YOU MADE IN THE MODEL (DATABASE IS NOT YET UPDATED!)
+- Add-Migration [Short description of change] -StartUpProjectName "WebSite" -ProjectName "Repositories"
+
+TO UPDATE THE DATABASE WITH CHANGES IN YOUR MODEL
+- Update-Database -StartUpProjectName "WebSite" -ProjectName "Repositories" -verbose

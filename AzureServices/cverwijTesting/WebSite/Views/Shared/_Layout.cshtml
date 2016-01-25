@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width">
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div class="alert alert-success">
+            @TempData["SuccessMessage"].ToString()
+        </div>
+    }
+    @if (TempData["ErrorMessage"] != null)
+    {
+        <div class="alert alert-danger">
+            @TempData["ErrorMessage"].ToString()
+        </div>
+    }
+
+    <br />
+
+    <div class="container">
+        <p><i>This is a simple webapplication that shows how to use Entity Framework 6, MVC4, Bootstrap, Ninject, Unit Testing, the Repository Pattern together. You can read more about this in this <a href="http://www.christiaanverwijs.nl/post/2013/12/05/Entity-Framework-MVC-Repositories-Code-First-Migrations-Putting-it-together.aspx">blogpost</a>.</i></p>
+
+        <div class="panel panel-primary">
+            <div class="panel-heading"><h1>@ViewBag.Title</h1></div>
+
+            <div class="frame">
+                <br />
+                @RenderBody()
+                <br />
+            </div>
+        </div>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

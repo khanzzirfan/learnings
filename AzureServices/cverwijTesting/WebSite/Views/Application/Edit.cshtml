@@ -1,0 +1,15 @@
+﻿@model ChristiaanVerwijs.MvcSiteWithEntityFramework.WebSite.Models.ApplicationManageViewModel
+
+@{
+    ViewBag.Title = "Update your application";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-5">
+        @Html.Partial("ManageApplicationPartial")
+    </div>
+</div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
