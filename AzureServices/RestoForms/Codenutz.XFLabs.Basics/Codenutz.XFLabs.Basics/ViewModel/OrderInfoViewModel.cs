@@ -59,7 +59,11 @@ namespace Codenutz.XFLabs.Basics.ViewModel
             try
             {
                 var odrepo = RepositoryManager.OrderDetailRepo();
-                var odItems = odrepo.GetItems();
+
+				//Select only items in the cart; which are not invoiced
+				var odItems = odrepo.SearchFor(c => c.OrderId <= 0).ToList();
+
+				//Sum up the whole total amount of all products;
                 var total = odItems.Sum(c => c.Price * c.Quantity);
                 OrderTotal = total;
                
@@ -131,8 +135,8 @@ namespace Codenutz.XFLabs.Basics.ViewModel
                 await page.DisplayAlert("Uh Oh :(", "Unable to place order, please try again.", "OK");
 
 
-            await page.Navigation.PopAsync();
-
+            //await page.Navigation.PopAsync();
+			await page.Navigation.PopToRootAsync();
         }
 
 
@@ -194,8 +198,7 @@ namespace Codenutz.XFLabs.Basics.ViewModel
                 return false;
             }
 
-            DateTime date = new DateTime();
-            if (date==DateTime.MinValue)
+            if (Date == null)
             {
                 page.DisplayAlert("Enter Date", "Please enter order pickup date.", "OK");
                 return false;

@@ -76,8 +76,11 @@ namespace Codenutz.XFLabs.Basics.ViewModel
         private void GetOrderDetailsList()
         {
             var odrepo = RepositoryManager.OrderDetailRepo();
-            var orderitems = odrepo.GetItems().ToList();
-            var list = orderitems.Select(c => new OrderDetails()
+
+			//Select only items in the cart; which are not invoiced
+			var orderitems = odrepo.SearchFor(c => c.OrderId <= 0).ToList();
+
+			var list = orderitems.Select(c => new OrderDetails()
             {
                 ID = c.ID,
                 MenuID = c.MenuID,

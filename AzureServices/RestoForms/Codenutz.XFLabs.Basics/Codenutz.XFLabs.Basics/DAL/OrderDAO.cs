@@ -22,7 +22,8 @@ namespace Codenutz.XFLabs.Basics.DAL
         public string Phone { get; set; }
         public decimal Amount { get; set; }
         public string Comment { get; set; }
-
+        
+        //Completed placing the order; Hence no longer show in menu items quantity
         public bool IsOrderComplete { get; set; }
 
     }

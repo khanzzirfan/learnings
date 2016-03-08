@@ -32,7 +32,7 @@ namespace Codenutz.XFLabs.Basics.View
             RestoTitle = restoName;
             StoreId = storeId;
             string platformName = Device.OS.ToString();
-
+            
             AboutUs = new ToolbarItem
             {
                 Name = "About Us",
@@ -88,12 +88,15 @@ namespace Codenutz.XFLabs.Basics.View
 
         public async void OnItemSelected(object sender, ItemTappedEventArgs args)
         {
-            
+           
+
             var menuItem = args.Item as MenuDAO;
             if (menuItem == null)
                 return;
             try
             {
+                ((ListView)sender).SelectedItem = null; //unselect the list item;
+
                 Navigation.PushAsync(new MenuItemDetailPage(RestoTitle, menuItem));
             }
             catch (Exception ex)
@@ -101,7 +104,7 @@ namespace Codenutz.XFLabs.Basics.View
                 DisplayAlert("Help", "Error loading tabbed view", "OK");
             }
 
-            //list.SelectedItem = null;
+            //this.list.SelectedItem = null;
         }
 
         public async void RemoveClicked(object sender, EventArgs args)

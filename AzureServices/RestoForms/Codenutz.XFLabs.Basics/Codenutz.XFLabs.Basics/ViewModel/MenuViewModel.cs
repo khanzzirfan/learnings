@@ -15,7 +15,7 @@ using Codenutz.XFLabs.Basics.DAL;
 
 namespace Codenutz.XFLabs.Basics.ViewModel
 {
-    public class MenuViewModel : BaseViewModel
+	public class MenuViewModel : BaseViewModel
     {
         #region ImageKConstants
         string d1_dessert_v1 = "https://lh3.googleusercontent.com/-Xh8aY2RRwd0/VeFCHSv2lzI/AAAAAAAAAOY/8SY3a6qk7WM/d1_icecream.png";
@@ -227,7 +227,9 @@ namespace Codenutz.XFLabs.Basics.ViewModel
             for (int i = 0; i < menulist.Count(); i++)
             {
                 var menuId = menulist[i].MenuID;
-                var existingOrder = odrepo.SearchFor(c => c.MenuID == menuId);
+				/*Check to exclude already placed orders c.OrderID < 1 */
+				var existingOrder = odrepo.SearchFor(c => c.MenuID == menuId && c.OrderId < 1 );
+                
                 if (existingOrder.Any())
                     menulist[i].QuantityOrdered = existingOrder.FirstOrDefault().Quantity;
             }
