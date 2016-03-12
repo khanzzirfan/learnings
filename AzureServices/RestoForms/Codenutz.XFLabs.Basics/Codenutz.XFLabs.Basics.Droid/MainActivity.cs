@@ -5,6 +5,8 @@ using Android.OS;
 using Autofac;
 using Codenutz.XFLabs.Basics.ViewModel;
 using FFImageLoading.Forms.Droid;
+using Plugin.Toasts;
+using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
 using XLabs.Forms;
 using XLabs.Ioc;
@@ -26,6 +28,8 @@ namespace Codenutz.XFLabs.Basics.Droid
 
             if (!Resolver.IsSet) SetIoc();
 
+			DependencyService.Register<ToastNotificatorImplementation>();
+			ToastNotificatorImplementation.Init(this);
 			LoadApplication(new App());
 
             ActionBar.SetIcon(new ColorDrawable(Resources.GetColor(Android.Resource.Color.Transparent)));
@@ -38,9 +42,8 @@ namespace Codenutz.XFLabs.Basics.Droid
 			containerBuilder.Register(c => AndroidDevice.CurrentDevice).As<IDevice>();
 			//containerBuilder.RegisterType<MainViewModel>().AsSelf();
 
-            containerBuilder.RegisterType<HomeViewModel>().AsSelf();
-
-            Resolver.SetResolver(new AutofacResolver(containerBuilder.Build()));
+			containerBuilder.RegisterType<HomeViewModel>().AsSelf();
+			Resolver.SetResolver(new AutofacResolver(containerBuilder.Build()));
 
 		}
 	}

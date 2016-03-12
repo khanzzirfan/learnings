@@ -3,8 +3,10 @@ using Codenutz.XFLabs.Basics.ViewModel;
 using FFImageLoading.Forms.Touch;
 using Foundation;
 using ImageCircle.Forms.Plugin.iOS;
+using Plugin.Toasts;
 using System;
 using UIKit;
+using Xamarin.Forms;
 using XLabs.Ioc;
 using XLabs.Ioc.Autofac;
 using XLabs.Platform.Device;
@@ -35,8 +37,12 @@ namespace Codenutz.XFLabs.Basics.iOS
             if (!Resolver.IsSet)
 				SetIoc();
 
-            
-            LoadApplication(new App());
+			//Toast Plugin Register;
+			DependencyService.Register<ToastNotificatorImplementation>();
+			ToastNotificatorImplementation.Init();
+
+
+			LoadApplication(new App());
 
 			return base.FinishedLaunching(app, options);
 		}

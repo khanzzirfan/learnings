@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Codenutz.XFLabs.Basics.Manager;
 using System.Linq;
+using Plugin.Toasts;
 
 namespace Codenutz.XFLabs.Basics.ViewModel
 {
@@ -87,10 +88,12 @@ namespace Codenutz.XFLabs.Basics.ViewModel
 			if (showAlert)
 				await page.DisplayAlert("Uh Oh :(", "Unable to place order, please try again.", "OK");
 			else
-				await page.DisplayAlert("Successful", "Order updated", "OK");
+			{
+				var notificator = DependencyService.Get<IToastNotificator>();
+				bool tapped = await notificator.Notify(ToastNotificationType.Success, "Successful", "Order Updated", TimeSpan.FromSeconds(2));
+			}
 			
 		}
-
 		
 		public void UpdateOrderItem(MenuDAO menu)
 		{
