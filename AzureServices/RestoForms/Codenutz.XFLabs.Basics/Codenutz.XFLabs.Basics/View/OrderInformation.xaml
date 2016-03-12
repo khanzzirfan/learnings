@@ -129,7 +129,7 @@
             BorderRadius="0"
             TextColor="White"
             Text="Send Confirmation"
-             Command="{Binding PlaceOrderCommand}"/>
+            Command="{Binding PlaceOrderCommand}"/>
       </StackLayout>
       
     </StackLayout>

@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Codenutz.XFLabs.Basics.View.MenuItemDetailPage"
+			 xmlns:local="clr-namespace:Codenutz.XFLabs.Basics.Helpers;assembly=Codenutz.XFLabs.Basics"
              Title="{Binding Title}"
 	           IsBusy="{Binding IsBusy}" >
   <ContentPage.Resources>
@@ -54,11 +55,16 @@
       
         <StackLayout  Orientation="Horizontal"
                       VerticalOptions="Center">
-            <Label Text="Quantity Ordered:" LineBreakMode="TailTruncation"/>
-            <Label Text="{Binding Menu.QuantityOrdered}" LineBreakMode="TailTruncation"/>
+		  
+            <Label Text="Quantity Ordered:" LineBreakMode="TailTruncation"	VerticalOptions="CenterAndExpand" />
+			<Entry Keyboard="Telephone" 
+					FontSize="12" WidthRequest="30"
+					HorizontalTextAlignment="Center"
+					Text="{Binding Menu.QuantityOrdered}"
+					VerticalOptions="Start"
+			  />
         </StackLayout>
       </StackLayout>
-     
     </StackLayout>
     
      <!-- middle controls -->
@@ -67,23 +73,26 @@
     </StackLayout>
 
      <!-- bottom controls -->
-    <StackLayout Orientation="Vertical" Padding="2" Spacing="2" VerticalOptions="End">
-        
-        <Button
-            x:Name="btnAddOrderQuantity"
-            BackgroundColor="#FFA500"
-            BorderRadius="0"
-            TextColor="White"
-            Text="Add To Order"/>
-    
-        <Button
-            x:Name="btnRemoveOrderQuantity"
-            BackgroundColor="#FFA500"
-            BorderRadius="0"
-            TextColor="White"
-            Text="Remove Order"/>
-    
-    </StackLayout>
+	<StackLayout Orientation="Vertical" Padding="2,3,2,2" Spacing="2" VerticalOptions="End">
+	  
+	  
+	  <Button
+		x:Name="btnAddOrder"
+		BackgroundColor="#FFA500"
+		BorderRadius="0"
+		TextColor="White"
+		Text="Add To Order"
+		Command="{Binding PlaceOrderCommand}"/>
+	  
+	  <Button
+			x:Name="btnRemoveOrderQuantity"
+			BackgroundColor="#FFA500"
+			BorderRadius="0"
+			TextColor="White"
+			Text="Remove Order"
+			Command="{Binding RemoveOrderCommand}"/>
+	
+	</StackLayout>
   </StackLayout>
   
   </ContentPage.Content>

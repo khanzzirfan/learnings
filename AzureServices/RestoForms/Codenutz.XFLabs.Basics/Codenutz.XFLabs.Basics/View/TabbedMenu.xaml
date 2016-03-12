@@ -62,17 +62,19 @@
                         </StackLayout>
                       
                       </StackLayout>
-                      
-                      <Label FontSize = "12" Text="{Binding Price, StringFormat='{0:C}'}" LineBreakMode="TailTruncation"></Label>
+                      <!-- Intentionally Added space in the stringformat so that look nicer down the menu name-->
+                      <Label FontSize = "12" Text="{Binding Price, StringFormat=' {0:C}'}" LineBreakMode="TailTruncation"></Label>
 
                       <StackLayout HorizontalOptions="Start"  Orientation="Horizontal">
-
-                        <Label FontSize = "12" Text="Add:" 
+						<!-- Intentionally Added space in the stringformat so that look nicer down the menu name-->
+                        <Label FontSize = "12" Text=" Add:" 
                                HorizontalOptions="Start" 
                                VerticalOptions="Center"  
                                LineBreakMode="TailTruncation"></Label>
                        
-                        <Entry Keyboard="Telephone" FontSize="12" WidthRequest="35">
+                        <Entry Keyboard="Telephone" FontSize="12"
+							   HorizontalTextAlignment="Center"
+							   WidthRequest="35">
                           <b:Interaction.Behaviors>
                             <b:BehaviorCollection>
                               <b:TextChangedBehavior Text="{Binding QuantityOrdered, Mode=TwoWay}" />

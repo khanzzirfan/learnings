@@ -18,13 +18,13 @@ namespace Codenutz.XFLabs.Basics.View
         {
             InitializeComponent();
             BindingContext = viewModel = new MenuItemDetailVM(this, storeName, menu);
-        }
+		}
 
-        protected override void OnAppearing()
+		protected override void OnAppearing()
         {
             base.OnAppearing();
         }
 
-
-    }
+		
+	}
 }

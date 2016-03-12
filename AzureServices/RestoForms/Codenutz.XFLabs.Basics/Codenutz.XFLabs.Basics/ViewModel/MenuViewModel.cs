@@ -267,6 +267,7 @@ namespace Codenutz.XFLabs.Basics.ViewModel
                 odrepo.SaveItem(item);
             }
 
+			//Debug code;
             var checklist = odrepo.GetItems().ToList();
         }
 
