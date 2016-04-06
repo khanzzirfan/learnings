@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using Codenutz.XFLabs.Basics.Manager;
 using System.Linq;
 using Plugin.Toasts;
+using Codenutz.XFLabs.Basics.View;
 
 namespace Codenutz.XFLabs.Basics.ViewModel
 {
@@ -52,7 +53,7 @@ namespace Codenutz.XFLabs.Basics.ViewModel
 		{
 			get
 			{
-				Menu.QuantityOrdered = 0; //A trick to delete the order;
+				//Menu.QuantityOrdered = 0; //A trick to delete the order;
 				return removeOrderCommand ??
 					(removeOrderCommand = new Command(async () => await ExecutePlaceOrderCommand(), () => { return !IsBusy; }));
 			}
@@ -72,7 +73,7 @@ namespace Codenutz.XFLabs.Basics.ViewModel
 
 			try
 			{
-				UpdateOrderItem(Menu);
+				ViewModelHelper.AddOrUpdateOrderItem(Menu);
 			}
 			catch (Exception ex)
 			{
@@ -93,40 +94,6 @@ namespace Codenutz.XFLabs.Basics.ViewModel
 				bool tapped = await notificator.Notify(ToastNotificationType.Success, "Successful", "Order Updated", TimeSpan.FromSeconds(2));
 			}
 			
-		}
-		
-		public void UpdateOrderItem(MenuDAO menu)
-		{
-			var odrepo = RepositoryManager.OrderDetailRepo();
-			var odList = odrepo.GetItems().ToList();
-			var existingOrder = odrepo.SearchFor(c => c.MenuID == menu.MenuID);
-			if (existingOrder.Any())
-			{
-				var oditem = odrepo.GetItem(existingOrder.FirstOrDefault().ID);
-				oditem.Quantity = menu.QuantityOrdered;
-				oditem.TotalAmount = menu.Price * menu.QuantityOrdered;
-				oditem.TaxAmount = menu.Price * menu.QuantityOrdered * 0.10m;
-				if (oditem.Quantity < 1)
-					odrepo.DeleteItem(oditem);
-				else
-					odrepo.SaveItem(oditem);
-			}
-			else if (menu.QuantityOrdered > 0)
-			{
-				var item = new OrderDetailDAO()
-				{
-					MenuID = menu.MenuID,
-					Price = menu.Price,
-					Quantity = menu.QuantityOrdered,
-					RestaurantId = 1,
-					TotalAmount = menu.Price * menu.QuantityOrdered,
-					TaxAmount = menu.Price * menu.QuantityOrdered * 0.10m,
-				};
-				odrepo.SaveItem(item);
-			}
-
-			//Debug code
-			var checklist = odrepo.GetItems().ToList();
 		}
 		
 	}

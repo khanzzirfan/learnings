@@ -44,7 +44,6 @@ namespace Codenutz.XFLabs.Basics.ViewModel
         string k1_italian_prawn = "https://lh3.googleusercontent.com/-4SA0Vqw0isU/VjiTsccK1eI/AAAAAAAAApQ/Udpzd-SJ_NU/italian_prawn.png";
         #endregion
 
-        //public ObservableCollection<Menu> MenuCollection { get; set; }
         public ObservableCollection<DisplayMenu> MenuCollection { get; set; }
         public int StoreId { get; set; }
         public MenuViewModel(Page page, string restoName, int storeId)
@@ -53,9 +52,6 @@ namespace Codenutz.XFLabs.Basics.ViewModel
             Title = restoName;
             StoreId = storeId;
             MenuCollection = new ObservableCollection<DisplayMenu>();
-
-            //Load List;
-            this.ExecuteGetMenuCommand();
         }
 
         public MenuViewModel(IDevice device) : base(device)
@@ -88,40 +84,7 @@ namespace Codenutz.XFLabs.Basics.ViewModel
             var showAlert = false;
             try
             {
-                MenuCollection.Clear();
-                var menulist = GetMenuItems();
-                
-                var dicMenuCollection = menulist
-                    .GroupBy(c => c.MenuCategory)
-                    .Select(c => new DisplayMenu()
-                    {
-                        MenuCategory = c.Key,
-                        MenuList = c.Select(m => new MenuDAO()
-                        {
-                            ID = m.ID,
-                            MenuID = m.MenuID,
-                            Name = m.Name,
-                            Description = m.Description,
-                            MenuCategory = m.MenuCategory,
-                            MenuType = m.MenuType,
-                            Price = m.Price,
-                            ThumbUrl = m.ThumbUrl,
-                            QuantityOrdered= m.QuantityOrdered,
-
-                        }).ToList()
-
-                    }).ToList();
-
-                MenuCollection = new ObservableCollection<DisplayMenu>(dicMenuCollection);
-                
-                //foreach (var m in menulist)
-                //{
-                //    //if (string.IsNullOrWhiteSpace(store.Image))
-                //    //  store.Image = "http://refractored.com/images/wc_small.jpg";
-                //    //MenuCollection.Add(m);
-                //}
-
-                //Sort();
+				UpdateAndNotifyCollection();
             }
             catch (Exception ex)
             {
@@ -136,17 +99,16 @@ namespace Codenutz.XFLabs.Basics.ViewModel
 
             if (showAlert)
                 await page.DisplayAlert("Uh Oh :(", "Unable to gather stores.", "OK");
-
-
+			
         }
 
 
 
-        private void GoTo()
-        {
-            var navigationPage = new NavigationPage((Page)ViewFactory.CreatePage<ReserveTableViewModel, ReserveTable>());
-            NavigationService.NavigateTo<ReserveTable>("");
-        }
+        //private void GoTo()
+        //{
+        //    var navigationPage = new NavigationPage((Page)ViewFactory.CreatePage<ReserveTableViewModel, ReserveTable>());
+        //    NavigationService.NavigateTo<ReserveTable>("");
+        //}
 
         #region properties
 
@@ -155,6 +117,7 @@ namespace Codenutz.XFLabs.Basics.ViewModel
         {
             get
             {
+				var unfocusedCommandExec = "x";
                 return this.unfocusedCommand ?? (this.unfocusedCommand = new Command<object>(
                   (param) =>
                   {
@@ -164,115 +127,41 @@ namespace Codenutz.XFLabs.Basics.ViewModel
                   (param) =>
                   {
                       var paramValue = param as MenuDAO;
-                      MenuCollectionUpdate(paramValue);
+                      MenuCollectionUpdate(paramValue,false);
                       // CanExecute delegate
                       return true;
                   }));
             }
         }
-        #endregion
-
-        public async void MenuCollectionUpdate(MenuDAO menu)
-        {
-            var showAlert = false;
-            var menulist = new List<MenuDAO>();
-            try
-            {
-                AddOrderItem(menu); //Add order to menu
-                menulist = GetMenuItems(); // Get new menu list;
-
-                var dicMenuCollection = menulist
-                .GroupBy(c => c.MenuCategory)
-                .Select(c => new DisplayMenu()
-                {
-                    MenuCategory = c.Key,
-                    MenuList = c.Select(m => new MenuDAO()
-                    {
-                        ID = m.ID,
-                        MenuID = m.MenuID,
-                        Name = m.Name,
-                        Description = m.Description,
-                        MenuCategory = m.MenuCategory,
-                        MenuType = m.MenuType,
-                        Price = m.Price,
-                        ThumbUrl = m.ThumbUrl
-
-                    }).ToList()
-
-                }).ToList();
-
-                MenuCollection = new ObservableCollection<DisplayMenu>(dicMenuCollection);
-                OnPropertyChanged("MenuCollection");
-            }
-            catch (Exception ex)
-            {
-                showAlert = true;
-            }
-
-            if (showAlert)
-                await page.DisplayAlert("Uh Oh :(", "Unable to update menu order.", "OK");
-            
-        }
-
-        /// <summary>
-        /// Return MenuItems along with the existing quantity ordered;
-        /// If there is no existing order, then quantity ordered column will be zero;
-        /// </summary>
-        /// <returns></returns>
-        public List<MenuDAO> GetMenuItems()
-        {
-            var menuRepo = RepositoryManager.MenuRepo();
-            var odrepo = RepositoryManager.OrderDetailRepo();
-            var menulist = menuRepo.GetItems();
-            for (int i = 0; i < menulist.Count(); i++)
-            {
-                var menuId = menulist[i].MenuID;
-				/*Check to exclude already placed orders c.OrderID < 1 */
-				var existingOrder = odrepo.SearchFor(c => c.MenuID == menuId && c.OrderId < 1 );
-                
-                if (existingOrder.Any())
-                    menulist[i].QuantityOrdered = existingOrder.FirstOrDefault().Quantity;
-            }
-
-            return menulist;
-        }
-
-        public void AddOrderItem(MenuDAO menu)
-        {
-            var odrepo = RepositoryManager.OrderDetailRepo();
-            var odList = odrepo.GetItems().ToList();
-            var existingOrder = odrepo.SearchFor(c => c.MenuID == menu.MenuID);
-            if (existingOrder.Any())
-            {
-                var oditem = odrepo.GetItem(existingOrder.FirstOrDefault().ID);
-                oditem.Quantity = menu.QuantityOrdered;
-                oditem.TotalAmount = menu.Price * menu.QuantityOrdered;
-                oditem.TaxAmount = menu.Price * menu.QuantityOrdered * 0.10m;
-                if (oditem.Quantity < 1)
-                    odrepo.DeleteItem(oditem);
-                else
-                    odrepo.SaveItem(oditem);
-            }
-            else if (menu.QuantityOrdered > 0)
-            {
-                var item = new OrderDetailDAO()
-                {
-                    MenuID = menu.MenuID,
-                    Price = menu.Price,
-                    Quantity = menu.QuantityOrdered,
-                    RestaurantId = 1,
-                    TotalAmount = menu.Price * menu.QuantityOrdered,
-                    TaxAmount = menu.Price * menu.QuantityOrdered * 0.10m,
-                };
-                odrepo.SaveItem(item);
-            }
-
-			//Debug code;
-            var checklist = odrepo.GetItems().ToList();
-        }
+		#endregion
 
 
+		#region Methods
 
+		public async void MenuCollectionUpdate(MenuDAO menu, bool updatepage)
+		{
+			var showAlert = false;
+			try
+			{
+				ViewModelHelper.AddOrUpdateOrderItem(menu);
+				if(updatepage) UpdateAndNotifyCollection();
+			}
+			catch (Exception ex)
+			{
+				showAlert = true;
+			}
 
-    }
+			if (showAlert)
+				await page.DisplayAlert("Uh Oh :(", "Unable to update menu order.", "OK");
+		}
+
+		public async void UpdateAndNotifyCollection()
+		{
+			var observableMenuCollection = ViewModelHelper.GetMenuViewModel();
+			MenuCollection = new ObservableCollection<DisplayMenu>(observableMenuCollection);
+			OnPropertyChanged("MenuCollection");
+		}
+		
+		#endregion
+	}
 }

@@ -5,7 +5,7 @@
              xmlns:b="clr-namespace:Corcav.Behaviors;assembly=Corcav.Behaviors"
              x:Name="TabMenuPage"
              Title="{Binding Title}"
-	           IsBusy="{Binding IsBusy}" >
+	           IsBusy="{Binding IsBusy}" ItemsSource="{Binding MenuCollection}">
   
   <TabbedPage.ItemTemplate>
     <DataTemplate>
@@ -86,6 +86,8 @@
                           </b:Interaction.Behaviors>
                         </Entry>
                         
+						<Label FontSize = "12" Text="{Binding QuantityOrdered}" LineBreakMode="NoWrap"></Label>
+					  
                       </StackLayout>
                     </StackLayout>
                     <Image Grid.Row="0" Grid.Column="2" Grid.RowSpan="2" HeightRequest="12"  WidthRequest="12" Source="arrowright_16.png" HorizontalOptions="Center" />

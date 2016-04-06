@@ -60,6 +60,7 @@
     <Compile Include="Interface\IService.cs" />
     <Compile Include="Manager\AppRepository.cs" />
     <Compile Include="Manager\RepositoryManager.cs" />
+    <Compile Include="Manager\ViewModelHelper.cs" />
     <Compile Include="Model\Home.cs" />
     <Compile Include="Model\Menu.cs" />
     <Compile Include="Model\OrderDetails.cs" />

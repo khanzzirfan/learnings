@@ -63,13 +63,9 @@ namespace Codenutz.XFLabs.Basics.View
             this.ToolbarItems.Add(AboutUs);
             this.ToolbarItems.Add(Cart);
             this.ToolbarItems.Add(Reservation);
-
-            var v = new MenuViewModel(this, restoName, StoreId);
-            var source = v.MenuCollection;
-            this.ItemsSource = source;
+			
             BindingContext = viewModel = new MenuViewModel(this, RestoTitle,StoreId);
-           
-        }
+		}
 
         public async void ReserveTable(string restoName)
         {
@@ -201,5 +197,63 @@ namespace Codenutz.XFLabs.Basics.View
             
 
         }
-    }
+
+		
+
+		protected override void OnAppearing()
+		{
+			base.OnAppearing();
+			//Part I
+			//if (viewModel.MenuCollection.Count > 0 || viewModel.IsBusy)
+			//	return;
+
+			//viewModel.GetMenuList.Execute(null);
+			/** Part II **/
+			var currentTabPage = this.CurrentPage;
+			var selectedTab = this.SelectedItem;
+			var loadOnDemand = false;
+			if (viewModel.MenuCollection.Count > 0 || viewModel.IsBusy)
+			{
+				loadOnDemand = true;
+			}
+
+			if (loadOnDemand)
+			{
+				//Fire a background task;
+				Task.Run(() => 
+				{
+					UpdatePageOnDemand(350); //specify no of milliseconds for referesh
+				});
+				return;
+			}
+			else
+			{
+				UpdatePageOnDemand(0);//specify no of milliseconds for referesh
+			} 
+		}
+
+		/// <summary>
+		/// Updates the page on popupasync load.
+		/// This is in place because on PopUpAsync will not update the page straight away. Hence Has to delay for few seconds.
+		/// </summary>
+		/// <param name="seconds">wait number of milliseconds to referesh the page</param>
+		public async void UpdatePageOnDemand(int seconds)
+		{
+			//keep the current selected tab reference;
+			var selectedPage = this.CurrentPage; 
+			await Task.Delay(seconds);
+			viewModel.GetMenuList.Execute(null);
+
+			if (selectedPage != null && this.CurrentPage.Id != selectedPage.Id)
+			{
+				Device.BeginInvokeOnMainThread(() =>
+				{
+					//Make sure after page referesh, show the same selected tab page;
+					this.CurrentPage = selectedPage;
+				});
+			}
+
+		}
+
+	}
 }

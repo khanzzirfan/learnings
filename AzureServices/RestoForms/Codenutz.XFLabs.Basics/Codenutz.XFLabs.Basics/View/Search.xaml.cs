@@ -47,9 +47,10 @@ namespace Codenutz.XFLabs.Basics.View
             {
                 DisplayAlert("Help", "Error loading tabbed view", "OK");
             }
-            
-            list.SelectedItem = null;
-        }
+
+			//list.SelectedItem = null;
+			((ListView)sender).SelectedItem = null; //unselect the list item;
+		}
 
     }
 }
