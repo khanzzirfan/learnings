@@ -59,6 +59,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="Helpers\FakeDataContext.cs" />
     <Compile Include="Helpers\InMemoryDbSet.cs" />
     <Compile Include="Helpers\TestEntity.cs" />
     <Compile Include="Helpers\TestRepository.cs" />

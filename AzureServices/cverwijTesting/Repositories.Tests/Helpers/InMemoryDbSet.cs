@@ -81,5 +81,7 @@ namespace ChristiaanVerwijs.MvcSiteWithEntityFramework.Repositories.Tests
         {
             get { return query.Provider; }
         }
+
+
     }
 }

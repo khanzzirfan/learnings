@@ -20,6 +20,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Website.Tests", "Website.Te
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RepositoryIK.Tests", "RepositoryIK.Tests\RepositoryIK.Tests.csproj", "{7D5360DB-A2B9-41F0-9131-71267D93873F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebsiteIK.Tests", "WebsiteIK.Tests\WebsiteIK.Tests.csproj", "{AC3CDAD1-0BAD-4654-BC1D-BD295690D3BA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -46,6 +48,10 @@ Global
 		{7D5360DB-A2B9-41F0-9131-71267D93873F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7D5360DB-A2B9-41F0-9131-71267D93873F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7D5360DB-A2B9-41F0-9131-71267D93873F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC3CDAD1-0BAD-4654-BC1D-BD295690D3BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC3CDAD1-0BAD-4654-BC1D-BD295690D3BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC3CDAD1-0BAD-4654-BC1D-BD295690D3BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC3CDAD1-0BAD-4654-BC1D-BD295690D3BA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
