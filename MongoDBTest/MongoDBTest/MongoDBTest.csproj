@@ -51,6 +51,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Blog.cs" />
+    <Compile Include="GradesV2.cs" />
     <Compile Include="Grades.cs" />
     <Compile Include="Orders.cs" />
     <Compile Include="Program.cs" />
