@@ -1,31 +1,46 @@
-Hi,I'm currently full time Web Developer MVC & C# having 3 years of experience in Utility & banking domain. I'm working on Xamarin at the current place of work & also I have own project on Xamarin android (Restaurant take away & booking table app). 
+Hi,I'm currently full time Web Developer MVC, ReactJs & C# having 5 years of experience in Utility & banking domain. I'm working on Xamarin at the current place of work & also I have own project on Xamarin android (Restaurant take away & booking table app). 
 
 I have created the app using Xamarin, SQL Lite, MongoDB, WebAPI2 Rest Services in C# & also SQL. I can provide you the app reference of my work.  There some code project articles I have been writing of my findings as Tips & Tricks for people.
 
-Code Project:  (@khanzzirfan or http://www.codeproject.com/Members/khanzzirfan) 
 Linkedin: https://www.linkedin.com/profile/public-profile-settings?trk=prof-edit-edit-public_profile
+Code Project:  (@khanzzirfan or http://www.codeproject.com/Members/khanzzirfan) 
 Google Play Store : (Reserve Table) by khanzzirfan sample reservation app for restaurants
 
 As I work all the weekends gaining knowledge , experience & earning extra money, I can easily put in about 12-16 hours of my time to work for you.
+
 I do have experience with Google API, Android SDK, Bluetooth applications.I'm very much interested in doing more apps going onwards. 
 Also challenges  motivates me to achieve the task. Hence, I present my self as self focused & meeting dead lines is priority for a given task. 
 
 I present all the skills required here for the project, I would like you to take opportunity to review my knowledge & experience & provide me an opportunity to work & discuss the role in further detail.
 
+/****************************************************************************************************************************
+**********************************************2nd Message *******************************************************************/
 
-/*************************************************************************************************************************************/
-******************************* 2nd message *******************************************************************************************
+Hi,I'm currently full time Web Developer MVC/ ReactJs & C# having 5 years of experience in Utility & banking domain. I'm working on Xamarin at the current place of work & also I have own project on Xamarin android (Restaurant take away & booking table app). 
 
-Hi,I'm currently full time Web Developer MVC & C# having 5 years of experience in Utility & banking domain. I'm working on Xamarin at the current place of work & also I have own project on Xamarin android (Restaurant take away & booking table app). 
+I have been working as reactjs developer at current work environment and I'm very experienced with React architecture/redux/flux. 
+Backend techonologies we use, Web API2, MongoDB, t-SQL and C#.
 
-I have created the app using Xamarin, SQL Lite, MongoDB, WebAPI2 Rest Services in C# & also SQL. I can provide you the app reference of my work.  There some code project articles I have been writing of my findings as Tips & Tricks for people.
-
-Code Project:  (@khanzzirfan or http://www.codeproject.com/Members/khanzzirfan) 
+Please visit my Linkedin profile to know more about me.
 Linkedin: https://www.linkedin.com/profile/public-profile-settings?trk=prof-edit-edit-public_profile
+
+I present all the skills required here for the project, I would like you to take opportunity to review my knowledge & experience & provide me an opportunity to work & discuss the role in further detail.
+
+
+
+/*************************************************React JS ****************************************************************
+**********************************************3nd Message *******************************************************************/
+
+Hi,I'm currently full time Web Developer MVC, ReactJs & C# having 5 years of experience in Utility & banking domain. I'm working on Reactjs/Redux/Node.js modules at the current place of work.
+I'm very passionate about the new workthings I learn and develope. I have been training other people with reactjs knowledge in my part times.
+
+Please take a look at my linkeding profile to get good understanding of my knowledge and skills.
+Linkedin: https://www.linkedin.com/profile/public-profile-settings?trk=prof-edit-edit-public_profile
+Code Project:  (@khanzzirfan or http://www.codeproject.com/Members/khanzzirfan) 
 Google Play Store : (Reserve Table) by khanzzirfan sample reservation app for restaurants
 
 As I work all the weekends gaining knowledge , experience & earning extra money, I can easily put in about 12-16 hours of my time to work for you.
 
-I'm very intermeditate at Xamarin IOS level but a quick learner and my implementation skills will not take any learning time to get things done for the job.
+Also challenges  motivates me to achieve the task. Hence, I present my self as self focused & meeting dead lines is priority for a given task. 
 
-I present all the skills required here for the project, I would like you to take opportunity to review my knowledge & experience & provide me an opportunity to work & discuss the role in further detail
+I present all the skills required here for the project, I would like you to take opportunity to review my knowledge & experience & provide me an opportunity to work & discuss the role in further detail.
